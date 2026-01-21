@@ -3,7 +3,7 @@ layout: default
 refactor: true
 ---
 
-{% include lang.html %}
+{% assign lang = site.lang | default: 'en' %}
 
 {% assign project_posts = site.tags.projects %}
 {% assign all_pinned = project_posts | where: 'pin', true %}
@@ -53,14 +53,14 @@ refactor: true
             <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
 
             <div class="card-text content mt-0 mb-3">
-              <p>{% include post-description.html %}</p>
+              <p>{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | truncate: 200 }}{% endif %}</p>
             </div>
 
             <div class="post-meta flex-grow-1 d-flex align-items-end">
               <div class="me-auto">
                 <!-- posted date -->
                 <i class="far fa-calendar fa-fw me-1"></i>
-                {% include datetime.html date=post.date lang=lang %}
+                <time data-ts="{{ post.date | date: '%s' }}" data-df="ll">{{ post.date | date: "%b %-d, %Y" }}</time>
 
                 <!-- categories -->
                 {% if post.categories.size > 0 %}
@@ -77,7 +77,7 @@ refactor: true
               {% if post.pin %}
                 <div class="pin ms-1">
                   <i class="fas fa-thumbtack fa-fw"></i>
-                  <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
+                  <span>Pinned</span>
                 </div>
               {% endif %}
             </div>
