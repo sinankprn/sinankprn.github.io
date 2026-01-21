@@ -1,0 +1,6 @@
+/* Custom styles */
+
+/* Disable avatar hover zoom completely */
+#sidebar #avatar img:hover {
+  transform: scale(1.0) !important;
+}
