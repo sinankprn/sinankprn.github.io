@@ -9,7 +9,7 @@ theme: jekyll-theme-chirpy
 lang: en
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone:
+timezone: Australia/Sydney
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
@@ -19,7 +19,7 @@ title: Sinan Koparan # the main title
 tagline: PhD Candidate # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Personal blog and portfolio of Sinan Koparan - sharing insights on software development, technology, and projects.
+  Sinan Koparan - PhD Candidate in Sports Data Science & AI. Research on machine learning, LLMs, and community sport analytics with CSIRO Data61 and Rugby Australia.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -58,7 +58,7 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: # fill in your Google Analytics ID
+    id: G-3GHHFN1FPX
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
@@ -101,7 +101,7 @@ avatar: /assets/img/avatar.jpg
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: # string, local or CORS resources
+social_preview_image: /assets/img/avatar.jpg
 
 # boolean type, the global switch for TOC in posts.
 toc: true
