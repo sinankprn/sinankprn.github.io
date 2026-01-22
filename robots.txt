@@ -1,7 +1,5 @@
-
 User-agent: *
 Disallow:
-
 Sitemap: https://sinankprn.github.io/sitemap.xml
 
 
