@@ -1,5 +1,5 @@
 ---
 layout: projects
-icon: fas fa-project-diagram
+icon: fas fa-folder-open
 order: 4
 ---
