@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-info-circle
-order: 6
+order: 8
 ---
 
 # Sinan Koparan
@@ -76,7 +76,10 @@ I thrive in environments where **rigorous research meets practical implementatio
 
 I'm always open to discussing research collaborations, technical challenges, or opportunities where data science and AI can make a meaningful difference.
 
-<div class="d-flex gap-3 mt-4">
+<div class="d-flex flex-wrap gap-3 mt-4">
+  <a href="/assets/docs/cv.pdf" class="btn btn-primary" target="_blank">
+    <i class="fas fa-download me-2"></i>Download CV
+  </a>
   <a href="https://www.linkedin.com/in/sinankprn/" class="btn btn-outline-primary" target="_blank">
     <i class="fab fa-linkedin me-2"></i>LinkedIn
   </a>
