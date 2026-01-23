@@ -17,6 +17,8 @@ PaperExtractor is an AI-powered tool that extracts specific information from PDF
 
 ![PaperExtractor Demo](/assets/gifs/paperextractor.gif)
 
+I also shared this project and my thoughts on building it in a [LinkedIn post](https://www.linkedin.com/posts/sinankprn_systematic-literature-reviews-are-a-rigorous-activity-7416207278451773440-10_9?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFKBnPQBt_vKtEOnQl4t0mFckzsUL2UdNIw)
+
 ## Learning Goals
 
 * **Visual Derendering:** Leveraging Gemini 3 Pro's advanced visual derendering capabilities to reverse-engineer the visual layout of a PDF back into structured code.
