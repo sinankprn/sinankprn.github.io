@@ -9,25 +9,31 @@ description: "A full-stack application for creative AI-powered content generatio
 
 ## Overview
 
-Prompt2Canvas is a full-stack application for creative AI-powered content generation. Transform text prompts into visual content using modern web technologies and AI capabilities.
+Prompt2Canvas can take any text prompt and turn it into live, interactive visuals in the browser. This is powered by Gemini 3, which generates p5.js code based on your prompt, and the application executes that code directly on a canvas.
 
 **[View on GitHub](https://github.com/sinankprn/prompt2canvas)**
 
-## Technical Stack
 
-- **Languages:** JavaScript (98.1%), HTML, CSS
-- **Architecture:** Full-stack application with separate client and server components
+## Demo
 
-## Project Structure
+![Prompt2Canvas Demo](/assets/gifs/prompt2canvas.gif)
 
-The application is organised into two main components:
-- **Client:** Frontend interface for user interactions and content display
-- **Server:** Backend processing and AI integration
+I also shared this project and my thoughts on building it in a [LinkedIn post](https://www.linkedin.com/posts/sinankprn_i-have-been-experimenting-with-how-large-activity-7418743994987454464-fhMa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKBnPQBt_vKtEOnQl4t0mFckzsUL2UdNIw)
 
-## Development Focus
+## Learning Goals
 
-This project explores the integration of AI-powered generation capabilities into web applications, focusing on transforming user prompts into creative visual outputs. The full-stack architecture demonstrates modern web development practices whilst leveraging AI APIs for content generation.
+* **AI Integration:** Understanding how to dynamically generate and safely execute JavaScript (p5.js) from AI models like Gemini 3.
+* **Prompt-to-Code Workflow:** Experimenting with prompt engineering to guide AI code generation.
+* **Interactive Frontend:** Rendering AI-generated sketches in real-time using p5.js.
 
-## Technical Approach
+## Tech Stack
 
-Built with a clean separation between frontend and backend concerns, the application provides a foundation for experimenting with various AI-powered creative tools and generation techniques.
+* **Frontend:** React + p5.js for interactive rendering
+* **Backend:** Node.js + Express, communicates with Gemini 3 API
+* **AI API:** Gemini 3 for generating p5.js sketches from text prompts
+
+## Takeaways
+
+* Dynamically generating and running code safely in the browser is tricky but rewarding.
+* Using AI (Gemini 3) to turn prompts into p5.js sketches taught me the importance of prompt design and error handling.
+* Combining AI and interactive front-end development creates highly engaging user experiences.
