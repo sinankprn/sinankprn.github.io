@@ -6,20 +6,10 @@ order: 6
 
 # Talks & Presentations
 
-*Coming soon.*
 
-Check back for upcoming conference presentations, seminars, and workshops on sports data science, machine learning, and AI applications.
+Technical Considerations for Reliable Studies Using Large Language Models
+*[Faculty of Health GenAI-Enhance Summit, 2026]*
+[Slides (PDF)](/assets/presentations/genaienhancesummit2026.pdf)
 
-<!--
-## 2025
-
-### Conference Name
-**Title of Presentation**
-*Location, Date*
-
-Brief description or abstract of the talk.
-
-[Slides](/assets/slides/presentation.pdf) | [Video](https://youtube.com/...)
-
----
--->
+The Anatomy of a Thriving Club: Organisational Characteristics Supporting Retention and Growth
+*[STARS Australian Sports Commission, 2025](https://www.ausport.gov.au/services-and-programs/learning-resources/conferences/stars2025)*
