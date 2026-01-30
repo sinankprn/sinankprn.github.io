@@ -1,0 +1,69 @@
+# Sinan Koparan
+
+> Sinan Koparan - PhD Candidate in Sports Data Science & AI. Research on machine learning, LLMs, and community sport analytics with CSIRO Data61 and Rugby Australia.
+
+## Sinan Koparan
+[Sinan Koparan](https://sinankprn.com/)
+
+## CATEGORIES
+[CATEGORIES](https://sinankprn.com/categories/)
+
+## TAGS
+[TAGS](https://sinankprn.com/tags/)
+
+## ARCHIVES
+[ARCHIVES](https://sinankprn.com/archives/)
+
+## PROJECTS
+[PROJECTS](https://sinankprn.com/projects/)
+
+## PUBLICATIONS
+[PUBLICATIONS](https://sinankprn.com/publications/)
+
+## TALKS
+[TALKS](https://sinankprn.com/talks/)
+
+## RESOURCES
+[RESOURCES](https://sinankprn.com/resources/)
+
+## ABOUT
+[ABOUT](https://sinankprn.com/about/)
+
+## Paper Extractor: AI-Powered PDF Data Extraction An AI-powered tool that extracts specific information from PDF documents. Upload a PDF, specify what information you need, and the application automatically finds it with source citations. Jan 18, 2025 Projects, AI Tools
+[Paper Extractor: AI-Powered PDF Data Extraction An AI-powered tool that extracts specific information from PDF documents. Upload a PDF, specify what information you need, and the application automatically finds it with source citations. Jan 18, 2025 Projects, AI Tools](https://sinankprn.com/posts/paperextractor/)
+
+## Prompt2Canvas: Creative AI Content Generation A full-stack application for creative AI-powered content generation. Transform text prompts into visual content using modern web technologies and AI capabilities. Jan 12, 2025 Projects, AI Tools
+[Prompt2Canvas: Creative AI Content Generation A full-stack application for creative AI-powered content generation. Transform text prompts into visual content using modern web technologies and AI capabilities. Jan 12, 2025 Projects, AI Tools](https://sinankprn.com/posts/prompt2canvas/)
+
+## ai
+[ai](https://sinankprn.com/tags/ai/)
+
+## projects
+[projects](https://sinankprn.com/tags/projects/)
+
+## creative
+[creative](https://sinankprn.com/tags/creative/)
+
+## extraction
+[extraction](https://sinankprn.com/tags/extraction/)
+
+## gemini
+[gemini](https://sinankprn.com/tags/gemini/)
+
+## javascript
+[javascript](https://sinankprn.com/tags/javascript/)
+
+## pdf
+[pdf](https://sinankprn.com/tags/pdf/)
+
+## react
+[react](https://sinankprn.com/tags/react/)
+
+## Sinan Koparan
+[Sinan Koparan](https://github.com/sinankprn)
+
+## Chirpy
+[Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)
+
+## Jekyll
+[Jekyll](https://jekyllrb.com)
