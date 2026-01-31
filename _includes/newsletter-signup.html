@@ -1,0 +1,27 @@
+<!-- Newsletter Signup Component -->
+<!-- Configure your Buttondown username in _config.yml: newsletter.username -->
+{% if site.newsletter.enabled %}
+<div class="newsletter-signup">
+  <h3>{{ site.newsletter.title | default: "Subscribe to Updates" }}</h3>
+  <p>{{ site.newsletter.description | default: "Get notified about new posts on sports analytics, AI research, and projects." }}</p>
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/{{ site.newsletter.username }}"
+    method="post"
+    class="newsletter-form embeddable-buttondown-form"
+  >
+    <div class="newsletter-input-group">
+      <input
+        type="email"
+        name="email"
+        id="bd-email"
+        placeholder="your@email.com"
+        required
+        aria-label="Email address"
+      />
+      <input type="hidden" value="1" name="embed" />
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </div>
+    <p class="newsletter-privacy">No spam. Unsubscribe anytime.</p>
+  </form>
+</div>
+{% endif %}

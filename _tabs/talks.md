@@ -2,6 +2,7 @@
 layout: page
 icon: fas fa-microphone-alt
 order: 6
+description: "Conference presentations and talks by Sinan Koparan on AI, large language models, and sports analytics research."
 ---
 
 

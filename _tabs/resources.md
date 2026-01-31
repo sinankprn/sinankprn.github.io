@@ -2,9 +2,8 @@
 layout: page
 icon: fas fa-bookmark
 order: 7
+description: "Curated tools, libraries, courses, and datasets for sports data science, machine learning, and AI research."
 ---
-
-# Resources
 
 A curated collection of tools, papers, and learning materials I find valuable in sports data science, machine learning, and AI.
 

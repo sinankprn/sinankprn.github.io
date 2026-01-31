@@ -1,7 +1,8 @@
 ---
-# the default layout is 'page'
+layout: page
 icon: fas fa-info-circle
 order: 8
+description: "Sinan Koparan - PhD Candidate at UTS researching sports data science and AI with CSIRO Data61 and Rugby Australia."
 ---
 
 ## Sinan Koparan
@@ -53,7 +54,9 @@ React, Node.js, Express, Git, REST APIs
 
 I'm always open to discussing research collaborations, technical challenges, or opportunities where data science and AI can make a meaningful difference.
 
-- 📄 [Download CV](/assets/docs/cv.pdf)
-- 💼 [LinkedIn](https://www.linkedin.com/in/sinankprn/)
-- 🐙 [GitHub](https://github.com/sinankprn)
-- ✉️ [Email](mailto:sinan.koparan@uts.edu.au)
+- [Download CV](/assets/docs/cv.pdf)
+- [LinkedIn](https://www.linkedin.com/in/sinankprn/)
+- [GitHub](https://github.com/sinankprn)
+- [Email](mailto:sinan.koparan@uts.edu.au)
+
+{% include newsletter-signup.html %}

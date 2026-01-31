@@ -2,6 +2,7 @@
 layout: page
 icon: fas fa-file-alt
 order: 5
+description: "Peer-reviewed publications by Sinan Koparan on sports analytics, community sport, and health promotion research."
 ---
 
 Schulenkorf, N., **Koparan, S.**, English, M., Sharp, P., Sixsmith, H., Wood, L. M., Farhart, P., & Caperchione, C. M.  

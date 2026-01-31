@@ -223,3 +223,11 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+# Newsletter settings (Buttondown)
+# Sign up at https://buttondown.email and replace 'sinankprn' with your username
+newsletter:
+  enabled: true # Set to true once you have a Buttondown account
+  username: sinankprn
+  title: "Subscribe to Updates"
+  description: "Get notified about new posts on sports analytics, AI research, and projects."

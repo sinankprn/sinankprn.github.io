@@ -1,69 +1,73 @@
 # Sinan Koparan
 
-> Sinan Koparan - PhD Candidate in Sports Data Science & AI. Research on machine learning, LLMs, and community sport analytics with CSIRO Data61 and Rugby Australia.
+> PhD Candidate in Sports Data Science & AI at University of Technology Sydney. Researching machine learning, large language models, and community sport analytics with CSIRO Data61 and Rugby Australia.
 
-## Sinan Koparan
-[Sinan Koparan](https://sinankprn.com/)
+## About
 
-## CATEGORIES
-[CATEGORIES](https://sinankprn.com/categories/)
+Sinan Koparan is a PhD candidate focused on leveraging data science and AI to drive insights in community sport analytics. His research combines statistical modelling, machine learning, and practical applications to help organisations make informed, data-driven decisions.
 
-## TAGS
-[TAGS](https://sinankprn.com/tags/)
+- Website: https://sinankprn.com
+- Email: sinan.koparan@uts.edu.au
+- GitHub: https://github.com/sinankprn
+- LinkedIn: https://www.linkedin.com/in/sinankprn/
 
-## ARCHIVES
-[ARCHIVES](https://sinankprn.com/archives/)
+## Expertise Areas
 
-## PROJECTS
-[PROJECTS](https://sinankprn.com/projects/)
+- Sports Data Science and Analytics
+- Large Language Models for Research
+- Community Sport Participation Analysis
+- AI Tools for Academic Workflows
+- Machine Learning and Statistical Modelling
+- Full-Stack Development (Python, JavaScript, React)
 
-## PUBLICATIONS
-[PUBLICATIONS](https://sinankprn.com/publications/)
+## Affiliations
 
-## TALKS
-[TALKS](https://sinankprn.com/talks/)
+- University of Technology Sydney (PhD Candidate)
+- CSIRO Data61 (Research Partner)
+- Rugby Australia (Industry Partner)
 
-## RESOURCES
-[RESOURCES](https://sinankprn.com/resources/)
+## Navigation
 
-## ABOUT
-[ABOUT](https://sinankprn.com/about/)
+- [Home](https://sinankprn.com/)
+- [Projects](https://sinankprn.com/projects/)
+- [Publications](https://sinankprn.com/publications/)
+- [Talks](https://sinankprn.com/talks/)
+- [Resources](https://sinankprn.com/resources/)
+- [About](https://sinankprn.com/about/)
 
-## Paper Extractor: AI-Powered PDF Data Extraction An AI-powered tool that extracts specific information from PDF documents. Upload a PDF, specify what information you need, and the application automatically finds it with source citations. Jan 18, 2025 Projects, AI Tools
-[Paper Extractor: AI-Powered PDF Data Extraction An AI-powered tool that extracts specific information from PDF documents. Upload a PDF, specify what information you need, and the application automatically finds it with source citations. Jan 18, 2025 Projects, AI Tools](https://sinankprn.com/posts/paperextractor/)
+## Recent Projects
 
-## Prompt2Canvas: Creative AI Content Generation A full-stack application for creative AI-powered content generation. Transform text prompts into visual content using modern web technologies and AI capabilities. Jan 12, 2025 Projects, AI Tools
-[Prompt2Canvas: Creative AI Content Generation A full-stack application for creative AI-powered content generation. Transform text prompts into visual content using modern web technologies and AI capabilities. Jan 12, 2025 Projects, AI Tools](https://sinankprn.com/posts/prompt2canvas/)
+### PaperExtractor
+AI-powered PDF data extraction tool. Upload a PDF, specify what information you need, and the application automatically finds it with source citations.
+- [Read more](https://sinankprn.com/posts/paperextractor/)
+- [GitHub](https://github.com/sinankprn/paperextractor)
 
-## ai
-[ai](https://sinankprn.com/tags/ai/)
+### Prompt2Canvas
+Creative AI content generation using Gemini to transform text prompts into live, interactive p5.js visuals in the browser.
+- [Read more](https://sinankprn.com/posts/prompt2canvas/)
+- [GitHub](https://github.com/sinankprn/prompt2canvas)
 
-## projects
-[projects](https://sinankprn.com/tags/projects/)
+## Recent Talks
 
-## creative
-[creative](https://sinankprn.com/tags/creative/)
+### Technical Considerations for Reliable Studies Using Large Language Models
+UTS Faculty of Health GenAI-Enhance Summit, 2026
+- [Slides](https://sinankprn.com/assets/presentations/genaienhancesummit2026.pdf)
 
-## extraction
-[extraction](https://sinankprn.com/tags/extraction/)
+### The Anatomy of a Thriving Club
+STARS, Australian Sports Commission, 2025
 
-## gemini
-[gemini](https://sinankprn.com/tags/gemini/)
+## Topics Covered
 
-## javascript
-[javascript](https://sinankprn.com/tags/javascript/)
+- AI for research reproducibility
+- Generative AI in sport organisations
+- LLM applications in qualitative research
+- Sports analytics and data science
+- Community sport participation patterns
 
-## pdf
-[pdf](https://sinankprn.com/tags/pdf/)
+## Technical Skills
 
-## react
-[react](https://sinankprn.com/tags/react/)
+Python, JavaScript, TypeScript, SQL, Scikit-learn, PyTorch, LangChain, OpenAI API, Google Gemini API, RAG Systems, Pandas, NumPy, React, Node.js
 
-## Sinan Koparan
-[Sinan Koparan](https://github.com/sinankprn)
+## Tags
 
-## Chirpy
-[Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)
-
-## Jekyll
-[Jekyll](https://jekyllrb.com)
+ai, sports-analytics, machine-learning, llm, community-sport, data-science, python, research, phd
