@@ -7,6 +7,41 @@
   gtag('config', 'AW-17919898476');
 </script>
 
+{% if page.layout == 'post' %}
+<!-- BlogPosting Schema for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | default: site.description | jsonify }},
+  "url": "{{ site.url }}{{ page.url }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  {% if page.last_modified_at %}"dateModified": "{{ page.last_modified_at | date_to_xmlschema }}",{% else %}"dateModified": "{{ page.date | date_to_xmlschema }}",{% endif %}
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.social.name }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ site.social.name }}",
+    "url": "{{ site.url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/assets/img/avatar.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  },
+  {% if page.image %}"image": "{{ site.url }}{{ page.image.path | default: page.image }}",{% else %}"image": "{{ site.url }}/assets/img/avatar.jpg",{% endif %}
+  "keywords": {{ page.tags | join: ', ' | jsonify }}
+}
+</script>
+{% endif %}
+
 <!-- Academic Person Schema for SEO -->
 <script type="application/ld+json">
 {
