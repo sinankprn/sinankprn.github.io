@@ -40,13 +40,11 @@ This is not a toy example or a proof of concept. It is a functional, deployable 
 
 ## What This Means for Sporting Organisations
 
-The implications for sport are significant across several areas.
+The implications for sport are significant across several areas:
 
-**Performance analysis.** Analysts and coaches can go from raw match data to interactive dashboards without waiting. If you can describe the analysis you want, you can have a working tool the same day.
-
-**Community sport.** Smaller organisations (clubs, associations, regional bodies) that have never had the budget for custom analytics tooling can now build their own. Participation data, registration trends, facility usage, and program outcomes can all be surfaced in purpose-built dashboards.
-
-**Commercial and operations.** Membership data, ticketing patterns, sponsorship performance, and fan engagement metrics can be explored interactively rather than buried in static reports.
+1. **Performance analysis.** Analysts and coaches can go from raw match data to interactive dashboards without waiting. If you can describe the analysis you want, you can have a working tool the same day.
+2. **Community sport.** Smaller organisations (clubs, associations, regional bodies) that have never had the budget for custom analytics tooling can now build their own. Participation data, registration trends, facility usage, and program outcomes can all be surfaced in purpose-built dashboards.
+3. **Commercial and operations.** Membership data, ticketing patterns, sponsorship performance, and fan engagement metrics can be explored interactively rather than buried in static reports.
 
 ## The Limitations to Be Aware Of
 
@@ -64,10 +62,11 @@ For data retention, Anthropic retains personal data as long as reasonably necess
 
 For organisations that need stronger data governance controls, Claude for Work (the Claude Team plan) is worth considering. Under this commercial product, Anthropic acts as a data processor rather than a data controller[^6]. This means the organisation retains control over its data, and Anthropic processes it on the organisation's behalf according to their agreement. Critically, inputs and outputs under Claude for Work are not used to train Anthropic's models by default. This distinction matters for sporting organisations dealing with sensitive operational or athlete data, as it provides a clearer boundary between what the organisation owns and what Anthropic can use. Claude for Work also supports team-level administration, allowing organisations to manage user access, set permissions, and maintain oversight of how the tool is being used across staff. For a sporting body looking to move beyond individual experimentation and adopt AI-assisted analytics more broadly, this offers a more structured and privacy-appropriate path than consumer plans.
 
+## References
 
-[^1]: Anthropic, "Claude Opus 4.6", 2025. [https://www.anthropic.com/news/claude-opus-4-6](https://www.anthropic.com/news/claude-opus-4-6)
-[^2]: Anthropic, "Claude Code Documentation", 2025. [https://docs.anthropic.com/en/docs/claude-code](https://docs.anthropic.com/en/docs/claude-code)
-[^3]: A qualitative examination of the evolving role of sports technology in collegiate coaching, 2025. [https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2025.1644099/full](https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2025.1644099/full)
-[^4]: International football results from 1872 to 2026, 2026. [https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017](https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017)
-[^5]: Anthropic, "How long do you store my data?", 2025. [https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)
-[^6]: Anthropic, "Privacy Policy", 2025. [https://www.anthropic.com/legal/privacy](https://www.anthropic.com/legal/privacy)
+[^1]: Anthropic. "Claude Opus 4.6." 2025. [Link](https://www.anthropic.com/news/claude-opus-4-6)
+[^2]: Anthropic. "Claude Code Documentation." 2025. [Link](https://docs.anthropic.com/en/docs/claude-code)
+[^3]: Brewer, M. et al. "A qualitative examination of the evolving role of sports technology in collegiate coaching." *Frontiers in Sports and Active Living*, 2025. [Link](https://www.frontiersin.org/journals/sports-and-active-living/articles/10.3389/fspor.2025.1644099/full)
+[^4]: Jurisoo, M. "International football results from 1872 to 2026." Kaggle, 2026. [Link](https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017)
+[^5]: Anthropic. "How long do you store my data?" 2025. [Link](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)
+[^6]: Anthropic. "Privacy Policy." 2025. [Link](https://www.anthropic.com/legal/privacy)
