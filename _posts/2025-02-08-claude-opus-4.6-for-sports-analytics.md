@@ -38,6 +38,8 @@ This is not a toy example or a proof of concept. It is a functional, deployable 
 
 ![sports-dashboard](../assets/gifs/sportsdashboard.gif)
 
+**[View on GitHub](https://github.com/sinankprn/football)**
+
 ## What This Means for Sporting Organisations
 
 The implications for sport are significant across several areas:
