@@ -8,7 +8,7 @@ pin: false
 description: "Anthropic's Claude Opus 4.6 release powers Claude Code to deliver production-ready data analytics for resource-constrained sporting organisations. I built a dashboard from 48,000 football matches in 40 minutes for $15 AUD."
 ---
 
-Anthropic recently released Claude Opus 4.6[^1], the most capable model in the Claude family. Paired with Claude Code[^2], their agentic coding tool that operates directly in the terminal, this release represents a meaningful shift in what a single person can deliver in data science and analytics without a dedicated engineering team. For sporting organisations that have long struggled to resource data and analytics capabilities, this is worth paying attention to.
+Anthropic recently released Claude Opus 4.6[^1], the most capable model in the Claude family. Paired with Claude Code[^2], their agentic coding tool that operates directly in the terminal, this release means a single analyst or operations staff member can now produce interactive dashboards and analytics workflows independently. For sporting organisations operating under tight budgets and limited technical capacity, this is worth paying attention to.
 
 ![claudeterminal](../assets/img/claudecodeterminal.PNG)
 
@@ -16,11 +16,11 @@ Anthropic recently released Claude Opus 4.6[^1], the most capable model in the C
 
 Most sporting organisations operate under significant resource constraints. Budgets are tight, headcount is limited, and the people closest to the data (coaches, analysts, operations staff) often lack formal training in data science[^3]. The result is a familiar pattern: data sits in spreadsheets or legacy systems, insights are extracted manually, and the gap between what an organisation knows it could do with its data and what it actually does continues to widen.
 
-Hiring a data analyst or data scientist to build internal dashboards and analytics tools is expensive. Outsourcing the work to consultancies is also costly and introduces delays. Even when organisations do invest in analytics platforms, ongoing licensing fees for tools add up quickly, particularly for organisations already under budget pressure.
+Sporting organisations already have analysts, but their time is stretched across competing priorities. Outsourcing work to consultancies is costly, introduces delays, and raises data privacy concerns when sensitive organisational data is shared with third parties. Even when organisations invest in analytics platforms, ongoing licensing fees add up quickly, particularly for those already under budget pressure. The bottleneck is not a lack of analytical thinking. It is the time and tooling required to turn that thinking into something usable.
 
 ## What Claude Code Changes
 
-Claude Code is a command-line tool that acts as an AI-powered software engineer. You describe what you want to build in plain language, and it writes the code, creates the files, installs dependencies, debugs errors, and iterates until the application works. It operates directly in your development environment, reading and writing files, running commands, and managing the full development workflow autonomously.
+Claude Code is a command-line tool that acts as an AI-powered software engineer. You describe what you want to build in plain language, and it writes the code, creates the files, installs dependencies, debugs errors, and iterates until the application works. It operates directly in your development environment, reading and writing files, running commands, and managing the full development workflow autonomously. Claude Code is not limited to software engineering tasks, which is why Anthropic also developed Claude Cowork[^7] for broader agentic workflows dedicated to non-technical users.
 
 What makes this different from chatbot-based coding assistants is the agentic loop. Claude Code does not just suggest code snippets for you to copy and paste. It executes the entire development process: planning, writing, testing, and fixing. When something breaks, it reads the error, reasons about the cause, and applies a fix. This means that someone with limited programming experience can describe an outcome and have Claude Code deliver a working application.
 
@@ -39,6 +39,8 @@ This is not a toy example or a proof of concept. It is a functional, deployable 
 ![sports-dashboard](../assets/gifs/sportsdashboard.gif)
 
 **[View on GitHub](https://github.com/sinankprn/football)**
+
+I also shared this project and my thoughts on building it in a [LinkedIn post](https://www.linkedin.com/posts/sinankprn_in-just-40-minutes-and-for-only-15-aud-activity-7414757732852879361-rs_h?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKBnPQBt_vKtEOnQl4t0mFckzsUL2UdNIw)
 
 ## What This Means for Sporting Organisations
 
@@ -72,3 +74,4 @@ For organisations that need stronger data governance controls, Claude for Work (
 [^4]: Jurisoo, M. "International football results from 1872 to 2026." Kaggle, 2026. [Link](https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017)
 [^5]: Anthropic. "How long do you store my data?" 2025. [Link](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)
 [^6]: Anthropic. "Privacy Policy." 2025. [Link](https://www.anthropic.com/legal/privacy)
+[^7]: Anthropic. "Getting started with Cowork". 2025. [Link](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)
