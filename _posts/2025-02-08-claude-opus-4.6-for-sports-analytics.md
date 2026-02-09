@@ -14,7 +14,7 @@ For years, turning raw sport data into something useful required either a dedica
 
 ## The Resource Problem in Sport
 
-The people closest to the data in sporting organisations (coaches, analysts, operations staff) often have strong domain knowledge but lack formal training in data science[^3]. They know what questions to ask, but turning those questions into dashboards or automated workflows requires technical skills.
+The people closest to the data in sporting organisations (coaches, analysts, operations staff) often have strong domain knowledge but lack formal training in data science[^3]. They know what questions to ask, but turning those questions into dashboards or automated workflows requires technical skills. Research into data maturity across Australian sport found that organisations rated themselves just 5.6 out of 10, with significant gaps between aspiration and execution[^8].
 
 Data analysts within these organisations are managing competing demands across departments, which limits how thoroughly and how quickly any single project can be delivered. Outsourcing is an option, but it is expensive, slow, and introduces data privacy risks.
 
@@ -28,19 +28,19 @@ With Opus 4.6, the model powering Claude Code is significantly more capable at s
 
 Benchmarks are standardised tests used to compare how well different AI models perform on specific tasks. Anthropic published results comparing Opus 4.6 against other leading models, including Google's Gemini 3 Pro and OpenAI's GPT-5.2.
 
-**Agentic coding** measures a model's ability to autonomously write, execute, and debug code. This is the core capability powering Claude Code. Opus 4.6 leads at 65.4% on Terminal-Bench 2.0 (a test simulating real coding tasks in a terminal), ahead of GPT-5.2 Codex CLI (64.7%) and Opus 4.5 (59.8%).
+**Agentic coding** measures a model's ability to autonomously write, execute, and debug code. This is the core capability powering Claude Code. Opus 4.6 leads at 65.4% on Terminal-Bench 2.0[^9] (a test simulating real coding tasks in a terminal), ahead of GPT-5.2 Codex CLI (64.7%) and Opus 4.5 (59.8%).
 
 ![Agentic coding benchmark - Terminal-Bench 2.0](../assets/img/claude-opus-4.6-agentic-coding-benchmark.webp)
 
-**Knowledge work** evaluates how well models handle real-world analytical tasks such as interpreting data, producing summaries, and generating reports. Opus 4.6 scores 1606 on GDPval-AA (a ranking system for everyday knowledge tasks), ahead of GPT-5.2 (1462) and Opus 4.5 (1416).
+**Knowledge work** evaluates how well models handle real-world analytical tasks such as interpreting data, producing summaries, and generating reports. Opus 4.6 scores 1606 on GDPval-AA[^10] (a ranking system for everyday knowledge tasks), ahead of GPT-5.2 (1462) and Opus 4.5 (1416).
 
 ![Knowledge work benchmark - GDPval-AA Elo scores](../assets/img/claude-opus-4.6-knowledge-work-benchmark.webp)
 
-**Agentic search** tests a model's ability to find and synthesise information from multiple sources. Opus 4.6 achieves 84.0% on BrowseComp (a test requiring finding and combining information across the web), ahead of GPT-5.2 Pro (77.9%) and Opus 4.5 (67.8%).
+**Agentic search** tests a model's ability to find and synthesise information from multiple sources. Opus 4.6 achieves 84.0% on BrowseComp[^11] (a test requiring finding and combining information across the web), ahead of GPT-5.2 Pro (77.9%) and Opus 4.5 (67.8%).
 
 ![Agentic search benchmark - BrowseComp](../assets/img/claude-opus-4.6-agentic-search-benchmark.webp)
 
-**Multidisciplinary reasoning** assesses performance on complex problems spanning multiple fields. Opus 4.6 scores 53.1% with tools on Humanity's Last Exam (a test covering questions across dozens of academic disciplines), ahead of GPT-5.2 Pro (50.0%) and Gemini 3 Pro (45.8%).
+**Multidisciplinary reasoning** assesses performance on complex problems spanning multiple fields. Opus 4.6 scores 53.1% with tools on Humanity's Last Exam[^12] (a test covering questions across dozens of academic disciplines), ahead of GPT-5.2 Pro (50.0%) and Gemini 3 Pro (45.8%).
 
 ![Multidisciplinary reasoning benchmark - Humanity's Last Exam](../assets/img/claude-opus-4.6-multidisciplinary-reasoning-benchmark.webp)
 
@@ -89,7 +89,7 @@ Start with anonymised or synthetic data and review Anthropic's policies against 
 
 ### Claude for Work for organisational use
 
-For organisations needing stronger data governance controls, Claude for Work (the Claude Team plan) offers a more appropriate path:
+For organisations needing stronger data governance controls, Claude for Work[^13] (the Claude Team plan) offers a more appropriate path:
 
 - **Data ownership.** Anthropic acts as a data processor rather than a data controller[^6]. The organisation retains control over its data.
 - **No model training by default.** Inputs and outputs are not used to train Anthropic's models.
@@ -99,7 +99,7 @@ For a sporting body looking to move beyond individual experimentation, Claude fo
 
 ## Looking Ahead
 
-AI tools for data analytics are improving rapidly, and the gap between what is possible and what is accessible is narrowing with every release. It will not be long before sporting organisations at all levels are integrating these tools into their day-to-day workflows. The organisations that start experimenting now, even on small projects with anonymised data, will be better positioned when these tools become standard practice. The cost of waiting is not just missed efficiency. It is falling further behind organisations that are already learning how to use them well.
+AI tools for data analytics are improving rapidly, and the gap between what is possible and what is accessible is narrowing with every release. A 2026 survey of 675 sports media executives found that 81% have expanded their use of AI in the past year[^14]. It will not be long before sporting organisations at all levels are integrating these tools into their day-to-day workflows. The organisations that start experimenting now, even on small projects with anonymised data, will be better positioned when these tools become standard practice. The cost of waiting is not just missed efficiency. It is falling further behind organisations that are already learning how to use them well.
 
 ## References
 
@@ -110,3 +110,10 @@ AI tools for data analytics are improving rapidly, and the gap between what is p
 [^5]: Anthropic. "How long do you store my data?" 2025. [Link](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)
 [^6]: Anthropic. "Privacy Policy." 2025. [Link](https://www.anthropic.com/legal/privacy)
 [^7]: Anthropic. "Getting started with Cowork." 2025. [Link](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)
+[^8]: The Gemba Group. "Australian Sports Organisations Are Dissatisfied and Behind in the Data Game." 2022. [Link](https://thegembagroup.com/news/datamaturity/)
+[^9]: Terminal-Bench. "Terminal-Bench 2.0." 2025. [Link](https://www.tbench.ai/)
+[^10]: Artificial Analysis. "GDPval-AA Leaderboard." 2025. [Link](https://artificialanalysis.ai/evaluations/gdpval-aa)
+[^11]: OpenAI. "BrowseComp: a benchmark for browsing agents." 2025. [Link](https://openai.com/index/browsecomp/)
+[^12]: Center for AI Safety & Scale AI. "Humanity's Last Exam." *Nature*, 2025. [Link](https://www.nature.com/articles/s41586-025-09962-4)
+[^13]: Anthropic. "Claude for Work." 2025. [Link](https://www.anthropic.com/learn/claude-for-work)
+[^14]: Stats Perform. "2026 Sports Fan Engagement, Monetisation & AI Trends Survey." 2026. [Link](https://www.statsperform.com/2026-sports-fan-engagement-monetisation-ai-trends-survey/)
