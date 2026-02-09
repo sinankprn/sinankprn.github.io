@@ -8,21 +8,19 @@ pin: false
 description: "Anthropic's Claude Opus 4.6 release powers Claude Code to deliver production-ready data analytics for resource-constrained sporting organisations. I built a dashboard from 48,000 football matches in 40 minutes for $15 AUD."
 ---
 
-Most sporting organisations have more data than they know what to do with, and not enough people or budget to turn it into anything useful. That is starting to change. Anthropic's newly released Claude Opus 4.6 model[^1], paired with Claude Code[^2], means anyone can now build interactive dashboards and analytics workflows without writing code.
+For years, turning raw sport data into something useful required either a dedicated data team or an expensive consultancy. Anthropic's newly released Claude Opus 4.6 model[^1], paired with Claude Code[^2], removes that constraint. Anyone can now build interactive dashboards and analytics workflows without writing code.
 
 ![Claude Code running in a terminal environment](../assets/img/claudecodeterminal.PNG)
 
 ## The Resource Problem in Sport
 
-The people closest to the data in sporting organisations (coaches, analysts, operations staff) often have strong domain knowledge but lack formal training in data science[^3]. They know what questions to ask, but turning those questions into dashboards or automated workflows requires technical skills or external help.
+The people closest to the data in sporting organisations (coaches, analysts, operations staff) often have strong domain knowledge but lack formal training in data science[^3]. They know what questions to ask, but turning those questions into dashboards or automated workflows requires technical skills.
 
-Data analysts inside these organisations are typically responsible for competing priorities across multiple departments, making it difficult to deliver any single analytics project efficiently. Outsourcing to consultancies is costly, introduces delays, and raises data privacy concerns when sensitive organisational data is shared with third parties.
+Data analysts within these organisations are managing competing demands across departments, which limits how thoroughly and how quickly any single project can be delivered. Outsourcing is an option, but it is expensive, slow, and introduces data privacy risks.
 
 ## How Claude Code Enables Self-Service Analytics
 
-Claude Code addresses this directly. Tell it "create a dashboard that shows win rates by team across the last ten seasons" and it writes the code, sets up the project, and delivers a working application. No programming required. Anyone who currently spends days preparing a report in a spreadsheet can have a working, interactive tool in minutes.
-
-Unlike a chatbot, Claude Code does not just suggest code for you to copy. It plans the approach, writes the files, runs the application, and fixes errors autonomously. Work that previously required a data scientist, or sat in a backlog waiting for one, can now be done by the person who understands the data best.
+Claude Code addresses this gap. Given a plain language instruction such as "create a dashboard that shows win rates by team across the last ten seasons", it writes the code, sets up the project, and delivers a working application. No programming knowledge is required. Tasks that currently take days in spreadsheets can be completed in minutes.
 
 With Opus 4.6, the model powering Claude Code is significantly more capable at sustained reasoning and handling larger tasks. It makes fewer errors and produces higher quality output, meaning the analytics tools you can build are more ambitious and more reliable. Anthropic has also released Claude Cowork[^7], a companion tool for non-technical users who want to work with Claude outside of a coding environment.
 
@@ -66,9 +64,9 @@ I also shared this project and my thoughts on building it in a [LinkedIn post](h
 
 ## What This Means for Sporting Organisations
 
-1. **Performance analysis.** A performance analyst could take a season's worth of match data and build a dashboard that lets coaches filter by opponent, venue, or formation and see win rates, scoring patterns, and player workload at a glance. Instead of waiting weeks for a data analyst to build this, it could be done in an afternoon.
-2. **Community sport.** A state sporting organisation could take its registration data and build a tool showing participation trends by region, age group, and gender over time. Clubs and regional bodies that have never had the budget for custom analytics can now build exactly what they need.
-3. **Commercial and operations.** A commercial team could build an interactive tool that brings together membership, ticketing, and sponsorship data in one place, replacing the static reports and spreadsheets that currently sit in inboxes unread.
+1. **Performance analysis.** A performance analyst could take a season's worth of match data and build a dashboard that lets coaches filter by opponent, venue, or formation and see win rates, scoring patterns, and player workload at a glance.
+2. **Community sport.** A state sporting organisation could take its registration data and build a tool showing participation trends by region, age group, and gender over time.
+3. **Commercial and operations.** A commercial team could build an interactive tool that brings together membership, ticketing, and sponsorship data in one place.
 
 ## Limitations
 
