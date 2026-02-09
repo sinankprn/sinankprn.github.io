@@ -8,35 +8,59 @@ pin: false
 description: "Anthropic's Claude Opus 4.6 release powers Claude Code to deliver production-ready data analytics for resource-constrained sporting organisations. I built a dashboard from 48,000 football matches in 40 minutes for $15 AUD."
 ---
 
-Anthropic recently released Claude Opus 4.6[^1], the most capable model in the Claude family. Paired with Claude Code[^2], their agentic coding tool that operates directly in the terminal, this release means a single analyst or operations staff member can now produce interactive dashboards and analytics workflows independently. For sporting organisations operating under tight budgets and limited technical capacity, this is worth paying attention to.
+Most sporting organisations have more data than they know what to do with, and not enough people or budget to turn it into anything useful. That is starting to change. Anthropic's newly released Claude Opus 4.6[^1], paired with Claude Code[^2], means anyone can now build interactive dashboards and analytics workflows without writing code.
 
-![claudeterminal](../assets/img/claudecodeterminal.PNG)
+![Claude Code running in a terminal environment](../assets/img/claudecodeterminal.PNG)
 
 ## The Resource Problem in Sport
 
-Most sporting organisations operate under significant resource constraints. Budgets are tight, headcount is limited, and the people closest to the data (coaches, analysts, operations staff) often lack formal training in data science[^3]. The result is a familiar pattern: data sits in spreadsheets or legacy systems, insights are extracted manually, and the gap between what an organisation knows it could do with its data and what it actually does continues to widen.
+The people closest to the data in sporting organisations (coaches, analysts, operations staff) often have strong domain knowledge but lack formal training in data science[^3]. They know what questions to ask, but turning those questions into dashboards or automated workflows requires technical skills or external help.
 
-Sporting organisations already have analysts, but their time is stretched across competing priorities. Outsourcing work to consultancies is costly, introduces delays, and raises data privacy concerns when sensitive organisational data is shared with third parties. Even when organisations invest in analytics platforms, ongoing licensing fees add up quickly, particularly for those already under budget pressure. The bottleneck is not a lack of analytical thinking. It is the time and tooling required to turn that thinking into something usable.
+Data analysts inside these organisations are typically responsible for competing priorities across multiple departments, making it difficult to deliver any single analytics project efficiently. Outsourcing to consultancies is costly, introduces delays, and raises data privacy concerns when sensitive organisational data is shared with third parties.
 
-## What Claude Code Changes
+## How Claude Code Enables Self-Service Analytics
 
-Claude Code is a command-line tool that acts as an AI-powered software engineer. You describe what you want to build in plain language, and it writes the code, creates the files, installs dependencies, debugs errors, and iterates until the application works. It operates directly in your development environment, reading and writing files, running commands, and managing the full development workflow autonomously. Claude Code is not limited to software engineering tasks, which is why Anthropic also developed Claude Cowork[^7] for broader agentic workflows dedicated to non-technical users.
+Claude Code addresses this directly. You describe what you want to build in plain language and it builds it for you. Tell it "create a dashboard that shows win rates by team across the last ten seasons" and it writes the code, sets up the project, and delivers a working application. You do not need to know how to code.
 
-What makes this different from chatbot-based coding assistants is the agentic loop. Claude Code does not just suggest code snippets for you to copy and paste. It executes the entire development process: planning, writing, testing, and fixing. When something breaks, it reads the error, reasons about the cause, and applies a fix. This means that someone with limited programming experience can describe an outcome and have Claude Code deliver a working application.
+Anyone who currently spends days preparing a report in a spreadsheet can instead describe the output they need and have a working, interactive tool in minutes. Work that previously required a developer, or sat in a backlog waiting for one, can now be done by the person who understands the data best.
 
-With the release of Opus 4.6, the underlying model powering Claude Code is significantly more capable at sustained, multi-step reasoning and complex code generation. It handles larger codebases, makes fewer errors, and produces higher quality output across longer tasks. For practical purposes, this means the applications you can build with Claude Code are now more ambitious and more reliable.
+Unlike a chatbot, Claude Code does not just give you suggestions. It does the work: planning the approach, writing the files, running the application, and fixing errors when they occur. Your role is to describe the outcome you want and review what it produces.
+
+With Opus 4.6, the model powering Claude Code is significantly more capable at sustained reasoning and handling larger tasks. It makes fewer errors and produces higher quality output, meaning the analytics tools you can build are more ambitious and more reliable. Anthropic has also released Claude Cowork[^7], a companion tool for non-technical users who want to work with Claude outside of a coding environment.
+
+### How Opus 4.6 Benchmarks Against Other Models
+
+Benchmarks are standardised tests used to compare how well different AI models perform on specific tasks. Anthropic published results comparing Opus 4.6 against other leading models, including Google's Gemini 3 Pro and OpenAI's GPT-5.2.
+
+**Agentic coding** measures a model's ability to autonomously write, execute, and debug code. This is the core capability powering Claude Code. Opus 4.6 leads at 65.4% on Terminal-Bench 2.0 (a test simulating real coding tasks in a terminal), ahead of GPT-5.2 Codex CLI (64.7%) and Opus 4.5 (59.8%).
+
+![Agentic coding benchmark - Terminal-Bench 2.0](../assets/img/claude-opus-4.6-agentic-coding-benchmark.webp)
+
+**Knowledge work** evaluates how well models handle real-world analytical tasks such as interpreting data, producing summaries, and generating reports. Opus 4.6 scores 1606 on GDPval-AA (a ranking system for everyday knowledge tasks), ahead of GPT-5.2 (1462) and Opus 4.5 (1416).
+
+![Knowledge work benchmark - GDPval-AA Elo scores](../assets/img/claude-opus-4.6-knowledge-work-benchmark.webp)
+
+**Agentic search** tests a model's ability to find and synthesise information from multiple sources. Opus 4.6 achieves 84.0% on BrowseComp (a test requiring finding and combining information across the web), ahead of GPT-5.2 Pro (77.9%) and Opus 4.5 (67.8%).
+
+![Agentic search benchmark - BrowseComp](../assets/img/claude-opus-4.6-agentic-search-benchmark.webp)
+
+**Multidisciplinary reasoning** assesses performance on complex problems spanning multiple fields. Opus 4.6 scores 53.1% with tools on Humanity's Last Exam (a test covering questions across dozens of academic disciplines), ahead of GPT-5.2 Pro (50.0%) and Gemini 3 Pro (45.8%).
+
+![Multidisciplinary reasoning benchmark - Humanity's Last Exam](../assets/img/claude-opus-4.6-multidisciplinary-reasoning-benchmark.webp)
+
+The full benchmark comparison is shown below[^1].
+
+![Full benchmark comparison table - Opus 4.6 vs other models](../assets/img/claude-opus-4.6-full-benchmark-table.webp)
 
 ## A Practical Example: 48,000 Football Matches in 40 Minutes
 
-To illustrate the point concretely, I recently used Claude Code to build an interactive web application dashboard from a dataset of 48,000 football matches[^4]. The dashboard includes filtering, aggregation, visualisations, and the ability to explore match-level data across multiple dimensions.
+To put this into practice, I used Claude Code to build an interactive web application dashboard from a dataset of 48,000 football matches[^4]. The dashboard includes filtering, aggregation, visualisations, and the ability to explore match-level data across multiple dimensions.
 
-The total cost was $15 AUD in API usage. The total time from start to finish was 40 minutes.
+The total cost was $15 AUD in API usage. The total time was 40 minutes.
 
-To put that in perspective, commissioning a similar dashboard from a developer or consultancy would typically cost thousands of dollars and take days or weeks. The time and cost reduction here is not incremental. It is a different order of magnitude entirely.
+Commissioning a similar dashboard from a developer or consultancy would typically cost thousands of dollars and take days or weeks. The barrier to entry was not programming skill. It was the ability to describe clearly what I wanted the dashboard to do.
 
-This is not a toy example or a proof of concept. It is a functional, deployable web application built from a real dataset. The barrier to entry was not programming skill. It was the ability to describe clearly what I wanted the dashboard to do.
-
-![sports-dashboard](../assets/gifs/sportsdashboard.gif)
+![Interactive football matches dashboard built with Claude Code](../assets/gifs/sportsdashboard.gif)
 
 **[View on GitHub](https://github.com/sinankprn/football)**
 
@@ -44,27 +68,42 @@ I also shared this project and my thoughts on building it in a [LinkedIn post](h
 
 ## What This Means for Sporting Organisations
 
-The implications for sport are significant across several areas:
+1. **Performance analysis.** A performance analyst could take a season's worth of match data and build a dashboard that lets coaches filter by opponent, venue, or formation and see win rates, scoring patterns, and player workload at a glance. Instead of waiting weeks for a developer, it could be done in an afternoon.
+2. **Community sport.** A state sporting organisation could take its registration data and build a tool showing participation trends by region, age group, and gender over time. Clubs and regional bodies that have never had the budget for custom analytics can now build exactly what they need.
+3. **Commercial and operations.** A commercial team could build an interactive tool that brings together membership, ticketing, and sponsorship data in one place, replacing the static reports and spreadsheets that currently sit in inboxes unread.
 
-1. **Performance analysis.** Analysts and coaches can go from raw match data to interactive dashboards without waiting. If you can describe the analysis you want, you can have a working tool the same day.
-2. **Community sport.** Smaller organisations (clubs, associations, regional bodies) that have never had the budget for custom analytics tooling can now build their own. Participation data, registration trends, facility usage, and program outcomes can all be surfaced in purpose-built dashboards.
-3. **Commercial and operations.** Membership data, ticketing patterns, sponsorship performance, and fan engagement metrics can be explored interactively rather than buried in static reports.
+## Limitations
 
-## The Limitations to Be Aware Of
+There are three areas organisations should consider before adopting these tools.
 
-This is not without caveats. Claude Code requires some comfort with the command line, though the learning curve is modest. The quality of the output depends heavily on how clearly you describe the task, so prompt design matters. For applications that require ongoing maintenance, integration with production systems, or strict security requirements, you will still need engineering support. And as with any AI-generated output, the results should be reviewed and validated before being relied upon for decision-making.
+### Technical requirements
 
-Data privacy is another important consideration. Anthropic's privacy policy[^5] outlines how data is collected, used, and stored when interacting with their services. Organisations should review Anthropic's privacy policy and retention practices carefully to ensure they align with their own data governance requirements and applicable legislation before using real organisational data.
+Claude Code requires some comfort with the command line, though the learning curve is modest. The quality of output depends on how clearly you describe the task, so the ability to articulate what you want matters more than technical skill. For applications needing ongoing maintenance or integration with production systems, you will still need engineering support. As with any AI-generated output, results should be reviewed before being relied upon for decision-making.
 
-When you use Claude Code, your inputs (prompts, code, and any data referenced in the session) and outputs (generated responses and code) are collected by Anthropic[^6]. This means that if you include personal data or reference external content in your prompts, Anthropic will collect that information.
+### Data privacy
 
-By default, Anthropic may use your inputs and outputs to train their models and improve their services, unless you opt out through your account settings. Even if you opt out, inputs and outputs flagged for safety review may still be used to improve their ability to detect harmful content. Technical information such as your IP address, device type, and usage data is also collected automatically.
+Before using Claude Code with real organisational data, you need to understand what happens to that data[^6]:
 
-Anthropic also notes that personal data may be transferred to and stored on servers in the United States. For organisations based in Australia or elsewhere outside the US, this is relevant when assessing compliance with local data protection legislation.
+- **What is collected.** Your prompts, any data referenced in the session, and generated outputs are collected by Anthropic. If you include personal data, Anthropic will collect it.
+- **Model training.** By default, Anthropic may use your inputs and outputs to train their models, unless you opt out. Content flagged for safety review may still be used.
+- **Data storage.** Personal data may be transferred to and stored on servers in the United States, which is relevant for compliance with local data protection legislation.
+- **Data retention.** Deleted conversations are removed from back-end storage within 30 days[^5]. If you have opted in to model improvement, data may be retained in a de-identified format for up to 5 years.
 
-For data retention, Anthropic retains personal data as long as reasonably necessary for the purposes outlined in their policy[^5]. Deleted conversations are removed from chat history immediately and from back-end storage within 30 days. If you have opted in to allow your data to improve Claude, it may be retained in a de-identified format for up to 5 years in model training pipelines. You can change this setting at any time, and any chats deleted from your history will not be used for future model training.
+Start with anonymised or synthetic data and review Anthropic's policies against your own data governance requirements before using real organisational data.
 
-For organisations that need stronger data governance controls, Claude for Work (the Claude Team plan) is worth considering. Under this commercial product, Anthropic acts as a data processor rather than a data controller[^6]. This means the organisation retains control over its data, and Anthropic processes it on the organisation's behalf according to their agreement. Critically, inputs and outputs under Claude for Work are not used to train Anthropic's models by default. This distinction matters for sporting organisations dealing with sensitive operational or athlete data, as it provides a clearer boundary between what the organisation owns and what Anthropic can use. Claude for Work also supports team-level administration, allowing organisations to manage user access, set permissions, and maintain oversight of how the tool is being used across staff. For a sporting body looking to move beyond individual experimentation and adopt AI-assisted analytics more broadly, this offers a more structured and privacy-appropriate path than consumer plans.
+### Claude for Work for organisational use
+
+For organisations needing stronger data governance controls, Claude for Work (the Claude Team plan) offers a more appropriate path:
+
+- **Data ownership.** Anthropic acts as a data processor rather than a data controller[^6]. The organisation retains control over its data.
+- **No model training by default.** Inputs and outputs are not used to train Anthropic's models.
+- **Team administration.** Organisations can manage user access, set permissions, and maintain oversight of how the tool is used across staff.
+
+For a sporting body looking to move beyond individual experimentation, Claude for Work provides a more structured and privacy-appropriate option than consumer plans.
+
+## Looking Ahead
+
+AI tools for data analytics are improving rapidly, and the gap between what is possible and what is accessible is narrowing with every release. It will not be long before sporting organisations at all levels are integrating these tools into their day-to-day workflows. The organisations that start experimenting now, even on small projects with anonymised data, will be better positioned when these tools become standard practice. The cost of waiting is not just missed efficiency. It is falling further behind organisations that are already learning how to use them well.
 
 ## References
 
@@ -74,4 +113,4 @@ For organisations that need stronger data governance controls, Claude for Work (
 [^4]: Jurisoo, M. "International football results from 1872 to 2026." Kaggle, 2026. [Link](https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017)
 [^5]: Anthropic. "How long do you store my data?" 2025. [Link](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)
 [^6]: Anthropic. "Privacy Policy." 2025. [Link](https://www.anthropic.com/legal/privacy)
-[^7]: Anthropic. "Getting started with Cowork". 2025. [Link](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)
+[^7]: Anthropic. "Getting started with Cowork." 2025. [Link](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)
