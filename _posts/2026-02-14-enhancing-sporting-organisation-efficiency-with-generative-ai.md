@@ -19,7 +19,7 @@ Artificial Intelligence (AI) engineering is the practice of building useful appl
 
 Traditional AI solutions in sport were built for a single purpose: a computer vision model trained to track player movements or a machine learning model built to predict match outcomes from a specific dataset. Each required custom data, custom training, and ongoing maintenance. If the problem changed, you needed to update the model. Additionally, each solution relied on high-quality, task-specific labelled datasets that many organisations do not possess or cannot readily produce.
 
-Generative AI models are not built for one task. They are trained on vast amounts of general data and can apply that knowledge across a wide range of problems without being retrained. What makes this particularly striking is that many of these capabilities were not explicitly programmed. They emerged as a byproduct of training on enough data at sufficient scale. The models learned general patterns of language, reasoning, and structure, and those patterns turned out to be applicable to tasks the developers never anticipated. The same model that summarises a board report can also draft a sponsorship proposal, analyse match data, extract key clauses from a contract, and generate code for a dashboard. You do not need a different tool for each job. You need one model and clear instructions.
+Generative AI models are not built for one task. They are trained on vast amounts of general data and can apply that knowledge across a wide range of problems without being retrained. What makes this particularly striking is that many of these capabilities were not explicitly programmed. They emerged as a byproduct of training on enough data at sufficient scale. The models learned general patterns of language, reasoning, and structure, and those patterns turned out to be applicable to tasks that developers never anticipated. The same model that summarises a board report can also draft a sponsorship proposal, analyse match data, extract key clauses from a contract, and generate code for a dashboard. You do not need a different tool for each job. You need one model and clear instructions.
 
 This means that the expensive, bespoke AI solutions that vendors have been selling to sporting organisations are increasingly difficult to justify. A purpose-built tool that costs tens of thousands of dollars and solves one narrow problem is less compelling when a general-purpose model can handle that problem (and dozens of others) for a fraction of the cost. The value has shifted from building tailored models to knowing how to use general ones well.
 
@@ -209,7 +209,7 @@ Claude's reliable knowledge cutoff date - the date past which it cannot answer q
 </claude_behavior>
 ```
 
-When you use an API, you can write your own system prompts tailored to the task at hand. For example, you could set a system prompt that says: "You are an assistant for a national sporting organisation in Australia. Always use Australian English. When referencing legislation, default to Australian law. Do not provide medical advice. If asked about safeguarding matters, direct the user to the organisation's safeguarding policy." Every response the model generates will follow these instructions, without the user needing to repeat them in every prompt.
+When you use an API, you can write your own system prompts tailored to the task at hand. For example, you could set a system prompt that says: "You are an assistant for a national sporting organisation in Australia. Always use British English. When referencing legislation, default to Australian law. Do not provide medical advice. If asked about safeguarding matters, direct the user to the organisation's safeguarding policy." Every response the model generates will follow these instructions, without the user needing to repeat them in every prompt.
 
 System prompts are a key mechanism for tailoring general-purpose models to specific tasks and contexts.
 
@@ -334,7 +334,7 @@ At some point, someone in your organisation will suggest "fine-tuning" a model f
 
 **Prompting** is what most people do already. You write an instruction, provide context, and the model responds. With good prompt engineering and system prompts, you can get highly tailored results without modifying the model at all. This is free (beyond the standard usage cost), requires no technical infrastructure, and can be iterated on in minutes.
 
-**Fine-tuning** is the process of further training an existing model on your own dataset so that it learns patterns, terminology, and behaviours specific to your organisation. For example, you might fine-tune a model on thousands of your organisation's past communications so that it writes in your house style by default. Fine-tuning requires a curated dataset, technical expertise, compute resources, and ongoing maintenance as base models are updated. It also costs significantly more than prompting.
+**Fine-tuning** is the process of further training an existing model on your own dataset so that it learns patterns, terminology, and behaviours specific to your organisation. For example, you might fine-tune a model on thousands of your organisation's past communications so that it writes in your house style by default. Fine-tuning requires a curated dataset, technical expertise, compute resources, and ongoing maintenance as base models are updated.
 
 ### Open-Source vs Closed-Source Models
 
@@ -344,7 +344,7 @@ AI models fall into two broad categories based on how they are distributed.
 
 **Open-source models** (or more precisely, open-weight models) are released publicly. Anyone can download them, run them on their own hardware, and modify them. Meta's Llama models, Mistral's models, and DeepSeek's models are prominent examples. Open-source models can be run entirely within your own infrastructure, which means your data never leaves your organisation. This is significant for data sovereignty and privacy.
 
-The trade-off is capability and convenience. Closed-source frontier models from OpenAI, Anthropic, and Google are generally more capable than open-source alternatives, particularly for complex reasoning and instruction-following tasks. They also require no technical infrastructure to use. Open-source models require hardware (or cloud computing resources) to run and technical expertise to deploy and maintain, but they offer full control over your data and eliminate ongoing subscription costs.
+The trade-off is capability and convenience. Closed-source frontier models from OpenAI, Anthropic, and Google are generally more capable than open-source alternatives. They also require no infrastructure to use. Open-source models require hardware (or cloud computing resources) to run and technical expertise to deploy and maintain, but they offer full control over your data.
 
 ### How to Explore Capabilities without Technical Skills
 
@@ -365,6 +365,8 @@ You do not need to write code to experiment with models. Several providers offer
 These playgrounds are the bridge between chatbot convenience and full API access. They let you see exactly what parameters are being used, how they affect the output, and what the model is actually capable of. Spending an hour in one of these environments will give you a far better understanding of generative AI than months of chatbot use alone.
 
 ## Part 3: Capabilities That Matter for Sport
+
+The videos throughout this section demonstrate each capability using Google AI Studio, the free browser-based playground introduced in Part 2.
 
 ### Text Generation
 
@@ -420,7 +422,11 @@ Models can also process audio files directly. This includes transcription (conve
 
 ### Code Generation
 
-Models can write, explain, and debug code. 
+Models can write, explain, and debug code across virtually any programming language. You can describe what you want in plain language and receive working code in return. You can paste in existing code and ask the model to explain what it does, find bugs, or refactor it. You can ask it to convert code from one language to another, write tests, or generate documentation.
+
+What makes this capability transformative is that it extends beyond professional developers. Tools like Claude Code and GitHub Copilot allow people with no programming background to build functional applications by describing what they want in natural language. The model handles the syntax, the logic, and the project structure. This is covered in more detail in the practical applications section, where I demonstrate building an interactive dashboard from raw data without writing a single line of code manually.
+
+For organisations that do have developers, code generation accelerates their work significantly. Tasks that previously took hours (writing boilerplate, debugging edge cases, setting up project scaffolding) can be completed in minutes. The model does not replace the developer's judgement, but it removes much of the repetitive work that slows them down.
 
 ### Tool Use and Function Calling
 
