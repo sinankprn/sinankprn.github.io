@@ -1,17 +1,17 @@
 ---
 layout: post
 title: "Enhancing Sporting Organisation Efficiency with Generative AI"
-date: 2026-02-14 14:00:00 +1100
+date: 2026-02-18 14:00:00 +1100
 categories: [Large Language Models]
 tags: [AI, Generative AI, Sport]
 pin: false
-description: "A comprehensive guide for sport leaders on how generative AI capabilities (multimodal understanding, structured outputs, tool use, and more) can improve efficiency across sporting organisations, and why Australia's position in the global AI landscape matters."
+description: "A comprehensive guide for sport leaders on how generative AI capabilities (multimodal understanding, structured outputs, tool use, and more) can improve efficiency across sporting organisations."
 ---
 
-> I would like to acknowledge **John Warmenhoven**, who initiated my exploration into generative AI, and **Steven Hughes**, whose incisive questions have consistently reinforced and deepened my understanding of this space.
+> I would like to acknowledge **John Warmenhoven**, whose interest in generative AI led me to explore this space, and **Steven Hughes**, whose incisive questions have consistently reinforced and deepened my understanding of it.
 {: .prompt-info }
 
-Generative AI is no longer a novelty. It is a tool that sporting organisations can use today to work faster, make better decisions, and do more with less. My goal with this post is to give sport leaders a solid understanding of the technology and to demonstrate practical capabilities that can be applied across their organisations.
+Generative AI is a tool that sporting organisations can use today to work faster, make better decisions, and do more with less. My goal with this post is to give sport leaders a solid understanding of the technology and to demonstrate practical capabilities that can be applied across their organisations.
 
 ## Introduction
 
@@ -57,7 +57,7 @@ This distinction matters because the same model can behave differently depending
 
 There are three main ways to interact with generative AI models, each suited to different levels of technical ability and different use cases.
 
-**Chatbots** are the most common entry point. Products like ChatGPT, Gemini, and Claude provide a conversational interface where you type a message and receive a response. They are easy to use and require no technical setup. However, they give you limited control over how the model behaves. You cannot adjust sampling parameters, manage context precisely, or integrate the model into other systems. Chatbots are a good starting point for exploration, but they have limitations that matter as your use cases become more serious (discussed later in this post).
+**Chatbots** are the most common entry point. Products like ChatGPT, Gemini, and Claude provide a conversational interface where you type a message and receive a response. They are easy to use and require no technical setup. However, they give you limited control over how the model behaves. Chatbots are a good starting point for exploration, but they have limitations that matter as your use cases become more serious. You cannot adjust sampling parameters, manage context precisely, or integrate the model into other systems (discussed later in this post).
 
 ![geminichatbot](../assets/img/geminichatbot.PNG)
 
@@ -73,7 +73,7 @@ There are three main ways to interact with generative AI models, each suited to 
 
 When you send text to a model, it does not read words the way a person does. It breaks your input into smaller pieces called tokens. A token is roughly three-quarters of a word in English. The word "football" is one token. The word "uncharacteristically" might be broken into three or four tokens. Numbers, punctuation, and spaces are also counted as tokens.
 
-Tokens are not limited to text. When you upload an image, the model converts it into tokens based on the image's resolution. A single image can consume hundreds or thousands of tokens. Audio and video are handled similarly.
+Tokens are not limited to text. When you upload an image, the model converts it into tokens. A single image can consume hundreds or thousands of tokens. Audio and video are handled similarly.
 
 The example below shows how OpenAI's tokeniser breaks a sentence into individual tokens, each highlighted in a different colour. You can experiment with [OpenAI's tokeniser](https://platform.openai.com/tokenizer) yourself to get a feel for how text is split into tokens.
 
@@ -89,9 +89,9 @@ Think of it like briefing a new staff member. If you say "analyse the data", you
 
 When you type a message into a chatbot, that is your user prompt. But there is another layer of instruction that most users never see: the system prompt.
 
-A system prompt is a set of background instructions given to the model before your conversation begins. It defines the model's persona, sets rules for how it should behave, and establishes constraints on its responses. When you use a chatbot product, the provider has already written a system prompt that shapes every interaction. You do not see it, and you cannot change it.
+A system prompt is a set of background instructions given to the model before your conversation begins. It defines the model's persona, sets rules for how it should behave, and establishes constraints on its responses. When you use a chatbot product, the provider has already written a system prompt that shapes every interaction. You do not see it, and you cannot change it. 
 
-Most providers keep their chatbot system prompts hidden. Anthropic is an exception, publishing the system prompt used by their Claude chatbot. The full system prompt for Claude Opus 4.5 is shown below. It is worth reading through, not because you need to understand every detail, but because it reveals how much hidden instruction is shaping the responses you receive. Notice how it covers product information, refusal handling, tone and formatting rules, user wellbeing guidelines, political evenhandedness, knowledge cutoff behaviour, and more.
+Anthropic is an exception, publishing the system prompt used by their Claude chatbot. The full system prompt for Claude Opus 4.5 is shown below. It is worth reading through, not because you need to understand every detail, but because it reveals how much hidden instruction is shaping the responses you receive. Notice how it covers product information, refusal handling, tone and formatting rules, user wellbeing guidelines, political evenhandedness, knowledge cutoff behaviour, and more.
 
 You can also access their other models' system prompts at this [here](https://platform.claude.com/docs/en/release-notes/system-prompts)
 
@@ -209,9 +209,9 @@ Claude's reliable knowledge cutoff date - the date past which it cannot answer q
 </claude_behavior>
 ```
 
-When you use an API, you can write your own system prompts tailored to your organisation. For example, you could set a system prompt that says: "You are an assistant for a national sporting organisation in Australia. Always use Australian English. When referencing legislation, default to Australian law. Do not provide medical advice. If asked about safeguarding matters, direct the user to the organisation's safeguarding policy." Every response the model generates will follow these instructions, without the user needing to repeat them in every prompt.
+When you use an API, you can write your own system prompts tailored to the task at hand. For example, you could set a system prompt that says: "You are an assistant for a national sporting organisation in Australia. Always use Australian English. When referencing legislation, default to Australian law. Do not provide medical advice. If asked about safeguarding matters, direct the user to the organisation's safeguarding policy." Every response the model generates will follow these instructions, without the user needing to repeat them in every prompt.
 
-System prompts are a key mechanism for tailoring general-purpose models to your specific context and requirements.
+System prompts are a key mechanism for tailoring general-purpose models to specific tasks and contexts.
 
 Below is an example of a system prompt set to 'Santa Claus' using Google AI Studio, a browser-based sandbox environment that lets you test API capabilities without writing code. This configuration ensures that the assistant's responses are delivered in Santa's unique voice and style. You can now start to imagine scenarios where the system prompt is set to coaches or athletes which are more relevant to sporting organisations.
 
@@ -394,8 +394,6 @@ Many models can now process entire documents (PDFs) and answer questions about t
 Google's Gemini models are particularly strong in this area. They can process documents natively, meaning the model reads the document directly rather than relying on a separate text extraction step. This preserves the layout, tables, and visual elements that are often lost in traditional text extraction.
 
 Here's a project that I've built to demonstrate this capability:
-
-![paperextractor](../assets/gifs/paperextractor.gif)
 
 #### Image Understanding
 
