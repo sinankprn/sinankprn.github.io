@@ -17,9 +17,9 @@ Generative AI is a tool that sporting organisations can use today to work faster
 
 Artificial Intelligence (AI) engineering is the practice of building useful applications and workflows that leverage AI. This can include training machine learning models or building on top of pre-trained models from providers like OpenAI, Google, and Anthropic. It is distinct from AI research, which mainly focuses on advancing the science behind new model architectures and training techniques. In the context of generative AI, AI engineers are primarily focused on using existing models effectively: choosing the right model for a task, writing good prompts, managing context, connecting models to data sources, and building reliable workflows around them.
 
-Traditional AI solutions in sport were built for a single purpose: a computer vision model trained to track player movements or a machine learning model built to predict match outcomes from a specific dataset. Each required custom data, custom training, and ongoing maintenance. If the problem changed, you needed to update the model. Additionally, each solution relied on high-quality, task-specific labelled datasets that many organisations do not possess or cannot readily produce.
+Traditional AI solutions in sport were built for a single purpose: a computer vision model trained to track player movements or a machine learning model built to predict match outcomes. Each required custom data, custom training, and ongoing maintenance. If the problem changed, you needed to update the model. Additionally, each solution relied on high-quality, task-specific labelled datasets that many organisations do not possess or cannot readily produce.
 
-Generative AI models are not built for one task. They are trained on vast amounts of general data and can apply that knowledge across a wide range of problems without being retrained. What makes this particularly striking is that many of these capabilities were not explicitly programmed. They emerged as a byproduct of training on enough data at sufficient scale. The models learned general patterns of language, reasoning, and structure, and those patterns turned out to be applicable to tasks that developers never anticipated. The same model that summarises a board report can also draft a sponsorship proposal, analyse match data, extract key clauses from a contract, and generate code for a dashboard. You do not need a different tool for each job. You need one model and clear instructions.
+Generative AI models are not built for one task. They are trained on vast amounts of general data and can apply that knowledge across a wide range of problems without being retrained. What makes this particularly interesting is that many of these capabilities were not explicitly programmed. They emerged as a byproduct of training on enough data at sufficient scale. The models learned general patterns of language, reasoning, and structure, and those patterns turned out to be applicable to tasks that developers never anticipated. The same model that summarises a board report can also draft a sponsorship proposal, analyse match data, extract key clauses from a contract, and generate code for a dashboard. You do not need a different tool for each job. You need one model and clear instructions.
 
 This means that the expensive, bespoke AI solutions that vendors have been selling to sporting organisations are increasingly difficult to justify. A purpose-built tool that costs tens of thousands of dollars and solves one narrow problem is less compelling when a general-purpose model can handle that problem (and dozens of others) for a fraction of the cost. The value has shifted from building tailored models to knowing how to use general ones well.
 
@@ -49,9 +49,7 @@ A **product** is the user-facing application built on top of a model.
 - Microsoft Copilot is a product built primarily on OpenAI's models (as they have a strategic partnership).
 - and so on.
 
-The product determines the interface, the features available to you, and often adds its own limitations on top of what the underlying model can do.
-
-This distinction matters because the same model can behave differently depending on the product you access it through. When evaluating AI tools, ask which model powers the product.
+The product determines the interface, the features available to you, and often adds its own limitations on top of what the underlying model can do. This distinction matters because the same model can behave differently depending on the product you access it through. When evaluating AI tools, ask which model powers the product.
 
 ### Ways to Interact with Models
 
@@ -215,10 +213,7 @@ System prompts are a key mechanism for tailoring general-purpose models to speci
 
 Below is an example of a system prompt set to 'Santa Claus' using Google AI Studio, a browser-based sandbox environment that lets you test API capabilities without writing code. This configuration ensures that the assistant's responses are delivered in Santa's unique voice and style. You can now start to imagine scenarios where the system prompt is set to coaches or athletes which are more relevant to sporting organisations.
 
-<video width="100%" controls preload="metadata">
-  <source src="/assets/videos/santaclause.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/lesOpkiPZnc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 ### Sampling Parameters and Generation Configuration
 
