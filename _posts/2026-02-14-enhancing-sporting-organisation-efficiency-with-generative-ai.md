@@ -215,7 +215,7 @@ System prompts are a key mechanism for tailoring general-purpose models to speci
 
 Below is an example of a system prompt set to 'Santa Claus' using Google AI Studio, a browser-based sandbox environment that lets you test API capabilities without writing code. This configuration ensures that the assistant's responses are delivered in Santa's unique voice and style. You can now start to imagine scenarios where the system prompt is set to coaches or athletes which are more relevant to sporting organisations.
 
-<video width="100%" controls preload="none">
+<video width="100%" controls preload="metadata">
   <source src="/assets/videos/santaclause.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -374,7 +374,7 @@ Text generation is the most familiar capability. Models can draft communications
 
 Instead of returning free-form text, you can instruct a model to return its response in a specific format, such as JavaScript Object Notation (JSON) that matches a schema you define. This is useful when you need the output to feed directly into another system. For example, you could ask a model to extract information from a document and return it as structured data that a database or dashboard can ingest automatically.
 
-<video width="100%" controls preload="none">
+<video width="100%" controls preload="metadata">
   <source src="/assets/videos/structuredoutputs.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -395,7 +395,7 @@ Here's a project that I've built to demonstrate this capability:
 
 Models can analyse images and describe what they see, answer questions about visual content, and extract information from screenshots, photos, or diagrams.
 
-<video width="100%" controls preload="none">
+<video width="100%" controls preload="metadata">
   <source src="/assets/videos/imageunderstanding.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -404,7 +404,7 @@ Models can analyse images and describe what they see, answer questions about vis
 
 Google's Gemini models support native video understanding. You can provide a video file and ask the model to describe what happens, identify specific moments, or answer questions about the content. The model processes both the visual and audio components of the video.
 
-<video width="100%" controls preload="none">
+<video width="100%" controls preload="metadata">
   <source src="/assets/videos/videounderstanding.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -413,7 +413,7 @@ Google's Gemini models support native video understanding. You can provide a vid
 
 Models can also process audio files directly. This includes transcription (converting speech to text), but also comprehension (understanding what was said and answering questions about it).
 
-<video width="100%" controls preload="none">
+<video width="100%" controls preload="metadata">
   <source src="/assets/videos/audiounderstandingtranscription.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -430,7 +430,7 @@ One of the most powerful (and least understood) capabilities of modern models is
 
 Information tools retrieve data without changing anything. A web search, a database query, or a document lookup are all information tools. They give the model access to knowledge it does not have on its own, but they do not modify any external system.
 
-<video width="100%" controls preload="none">
+<video width="100%" controls preload="metadata">
   <source src="/assets/videos/informationtool.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -497,7 +497,7 @@ Often, a manager just needs a quick summary of trends, a few charts, and a clear
 
 Claude in PowerPoint has the capability to take raw data files (such as CSVs or Excel exports) and transform them into a fully structured presentation. You can provide a dataset and describe what you need ("create a presentation showing registration trends by region over the last three years, with a summary slide highlighting the key takeaways"), and the model will generate slides with charts, tables, and written commentary. What would normally take an analyst hours of manual formatting can be produced in minutes.
 
-<video width="100%" controls preload="none">
+<video width="100%" controls preload="metadata">
   <source src="/assets/videos/claudeinpowerpoint.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
