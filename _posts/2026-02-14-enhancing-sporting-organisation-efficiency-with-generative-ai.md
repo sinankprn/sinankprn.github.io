@@ -215,7 +215,7 @@ System prompts are a key mechanism for tailoring general-purpose models to speci
 
 Below is an example of a system prompt set to 'Santa Claus' using Google AI Studio, a browser-based sandbox environment that lets you test API capabilities without writing code. This configuration ensures that the assistant's responses are delivered in Santa's unique voice and style. You can now start to imagine scenarios where the system prompt is set to coaches or athletes which are more relevant to sporting organisations.
 
-<video width="100%" controls preload="metadata">
+<video width="100%" controls preload="none">
   <source src="/assets/videos/santaclause.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -307,21 +307,17 @@ Not all models support the same modalities. Some can process images but not vide
 
 ## Part 2: How Models Work
 
-The concepts in Part 1 cover what you interact with when using generative AI. This section explains what happens behind the scenes. Understanding these mechanics will help you make better decisions about which models to use, how much to invest, and what to expect.
+This section covers how models are built, why they have knowledge gaps, what the difference is between open and closed models, and how reasoning and fine-tuning work. These are the concepts that come up when someone asks "why did the model get that wrong?" or "can we train it on our data?"
 
-### Inference vs Training
-
-Two terms you will encounter regularly are training and inference. Understanding the difference clarifies how AI models work and why they cost what they do.
+### Training vs Inference
 
 **Training** is the process of building the model. It involves feeding massive amounts of data (text, images, code, and other content from across the internet and proprietary data) into a neural network so that it learns patterns, relationships, and structure. Training a frontier model takes months, costs tens or hundreds of millions of dollars, and requires thousands of specialised processors running in parallel. This is why only a handful of companies in the world can do it. Once training is complete, the model's knowledge is fixed. It does not continue learning from new information unless it is retrained or fine-tuned.
 
 **Inference** is what happens when you actually use the model. Every time you send a prompt and receive a response, the model is performing inference: taking your input, processing it through its learned patterns, and generating an output. Inference is what you pay for when you use an API (measured in tokens), and it is what happens behind the scenes every time you type into a chatbot.
 
-The distinction matters for two reasons. First, it explains why models have knowledge cutoffs. The model only knows what it learned during training. It does not learn from your conversations (unless your data is used for future training cycles, which is a separate privacy concern). Second, it explains the cost structure. Training is a massive upfront investment borne by the provider. Inference is the ongoing cost passed on to you, the user.
-
 ### Training Knowledge Cutoffs
 
-Every model has a training cutoff date, which is the point at which its training data ends. The model has no knowledge of events, rule changes, results, or publications that occurred after this date. If you ask a model about last weekend's match results or a policy update from last month, it will not know the answer. Worse, it may not tell you it does not know. Instead, it may generate a plausible but entirely fabricated response. This issue can be alleviated through techniques such as Retrieval Augmented Generation (RAG) and Information Tools which can fetch up to date information.
+Every model has a training cutoff date, which is the point at which its training data ends. The model has no knowledge of events, rule changes, results, or publications that occurred after this date. If you ask a model about last weekend's match results or a policy update from last month, it will not know the answer. Worse, it may not tell you it does not know. Instead, it may generate a plausible but entirely fabricated response. This issue can be alleviated through techniques such as Retrieval Augmented Generation (RAG) and Information Tools which can fetch up to date information (continue reading for more on this).
 
 ### Reasoning Models
 
@@ -378,7 +374,7 @@ Text generation is the most familiar capability. Models can draft communications
 
 Instead of returning free-form text, you can instruct a model to return its response in a specific format, such as JavaScript Object Notation (JSON) that matches a schema you define. This is useful when you need the output to feed directly into another system. For example, you could ask a model to extract information from a document and return it as structured data that a database or dashboard can ingest automatically.
 
-<video width="100%" controls preload="metadata">
+<video width="100%" controls preload="none">
   <source src="/assets/videos/structuredoutputs.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -399,7 +395,7 @@ Here's a project that I've built to demonstrate this capability:
 
 Models can analyse images and describe what they see, answer questions about visual content, and extract information from screenshots, photos, or diagrams.
 
-<video width="100%" controls preload="metadata">
+<video width="100%" controls preload="none">
   <source src="/assets/videos/imageunderstanding.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -408,7 +404,7 @@ Models can analyse images and describe what they see, answer questions about vis
 
 Google's Gemini models support native video understanding. You can provide a video file and ask the model to describe what happens, identify specific moments, or answer questions about the content. The model processes both the visual and audio components of the video.
 
-<video width="100%" controls preload="metadata">
+<video width="100%" controls preload="none">
   <source src="/assets/videos/videounderstanding.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -417,7 +413,7 @@ Google's Gemini models support native video understanding. You can provide a vid
 
 Models can also process audio files directly. This includes transcription (converting speech to text), but also comprehension (understanding what was said and answering questions about it).
 
-<video width="100%" controls preload="metadata">
+<video width="100%" controls preload="none">
   <source src="/assets/videos/audiounderstandingtranscription.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -434,7 +430,7 @@ One of the most powerful (and least understood) capabilities of modern models is
 
 Information tools retrieve data without changing anything. A web search, a database query, or a document lookup are all information tools. They give the model access to knowledge it does not have on its own, but they do not modify any external system.
 
-<video width="100%" controls preload="metadata">
+<video width="100%" controls preload="none">
   <source src="/assets/videos/informationtool.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
@@ -501,7 +497,7 @@ Often, a manager just needs a quick summary of trends, a few charts, and a clear
 
 Claude in PowerPoint has the capability to take raw data files (such as CSVs or Excel exports) and transform them into a fully structured presentation. You can provide a dataset and describe what you need ("create a presentation showing registration trends by region over the last three years, with a summary slide highlighting the key takeaways"), and the model will generate slides with charts, tables, and written commentary. What would normally take an analyst hours of manual formatting can be produced in minutes.
 
-<video width="100%" controls preload="metadata">
+<video width="100%" controls preload="none">
   <source src="/assets/videos/claudeinpowerpoint.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
