@@ -467,7 +467,7 @@ The video demonstration shows me uploading a football highlight reel and asking 
 
 Some sports are highly subjective, relying on judges' scores rather than objective outcomes. In disciplines like gymnastics, diving, or figure skating, judging decisions can be contentious and difficult to review at scale. Video understanding could support this by allowing analysts or coaches to upload routine footage and ask a model to describe the technical elements performed, identify potential deductions, and compare execution against scoring criteria. This does not replace qualified judges, but it could provide a structured second opinion that helps coaches prepare athletes for how their routines are likely to be scored, or support post-competition review of judging consistency.
 
-### Coach Journalling
+### Coach Journaling
 
 Image understanding capabilities will enable coaches to extract content from images of what they write on whiteboards. Coaches constantly capture information in informal, analogue formats: split times and pacing targets, set piece diagrams, training programs scribbled on notepads between sessions. This information is valuable, but it is rarely captured in a structured or consistent way.
 
