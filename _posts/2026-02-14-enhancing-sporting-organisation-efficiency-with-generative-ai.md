@@ -411,8 +411,6 @@ Models can also process audio files directly. This includes transcription (conve
 
 Models can write, explain, and debug code across virtually any programming language. You can describe what you want in plain language and receive working code in return. You can paste in existing code and ask the model to explain what it does, find bugs, or refactor it. You can ask it to convert code from one language to another, write tests, or generate documentation.
 
-What makes this capability transformative is that it extends beyond professional developers. Tools like Claude Code and GitHub Copilot allow people with no programming background to build functional applications by describing what they want in natural language. The model handles the syntax, the logic, and the project structure. This is covered in more detail in the practical applications section, where I demonstrate building an interactive dashboard from raw data without writing a single line of code manually.
-
 For organisations that do have developers, code generation accelerates their work significantly. Tasks that previously took hours (writing boilerplate, debugging edge cases, setting up project scaffolding) can be completed in minutes. The model does not replace the developer's judgement, but it removes much of the repetitive work that slows them down.
 
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/35hPUIcUiU8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
