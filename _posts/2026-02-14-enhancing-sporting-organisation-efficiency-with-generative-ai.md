@@ -207,7 +207,7 @@ Claude's reliable knowledge cutoff date - the date past which it cannot answer q
 </claude_behavior>
 ```
 
-When you use an API, you can write your own system prompts tailored to the task at hand. For example, you could set a system prompt that says: "You are an assistant for a national sporting organisation in Australia. Always use British English. When referencing legislation, default to Australian law. Do not provide medical advice. If asked about safeguarding matters, direct the user to the organisation's safeguarding policy." Every response the model generates will follow these instructions, without the user needing to repeat them in every prompt.
+When you use an API, you can write your own system prompts tailored to the task at hand. For example, you could set a system prompt that says: "You are a sentiment classification algorithm." Every response the model generates will follow these instructions, causing it to behave as a sentiment classifier rather than a general-purpose assistant.
 
 System prompts are a key mechanism for tailoring general-purpose models to specific tasks and contexts.
 
@@ -217,7 +217,7 @@ Below is an example of a system prompt set to 'Santa Claus' using Google AI Stud
 
 ### Sampling Parameters and Generation Configuration
 
-When a model generates text, it does not simply retrieve a fixed answer. It predicts the next word (or token) based on probabilities. Several parameters control how it makes these predictions.
+When a model generates text, it does not simply retrieve a fixed answer. It predicts the token based on probabilities. Several parameters control how it makes these predictions.
 
 **Temperature** controls randomness. A low temperature (close to 0) makes the model more predictable and focused, choosing the most likely next word each time. A higher temperature introduces more variation and creativity, but also more risk of irrelevant or incorrect output. For analytical tasks in sport, a lower temperature is generally better. For creative tasks like drafting marketing copy, a higher temperature can be useful.
 
@@ -320,6 +320,8 @@ Standard language models generate responses quickly by predicting the next token
 
 When you ask a standard model to solve a complex analytical problem, it generates its answer in one pass, which can lead to errors on tasks that require multi-step logic. A reasoning model will break the problem down, consider different approaches, check its own working, and then provide a more considered response. Some models show this thinking process to the user, while others perform it internally and hide it from the user (OpenAI hides it).
 
+The below screenshot highlights the reasoning/thinking process that the model has before providing an answer.
+
 ![reasoningmodels](../assets/img/reasoningmodel.PNG)
 
 
@@ -387,11 +389,15 @@ This is particularly useful for long reports, policy documents, or board papers 
 
 One thing to be aware of is that this native vision only works with PDFs. If you pass a Word document, the model will process the text but will not see any visual elements like charts or formatting.
 
+The video demonstration shows me putting in a PDF of a study that Steven Hughes, John Warmenhoven, Gregory Haff, Dale Chapman, and Sophia Nimphius conducted into the model and then I asked it what Table 1 contained. It was able to reliably understand the contents of Table 1 and reason about the results.
+
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/mSh0ikFROeE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 #### Image Understanding
 
 Models can analyse images and describe what they see, answer questions about visual content, and extract information from screenshots, photos, or diagrams.
+
+The video demonstration shows me putting in an image with a bunch of balls and the word "SPORT". The model was able to understand what sporting balls and text in the image.
 
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/PGV-qFCdvZM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
@@ -399,11 +405,15 @@ Models can analyse images and describe what they see, answer questions about vis
 
 Google's Gemini models support native video understanding. You can provide a video file and ask the model to describe what happens, identify specific moments, or answer questions about the content. The model processes both the visual and audio components of the video.
 
+The video demonstration shows me putting in a WSL Surfing highlight reel YouTube into the model. It was able to adequately describe the different highlights for both mens and womens events and even provided relevant timestamps.
+
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/Vju_A_BhZIk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 #### Audio Understanding
 
 Models can also process audio files directly. This includes transcription (converting speech to text), but also comprehension (understanding what was said and answering questions about it).
+
+The video demonstration shows me uploading an audio file of the Rugby World Cup final. Through a series of prompts, the model was able to transcribe the audio and identify individual speakers.
 
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/6rRghpDvtyE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
@@ -412,6 +422,8 @@ Models can also process audio files directly. This includes transcription (conve
 Models can write, explain, and debug code across virtually any programming language. You can describe what you want in plain language and receive working code in return. You can paste in existing code and ask the model to explain what it does, find bugs, or refactor it. You can ask it to convert code from one language to another, write tests, or generate documentation.
 
 For organisations that do have developers, code generation accelerates their work significantly. Tasks that previously took hours (writing boilerplate, debugging edge cases, setting up project scaffolding) can be completed in minutes. The model does not replace the developer's judgement, but it removes much of the repetitive work that slows them down.
+
+The video demonstration shows a simple example of this: I ask the model to generate a block of code that prints "Hello World", and it produces working code immediately.
 
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/35hPUIcUiU8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
@@ -423,11 +435,15 @@ One of the most powerful (and least understood) capabilities of modern models is
 
 Information tools retrieve data without changing anything. A web search, a database query, or a document lookup are all information tools. They give the model access to knowledge it does not have on its own, but they do not modify any external system.
 
+The video demonstration shows a simple example: I ask ChatGPT what the weather is today, and the model implicitly calls a web search tool to retrieve up-to-date weather information for my area, something it could not do from its training data alone.
+
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/Vxmpg00UM1Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 #### Action Tools
 
 Action tools do something in the real world. Sending an email, creating a calendar event, updating a record in a database, or triggering a workflow are all action tools. These carry more risk than information tools because they have side effects. A model that incorrectly calls an action tool could send an unintended email or overwrite data. This is why action tools require careful design and appropriate safeguards.
+
+The video demonstration shows the model being given access to Blender, a 3D modelling application. I instruct it to create a solar system, and it takes action within the software to build one.
 
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/NqwKoEPcgyE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
@@ -437,13 +453,13 @@ RAG is a technique that allows a model to search through a collection of documen
 
 For example, you could build a system where users ask questions in plain language and receive answers drawn from a library of documents, with references to the source material. RAG is not perfect. It relies on retrieving the right chunks of information, and important details can be missed if they are not well-matched to the query. But when implemented thoughtfully, it can significantly reduce the time spent searching for information.
 
-
 ## Part 4: Practical Applications for Sporting Organisations
 
 ### Video Performance Analysis
 
 Video understanding capabilities open up new possibilities for analysing competition footage. Using Gemini's native video processing, a performance analyst could upload match footage and ask the model to identify and timestamp key events: goals, turnovers, set pieces, penalties, or momentum shifts. The model can describe what happened at each moment, who was involved, and what the tactical context was. It can significantly reduce the time spent on initial review, allowing analysts to focus their attention on the moments that matter most rather than watching every minute of footage.
 
+The video demonstration shows me uploading a football highlight reel and asking the model to identify the timestamps of every goal in the video.
 
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/dgq-RABYSF0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
@@ -458,6 +474,8 @@ Image understanding capabilities will enable coaches to extract content from ima
 I recently spoke with a biomechanist at the Australian Institute of Sport (AIS) who mentioned that one of the persistent issues in their environment was that different coaches wrote pacing information on whiteboards in different formats. There was no standardisation, which made it difficult to digitise and compare across sessions or athletes. Image understanding solves this problem. A coach can photograph the whiteboard, upload the image to a model, and ask it to extract the content into a structured, standardised table, regardless of how the original was formatted. The model reads the handwriting, interprets the layout, and returns the data in a format that can be saved, shared with athletes, or imported into a training management system.
 
 This is a small but practical efficiency gain. It eliminates the manual transcription step that often means whiteboard notes are lost after a session. It also makes coaching information searchable, shareable, and consistent across the organisation, rather than existing only in the memory of the coach who wrote it.
+
+The video demonstration shows me uploading an image of a whiteboard with text on it and asking the model to extract the content.
 
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/z3bGtp0WKto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
@@ -481,6 +499,8 @@ Video understanding can automate parts of this workflow. A model could process a
 
 This does not replace a skilled content producer. But it can generate a first pass of highlight candidates that a social media manager can review, select from, and publish. For an organisation that currently has one person managing content across multiple platforms, automating the initial identification and clipping of highlights could be the difference between posting one piece of content per day and posting five.
 
+The video demonstration shows me uploading a clip of a rugby match and asking the model to identify the most viral moments suitable for YouTube Shorts, including the relevant timestamps.
+
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/lyHUiC9jmPs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 ### Self-Service Data Dashboards
@@ -496,6 +516,8 @@ I demonstrated this in my earlier post, [Claude Opus 4.6 and Claude Code: A Game
 Not every analytical need warrants a permanent dashboard. In many organisational contexts, a structured presentation is a more appropriate output: a summary of trends, key charts, and a clear narrative prepared for a specific meeting or stakeholder audience.
 
 Claude in PowerPoint can accept raw data files, such as CSV or Excel exports, and generate a fully structured presentation from them. Given a dataset and a brief description of the required output, the model produces slides with charts, tables, and written commentary. Analytical tasks that would previously require considerable time to format and structure manually can be completed in a fraction of the time.
+
+The video demonstration shows someone (not me as I found this video on Twitter) uploading a CSV file and prompting Claude in PowerPoint to generate a presentation from the data.
 
 <video width="100%" controls preload="metadata">
   <source src="/assets/videos/claudeinpowerpoint.mp4" type="video/mp4">
