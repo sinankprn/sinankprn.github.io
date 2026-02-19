@@ -369,12 +369,11 @@ Text generation is the most familiar capability. Models can draft communications
 
 ### Structured Outputs
 
-Instead of returning free-form text, you can instruct a model to return its response in a specific format, such as JavaScript Object Notation (JSON) that matches a schema you define. This is useful when you need the output to feed directly into another system. For example, you could ask a model to extract information from a document and return it as structured data that a database or dashboard can ingest automatically.
+Instead of returning free-form text, you can instruct a model to return its response in a specific format, such as JavaScript Object Notation (JSON) that matches a schema you define.
 
-<video width="100%" controls preload="metadata">
-  <source src="/assets/videos/structuredoutputs.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+The video demonstration shows me attempting to extract information from some text. First, I set the system prompt so that the model behaves as a data extractor. Then, I define the schema. I want the model to give me three pieces of information: name, age, and eye colour. It then returns key value pairs in the form of JSON with the data that I am interested in.   
+
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/yds_xpmyLgc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 ### Multimodal Understanding
 
@@ -386,16 +385,11 @@ Many models can now process entire documents (PDFs) and answer questions about t
 
 Google's Gemini models are particularly strong in this area. They can process documents natively, meaning the model reads the document directly rather than relying on a separate text extraction step. This preserves the layout, tables, and visual elements that are often lost in traditional text extraction.
 
-Here's a project that I've built to demonstrate this capability:
-
 #### Image Understanding
 
 Models can analyse images and describe what they see, answer questions about visual content, and extract information from screenshots, photos, or diagrams.
 
-<video width="100%" controls preload="metadata">
-  <source src="/assets/videos/imageunderstanding.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/PGV-qFCdvZM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 #### Video Understanding
 
