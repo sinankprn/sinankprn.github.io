@@ -8,20 +8,20 @@ pin: false
 description: "A comprehensive guide for sport leaders on how generative AI capabilities (multimodal understanding, structured outputs, tool use, and more) can improve efficiency across sporting organisations."
 ---
 
-> I would like to acknowledge **John Warmenhoven**, whose interest in generative AI led me to explore this space, and **Steven Hughes**, whose incisive questions have consistently reinforced and deepened my understanding of it.
+> I would like to acknowledge **John Warmenhoven**, whose interest in generative AI led me to explore this space, **Steven Hughes**, whose incisive questions have consistently reinforced and deepened my understanding of it, **Andrew Novak**, who has supported my methodological thinking and encouraged the use of this technology within my PhD, and **Katie Slattery**, for pioneering generative AI in sport.
 {: .prompt-info }
 
 Generative AI is a tool that sporting organisations can use today to work faster, make better decisions, and do more with less. My goal with this post is to give sport leaders a solid understanding of the technology and to demonstrate practical capabilities that can be applied across their organisations.
 
 ## Introduction
 
-Artificial Intelligence (AI) engineering is the practice of building useful applications and workflows that leverage AI. This can include training machine learning models or building on top of pre-trained models from providers like OpenAI, Google, and Anthropic. It is distinct from AI research, which mainly focuses on advancing the science behind new model architectures and training techniques. In the context of generative AI, AI engineers are primarily focused on using existing models effectively: choosing the right model for a task, writing good prompts, managing context, connecting models to data sources, and building reliable workflows around them.
+Artificial Intelligence (AI) engineering is the practice of building useful applications and workflows that leverage AI models. This can include training machine learning models or building on top of pre-trained models from providers like OpenAI, Google, and Anthropic. It is distinct from AI research, which mainly focuses on advancing the science behind new model architectures and training techniques. In the context of generative AI, AI engineers are primarily focused on using existing models effectively: choosing the right model for a task, writing good prompts, managing context, connecting models to data sources, and building reliable workflows around them.
 
 Traditional AI solutions in sport were built for a single purpose: a computer vision model trained to track player movements or a machine learning model built to predict match outcomes. Each required custom data, custom training, and ongoing maintenance. If the problem changed, you needed to update the model. Additionally, each solution relied on high-quality, task-specific labelled datasets that many organisations do not possess or cannot readily produce.
 
-Generative AI models are not built for one task. They are trained on vast amounts of general data and can apply that knowledge across a wide range of problems without being retrained. What makes this particularly interesting is that many of these capabilities were not explicitly programmed. They emerged as a byproduct of training on enough data at sufficient scale. The models learned general patterns of language, reasoning, and structure, and those patterns turned out to be applicable to tasks that developers never anticipated. The same model that summarises a board report can also draft a sponsorship proposal, analyse match data, extract key clauses from a contract, and generate code for a dashboard. You do not need a different tool for each job. You need one model and clear instructions.
+Generative AI models are not built for one task. They are trained on vast amounts of general data and can apply that knowledge across a wide range of problems without being retrained. What makes this particularly interesting is that many of these capabilities were not explicitly programmed. They emerged as a byproduct of training on data at sufficient scale. The models learned general patterns of language, reasoning, and structure, and those patterns turned out to be applicable to tasks that developers never anticipated. The same model that summarises a board report can also draft a sponsorship proposal, analyse match data, extract key clauses from a contract, and generate code for a dashboard. You do not need a different tool for each job. You need one model and clear instructions.
 
-This means that the expensive, bespoke AI solutions that vendors have been selling to sporting organisations are increasingly difficult to justify. A purpose-built tool that costs tens of thousands of dollars and solves one narrow problem is less compelling when a general-purpose model can handle that problem (and dozens of others) for a fraction of the cost. The value has shifted from building tailored models to knowing how to use general ones well.
+This shift has implications for how sporting organisations think about AI investment. Purpose-built tools that solve one narrow problem are harder to justify when a general-purpose model can handle that same problem (and dozens of others) at a fraction of the cost. The value has moved away from building tailored models and towards knowing how to use general ones well.
 
 That said, generalisation is not the same as guaranteed quality. These models can perform a wide range of tasks, but the fundamental question for any organisation is: how well? A model that can summarise a match report does not necessarily summarise it accurately. A model that can draft a policy document does not necessarily capture the nuances your organisation requires. The capabilities are real, but they need to be evaluated in context. That is exactly why sporting organisations should be exploring these tools now, so they can learn what works, what does not, and where the genuine value lies for their operations.
 
@@ -290,7 +290,7 @@ There are more sampling parameters but I will skip out on discussing them and ma
 
 Models can "see" a finite number of tokens at a time. This is called the context window. Different models have different context window sizes. Some can handle 8,000 tokens, while others support over 1,000,000 tokens.
 
-If your input is too large for the model's context window, the model cannot see all of it at once. Chatbots handle this silently, often by dropping earlier parts of the conversation or truncating middle sections of the conversations in order to make space for later turns in the conversation.
+If your input is too large for the model's context window, the model will not be able to process it. Chatbots handle this silently, often by dropping earlier parts of the conversation or truncating middle sections of the conversations in order to make space for later turns in the conversation.
 
 ### Multimodality
 
@@ -361,7 +361,7 @@ These playgrounds are the bridge between chatbot convenience and full API access
 
 ## Part 3: Capabilities That Matter for Sport
 
-The videos throughout this section demonstrate each capability using Google AI Studio, the free browser-based playground introduced in Part 2.
+The videos throughout this section mostly demonstrate each capability using Google AI Studio, the free browser-based playground introduced in Part 2.
 
 ### Text Generation
 
@@ -381,9 +381,13 @@ The following capabilities all stem from the multimodal foundations discussed in
 
 #### Document Understanding
 
-Many models can now process entire documents (PDFs) and answer questions about their contents. This goes beyond simple text extraction. The model can interpret tables, charts, and formatting to understand the document as a human reader would.
+Google's Gemini models can process PDF documents using native vision, which means the model actually sees the document the way you would. It reads the text, but it also understands the charts, tables, diagrams, and images on each page. You can upload a PDF up to 1,000 pages long and ask questions about its contents, ask the model to summarise it, or extract specific information into a structured format.
 
-Google's Gemini models are particularly strong in this area. They can process documents natively, meaning the model reads the document directly rather than relying on a separate text extraction step. This preserves the layout, tables, and visual elements that are often lost in traditional text extraction.
+This is particularly useful for long reports, policy documents, or board papers where the information you need is buried across dozens of pages. Rather than reading the entire document yourself, you can ask the model to find what you need.
+
+One thing to be aware of is that this native vision only works with PDFs. If you pass a Word document, the model will process the text but will not see any visual elements like charts or formatting.
+
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/mSh0ikFROeE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 #### Image Understanding
 
@@ -395,19 +399,13 @@ Models can analyse images and describe what they see, answer questions about vis
 
 Google's Gemini models support native video understanding. You can provide a video file and ask the model to describe what happens, identify specific moments, or answer questions about the content. The model processes both the visual and audio components of the video.
 
-<video width="100%" controls preload="metadata">
-  <source src="/assets/videos/videounderstanding.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/Vju_A_BhZIk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 #### Audio Understanding
 
 Models can also process audio files directly. This includes transcription (converting speech to text), but also comprehension (understanding what was said and answering questions about it).
 
-<video width="100%" controls preload="metadata">
-  <source src="/assets/videos/audiounderstandingtranscription.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/6rRghpDvtyE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 ### Code Generation
 
@@ -417,6 +415,8 @@ What makes this capability transformative is that it extends beyond professional
 
 For organisations that do have developers, code generation accelerates their work significantly. Tasks that previously took hours (writing boilerplate, debugging edge cases, setting up project scaffolding) can be completed in minutes. The model does not replace the developer's judgement, but it removes much of the repetitive work that slows them down.
 
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/35hPUIcUiU8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+
 ### Tool Use and Function Calling
 
 One of the most powerful (and least understood) capabilities of modern models is tool use, sometimes called function calling. This allows a model to call external tools, such as databases, APIs, or software applications, and use the results in its response.
@@ -425,14 +425,13 @@ One of the most powerful (and least understood) capabilities of modern models is
 
 Information tools retrieve data without changing anything. A web search, a database query, or a document lookup are all information tools. They give the model access to knowledge it does not have on its own, but they do not modify any external system.
 
-<video width="100%" controls preload="metadata">
-  <source src="/assets/videos/informationtool.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/Vxmpg00UM1Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 #### Action Tools
 
 Action tools do something in the real world. Sending an email, creating a calendar event, updating a record in a database, or triggering a workflow are all action tools. These carry more risk than information tools because they have side effects. A model that incorrectly calls an action tool could send an unintended email or overwrite data. This is why action tools require careful design and appropriate safeguards.
+
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/NqwKoEPcgyE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 ### Retrieval-Augmented Generation (RAG)
 
@@ -447,15 +446,22 @@ For example, you could build a system where users ask questions in plain languag
 
 Video understanding capabilities open up new possibilities for analysing competition footage. Using Gemini's native video processing, a performance analyst could upload match footage and ask the model to identify and timestamp key events: goals, turnovers, set pieces, penalties, or momentum shifts. The model can describe what happened at each moment, who was involved, and what the tactical context was. It can significantly reduce the time spent on initial review, allowing analysts to focus their attention on the moments that matter most rather than watching every minute of footage.
 
+
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/dgq-RABYSF0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/Zu5-6sUrtpI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+
 Some sports are highly subjective, relying on judges' scores rather than objective outcomes. In disciplines like gymnastics, diving, or figure skating, judging decisions can be contentious and difficult to review at scale. Video understanding could support this by allowing analysts or coaches to upload routine footage and ask a model to describe the technical elements performed, identify potential deductions, and compare execution against scoring criteria. This does not replace qualified judges, but it could provide a structured second opinion that helps coaches prepare athletes for how their routines are likely to be scored, or support post-competition review of judging consistency.
 
 ### Coach Journalling
 
 Image understanding capabilities will enable coaches to extract content from images of what they write on whiteboards. Coaches constantly capture information in informal, analogue formats: split times and pacing targets, set piece diagrams, training programs scribbled on notepads between sessions. This information is valuable, but it is rarely captured in a structured or consistent way.
 
-I recently spoke with a biomechanist at the Australian Institute of Sport (AIS) who mentioned that one of the persistent frustrations in their environment was that different coaches wrote pacing information on whiteboards in different formats. There was no standardisation, which made it difficult to digitise and compare across sessions or athletes. Image understanding solves this problem. A coach can photograph the whiteboard, upload the image to a model, and ask it to extract the content into a structured, standardised table, regardless of how the original was formatted. The model reads the handwriting, interprets the layout, and returns the data in a format that can be saved, shared with athletes, or imported into a training management system.
+I recently spoke with a biomechanist at the Australian Institute of Sport (AIS) who mentioned that one of the persistent issues in their environment was that different coaches wrote pacing information on whiteboards in different formats. There was no standardisation, which made it difficult to digitise and compare across sessions or athletes. Image understanding solves this problem. A coach can photograph the whiteboard, upload the image to a model, and ask it to extract the content into a structured, standardised table, regardless of how the original was formatted. The model reads the handwriting, interprets the layout, and returns the data in a format that can be saved, shared with athletes, or imported into a training management system.
 
 This is a small but practical efficiency gain. It eliminates the manual transcription step that often means whiteboard notes are lost after a session. It also makes coaching information searchable, shareable, and consistent across the organisation, rather than existing only in the memory of the coach who wrote it.
+
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/z3bGtp0WKto" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 ### Qualitative Data Analysis
 
@@ -463,34 +469,35 @@ Sporting organisations regularly collect qualitative data that is time-consuming
 
 Audio understanding capabilities transform this process. A model can transcribe a recorded interview with speaker diarisation (identifying and labelling who said what), then perform content analysis on the transcript. You could ask it to identify the key themes discussed, extract specific quotes that support each theme, note points of agreement or disagreement between speakers, and summarise the overall findings.
 
-I am currently working on two projects that apply these capabilities in practice. The first, with the NSW Institute of Sport (NSWIS), aims to use generative AI to analyse qualitative data from coach-athlete debriefs. These conversations contain rich insights about athlete wellbeing, training load perceptions, and performance reflections, but they are rarely captured in a structured way. By transcribing and analysing these debriefs at scale, the goal is to surface patterns and themes that would otherwise remain locked in individual conversations. The second project, with Rugby Australia, focuses on analysing open-ended survey responses. Surveys generate large volumes of free-text data that is labour-intensive to code manually. Generative AI can identify recurring themes, sentiment shifts, and outlier responses across hundreds or thousands of responses in minutes rather than days.
+I am currently working on two projects that apply these capabilities in practice. The first, with the NSW Institute of Sport (NSWIS), aims to use generative AI to analyse qualitative data from coach-athlete debriefs. These conversations contain rich insights about athlete wellbeing, training load perceptions, and performance reflections, but they are rarely captured in a structured way. The goal is to examine the distribution of conversation across technical, tactical, physical, and mental domains, which can reveal how coaches and athletes allocate their attention and whether that distribution shifts over time or across performance contexts. The second project, with Rugby Australia, focuses on analysing open-ended survey responses. Surveys generate large volumes of free-text data that is labour-intensive to code manually. Generative AI can surface recurring themes across hundreds or thousands of responses in minutes rather than days.
 
-Both projects are still in progress, but they illustrate the practical direction this technology is heading for Australian sport. The organisations that build workflows around qualitative data analysis now will have a significant advantage as these tools continue to improve.
+Both projects are still in progress, but they illustrate the practical direction this technology is heading for Australian sport. 
 
 ### Fan Engagement and Automated Highlights
 
-Content creation is one of the biggest resource demands facing sporting organisations, particularly for digital and social media channels. Fans expect frequent, high-quality content, but most organisations lack the production capacity to deliver it consistently.
+Content creation is one of the biggest resource demands facing sporting organisations, particularly for digital and social media channels. Fans expect frequent content, but most organisations lack the production capacity to deliver it consistently.
 
-In my view, many Australian sports still cater almost exclusively to older audiences and have virtually zero presence on the platforms that younger generations use. Short-form video on TikTok, YouTube Shorts, and Instagram Reels is where younger fans discover and engage with sport, and most Australian sporting organisations are not there in any meaningful way. Organisations looking for a benchmark should study the UFC, which has been remarkably effective at engaging younger audiences through aggressive, platform-native content strategies that meet fans where they already are. Content streamers on platforms like Twitch.tv and Kick.com offer another model worth studying. Many streamers use automated clipping tools (or dedicated community "clippers") to extract the most entertaining moments from hours of live content and distribute those clips across TikTok, YouTube Shorts, and Instagram Reels on their behalf. Each clip acts as low-effort promotional content with a built-in call to action: come watch the live stream. This strategy lets a single creator maintain a constant presence across multiple platforms without personally producing content for each one. It is an effective engagement funnel, and there is no reason sporting organisations could not adopt the same approach with match footage, training content, or behind-the-scenes access.
+In my view, many Australian sports still cater almost exclusively to older audiences and have virtually zero presence on the platforms that younger generations use. Short-form video on TikTok, YouTube Shorts, and Instagram Reels is where younger fans discover and engage with sport, and most Australian sporting organisations are not there in any meaningful way. Organisations looking for a benchmark should study the UFC, which has been remarkably effective at engaging younger audiences through aggressive, platform-native content strategies that meet fans where they already are. Content streamers on platforms like Twitch.tv and Kick.com offer another model worth studying. Many streamers have dedicated community clippers who extract the most entertaining moments from hours of live content and distribute those clips across TikTok, YouTube Shorts, and Instagram Reels on the streamer's behalf. Each clip acts as low-effort promotional content with a built-in call to action: come watch the live stream. This strategy lets a single creator maintain a constant presence across multiple platforms without personally producing content for each one. It is an effective engagement funnel, and there is no reason sporting organisations could not adopt the same approach with match footage, training content, or behind-the-scenes access.
 
 Video understanding can automate parts of this workflow. A model could process a full match broadcast or training session recording, identify the most visually compelling or tactically significant moments (a spectacular try, a crucial save, a training drill gone right), and extract those clips with suggested captions and hashtags.
 
 This does not replace a skilled content producer. But it can generate a first pass of highlight candidates that a social media manager can review, select from, and publish. For an organisation that currently has one person managing content across multiple platforms, automating the initial identification and clipping of highlights could be the difference between posting one piece of content per day and posting five.
 
+<iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/lyHUiC9jmPs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
 ### Self-Service Data Dashboards
 
 Sporting organisations generate and store data across a wide range of systems: registration platforms, athlete management systems, CRMs, ticketing platforms, finance software, survey tools, and yes, spreadsheets. Much of this data sits untouched because the people who need insights from it do not have the technical skills to extract, transform, and visualise it. Turning data from any of these sources into an interactive dashboard has traditionally required a developer or data analyst, a business intelligence tool, or an expensive consultancy.
 
-Code generation changes this. Tools like Claude Code allow a non-technical staff member to describe what they want in plain language ("show me participation trends by region and age group over the last three years, with the ability to filter by gender and compare to national averages") and receive a fully interactive application built from their data. This could be a web dashboard, a Streamlit app, a Shiny app, or any other data application. The model writes the code, sets up the project, and delivers a working product. The data can come from a CSV export, a database connection, an API, or any other structured source.
+Code generation changes this. Tools like Claude Code allow a non-technical staff member to describe what they want in plain English ("show me participation trends by region and age group over the last three years, with the ability to filter by gender and compare to national averages") and receive a fully interactive application built from their data. This could be a web dashboard, a Streamlit app, a Shiny app, or any other data application. The model writes the code, sets up the project, and delivers a working product. The data can come from a CSV export, a database connection, an API, or any other structured source.
 
-I demonstrated this in my earlier post, [Claude Opus 4.6 and Claude Code: A Game Changer for Sport Data Analytics](/posts/claude-opus-4.6-for-sports-analytics/), where I built an interactive dashboard from 48,000 football matches in 40 minutes for $15 AUD. The important point for sport leaders is that this is a repeatable pattern, not a one-off demonstration. Any staff member with a dataset and a clear question can now build their own analytics tool. A community sport manager could visualise registration trends across regions. A commercial team could build an interactive sponsorship valuation report. A high-performance unit could create a tool that tracks athlete workload across a season. Each of these would previously have required a dedicated analyst or contractor. Now they require someone who can clearly articulate what they want to see.
+I demonstrated this in my earlier post, [Claude Opus 4.6 and Claude Code: A Game Changer for Sport Data Analytics](/posts/claude-opus-4.6-for-sports-analytics/), where I built an interactive dashboard from 48,000 football matches in 40 minutes for $15 AUD. The important point for sport leaders is that this is a repeatable pattern, not a one-off demonstration. Any staff member with a dataset and a clear question can now build their own analytics tool.
 
 ### Once-off Analytics with Claude in PowerPoint
 
-Often, a manager just needs a quick summary of trends, a few charts, and a clear narrative to present at a meeting. In these cases, a PowerPoint is the right output, not a dashboard.
+Not every analytical need warrants a permanent dashboard. In many organisational contexts, a structured presentation is a more appropriate output: a summary of trends, key charts, and a clear narrative prepared for a specific meeting or stakeholder audience.
 
-Claude in PowerPoint has the capability to take raw data files (such as CSVs or Excel exports) and transform them into a fully structured presentation. You can provide a dataset and describe what you need ("create a presentation showing registration trends by region over the last three years, with a summary slide highlighting the key takeaways"), and the model will generate slides with charts, tables, and written commentary. What would normally take an analyst hours of manual formatting can be produced in minutes.
+Claude in PowerPoint can accept raw data files, such as CSV or Excel exports, and generate a fully structured presentation from them. Given a dataset and a brief description of the required output, the model produces slides with charts, tables, and written commentary. Analytical tasks that would previously require considerable time to format and structure manually can be completed in a fraction of the time.
 
 <video width="100%" controls preload="metadata">
   <source src="/assets/videos/claudeinpowerpoint.mp4" type="video/mp4">
