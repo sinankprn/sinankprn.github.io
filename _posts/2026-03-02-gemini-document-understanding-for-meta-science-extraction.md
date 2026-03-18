@@ -32,7 +32,7 @@ Standard vision models process an image in a single static pass. If a fine-grain
 
 #### 1.3. Can Gemini's spatial understanding appropriately identify the bounding boxes with native vision?
 
-Gemini supports object detection: given an image, it can identify prominent elements and return their bounding box coordinates. Applied to a PDF page rendered as an image, this provides a way to see what the model is actually attending to. Rather than treating extraction as a black box, bounding boxes make the model's spatial reasoning visible and inspectable. If the model extracts a wrong value, the bounding boxes reveal whether it was looking at the right region of the page at all. This turns a previously opaque failure into a diagnosable one, and is the same interpretability argument made for derendering: separating the steps makes errors attributable.
+Gemini supports object detection: given an image, it can identify prominent elements and return their bounding box coordinates. Applied to a PDF page rendered as an image, this provides a way to see what the model is actually attending to. Rather than treating extraction as a black box, bounding boxes make the model's spatial reasoning visible and inspectable. If the model extracts a wrong value, the bounding boxes reveal whether it was looking at the right region of the page at all. This turns a previously opaque failure into a diagnosable one.
 
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/kbWTJ3VoDXg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
