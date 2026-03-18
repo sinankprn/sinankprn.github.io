@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Roadmap for Gemini-Powered Meta-Science Extraction Tasks"
-date: 2026-03-02 09:00:00 +1100
+date: 2026-03-18 08:00:00 +1100
 categories: [Large Language Models]
 tags: [AI, Gemini, PDF, Meta-Science, Document Understanding, Research]
 pin: false
