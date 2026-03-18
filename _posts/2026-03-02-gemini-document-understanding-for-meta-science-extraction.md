@@ -16,6 +16,8 @@ I would add that the field is poorly documented: many studies do not explicitly 
 
 Gemini models offer a different approach. They have [native vision](https://ai.google.dev/gemini-api/docs/document-processing) to understand PDFs directly, reasoning over both the visual layout and the text as a whole, rather than parsing the text alone. They also support [derendering](https://blog.google/innovation-and-ai/technology/developers-tools/gemini-3-pro-vision/): converting a rendered visual (a table, figure, or equation) back into a structured format such as Markdown, HTML, SVG, or LaTeX. Together, these capabilities make Gemini models a plausible tool for automating the extraction tasks. Whether they are reliable enough in practice is what needs to be tested.
 
+> I started writing this blog about three weeks ago but it seems that now GPT 5.4 also offers a similar capability. This might also be worth exploring. See [GPT 5.4 Vision and Document Understanding](https://developers.openai.com/cookbook/examples/multimodal/document_and_multimodal_understanding_tips)
+
 ## Roadmap
 
 > The video demonstrations below were produced using [Google AI Studio](https://aistudio.google.com/), a browser-based rapid-prototyping environment for experimenting with Google's Gemini multimodal models. It allows users to design prompts, adjust model parameters, and explore capabilities, often without needing to write code.
