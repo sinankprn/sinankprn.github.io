@@ -10,7 +10,7 @@ description: "A roadmap of empirical questions for using Gemini's document under
 
 Many researchers are attempting to automate journal article extraction using large language models, but the pipelines they build typically rely on traditional libraries to first read the PDF and convert it to text. Tools such as PyMuPDF and GROBID are widely used for this purpose, yet both can be unreliable on the complex layouts of journal articles, misreading tables, dropping figures, mangling equations, and losing the structural hierarchy that gives the extracted data its meaning. The quality of what a language model can extract is only as good as the text it is given.
 
-Recently I had the opportunity to speak with Paul Litvak through John Warmenhoven and Franco Impellizzeri. Paul noted that a clear research roadmap for this area would be valuable. 
+Recently I had the opportunity to speak with Paul Litvak through John Warmenhoven and Franco Impellizzeri. Paul is the founder and executive director of [The Robyn Dawes Institute](https://robyndawesinstitute.org/), an independent organisation that makes research quality transparent and usable at scale, providing tools to analyse papers, run rigorous checks, and surface the most reliable findings for researchers, journalists, policymakers, and the public. Paul noted that a clear research roadmap for this area would be valuable.
 
 I would add that the field is poorly documented: many studies do not explicitly report their methods, despite the method being the most important contribution, more so than the results themselves. Some are using techniques that do not even operate on the full article, which undermines the value of the approach entirely. When methods are opaque, a poor result cannot be diagnosed: it is impossible to know whether the failure is an LLM issue or a data preprocessing issue. This post is an attempt to lay out the empirical questions that need to be answered, and to offer techniques that can account for the full journal article.
 
@@ -24,13 +24,13 @@ The baseline question is whether passing the PDF directly to Gemini via native v
 
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/oTQfn9kyorg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-### 1.2. Can using Agentic Vision with Documents improve accuracy?
+#### 1.2. Can using Agentic Vision with Documents improve accuracy?
 
 Standard vision models process an image in a single static pass. If a fine-grained detail is missed, the model is forced to guess. [Agentic Vision](https://blog.google/innovation-and-ai/technology/developers-tools/agentic-vision-gemini-3-flash/) in Gemini 3 Flash changes this by treating image understanding as an active, iterative investigation rather than a one-shot inference. It introduces a Think, Act, Observe loop: the model analyses the image and formulates a plan, executes Python code to manipulate or inspect it (cropping, annotating, rotating, running calculations), then appends the result back into its context window before generating a response. Enabling code execution with Gemini 3 Flash has been reported to deliver a consistent 5–10% quality boost across vision benchmarks. Applied to document understanding, the question is whether this agentic process, zooming into dense tables, isolating figure regions, grounding reasoning in visual evidence, translates into meaningfully higher extraction accuracy for extraction tasks.
 
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/BCdkpaymi2c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-### 1.3. Can Gemini's spatial understanding appropriately identify the bounding boxes with native vision?
+#### 1.3. Can Gemini's spatial understanding appropriately identify the bounding boxes with native vision?
 
 Gemini supports object detection: given an image, it can identify prominent elements and return their bounding box coordinates. Applied to a PDF page rendered as an image, this provides a way to see what the model is actually attending to. Rather than treating extraction as a black box, bounding boxes make the model's spatial reasoning visible and inspectable. If the model extracts a wrong value, the bounding boxes reveal whether it was looking at the right region of the page at all. This turns a previously opaque failure into a diagnosable one, and is the same interpretability argument made for derendering: separating the steps makes errors attributable.
 
