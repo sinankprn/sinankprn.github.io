@@ -24,13 +24,13 @@ The baseline question is whether passing the PDF directly to Gemini via native v
 
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/oTQfn9kyorg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-### 1.2 Can using Agentic Vision with Documents improve accuracy?
+### 1.2. Can using Agentic Vision with Documents improve accuracy?
 
 Standard vision models process an image in a single static pass. If a fine-grained detail is missed, the model is forced to guess. [Agentic Vision](https://blog.google/innovation-and-ai/technology/developers-tools/agentic-vision-gemini-3-flash/) in Gemini 3 Flash changes this by treating image understanding as an active, iterative investigation rather than a one-shot inference. It introduces a Think, Act, Observe loop: the model analyses the image and formulates a plan, executes Python code to manipulate or inspect it (cropping, annotating, rotating, running calculations), then appends the result back into its context window before generating a response. Enabling code execution with Gemini 3 Flash has been reported to deliver a consistent 5–10% quality boost across vision benchmarks. Applied to document understanding, the question is whether this agentic process, zooming into dense tables, isolating figure regions, grounding reasoning in visual evidence, translates into meaningfully higher extraction accuracy for extraction tasks.
 
 <iframe width="100%" height="468" src="https://www.youtube-nocookie.com/embed/BCdkpaymi2c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
 
-### 1.3 Can Gemini's spatial understanding appropriately identify the bounding boxes with native vision?
+### 1.3. Can Gemini's spatial understanding appropriately identify the bounding boxes with native vision?
 
 Gemini supports object detection: given an image, it can identify prominent elements and return their bounding box coordinates. Applied to a PDF page rendered as an image, this provides a way to see what the model is actually attending to. Rather than treating extraction as a black box, bounding boxes make the model's spatial reasoning visible and inspectable. If the model extracts a wrong value, the bounding boxes reveal whether it was looking at the right region of the page at all. This turns a previously opaque failure into a diagnosable one, and is the same interpretability argument made for derendering: separating the steps makes errors attributable.
 
