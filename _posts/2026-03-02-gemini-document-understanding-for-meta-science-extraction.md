@@ -18,6 +18,8 @@ Gemini models offer a different approach. They have [native vision](https://ai.g
 
 ## Roadmap
 
+> The video demonstrations below were produced using [Google AI Studio](https://aistudio.google.com/), a browser-based rapid-prototyping environment for experimenting with Google's Gemini multimodal models. It allows users to design prompts, adjust model parameters, and explore capabilities, often without needing to write code.
+
 ### 1. Is Gemini's native vision sufficient, and if not, does derendering help?
 
 The baseline question is whether passing the PDF directly to Gemini via native vision and asking for structured extraction is already accurate enough. This needs to be tested with different media resolutions (low, medium, high). If it is, derendering adds complexity without benefit.
