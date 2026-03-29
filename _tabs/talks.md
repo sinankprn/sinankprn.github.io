@@ -6,6 +6,11 @@ description: "Conference presentations and talks by Sinan Koparan on AI, large l
 ---
 
 
+## Generative AI for Biomechanists
+
+*Australian Institute of Sports Biomechanics Network - 2026*
+[Slides (PDF)](/assets/presentations/generativeaiforbiomechanists2026.pdf)
+
 ## Technical Considerations for Reliable Studies Using Large Language Models
 
 *Faculty of Health GenAI-Enhance Summit, UTS - 2026*  
