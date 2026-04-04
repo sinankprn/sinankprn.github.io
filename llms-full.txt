@@ -1,0 +1,61 @@
+---
+layout: null
+permalink: /llms-full.txt
+---
+# {{ site.title }}
+
+> {{ site.description }}
+
+## About
+
+{{ site.title }} is a PhD candidate focused on leveraging data science and AI to drive insights in community sport analytics. His research combines statistical modelling, machine learning, and practical applications to help organisations make informed, data-driven decisions.
+
+- Website: {{ site.url }}
+- Email: sinan.koparan@uts.edu.au
+- GitHub: https://github.com/{{ site.github.username }}
+- LinkedIn: https://www.linkedin.com/in/sinankprn
+
+## Expertise Areas
+
+- Sports Data Science and Analytics
+- Large Language Models for Research
+- Community Sport Participation Analysis
+- AI Tools for Academic Workflows
+- Machine Learning and Statistical Modelling
+- Full-Stack Development (Python, JavaScript, React)
+
+## Affiliations
+
+- University of Technology Sydney (PhD Candidate)
+- CSIRO Data61 (Research Partner)
+- Rugby Australia (Industry Partner)
+
+## Navigation
+{% for tab in site.tabs %}
+- [{{ tab.title | default: tab.slug | capitalize }}]({{ site.url }}{{ tab.url }})
+{%- endfor %}
+
+## Blog Posts
+{% for post in site.posts %}{% unless post.tags contains "projects" %}
+### {{ post.title }}
+{{ post.description | default: post.excerpt | strip_html | truncate: 200 }}
+- [Read more]({{ site.url }}{{ post.url }})
+
+{{ post.content | strip_html | strip_newlines | truncate: 2000 }}
+
+---
+{% endunless %}{% endfor %}
+
+## Projects
+{% for post in site.posts %}{% if post.tags contains "projects" %}
+### {{ post.title }}
+{{ post.description | default: post.excerpt | strip_html | truncate: 200 }}
+- [Read more]({{ site.url }}{{ post.url }})
+
+{{ post.content | strip_html | strip_newlines | truncate: 2000 }}
+
+---
+{% endif %}{% endfor %}
+
+## Tags
+{% for tag in site.tags %}{{ tag[0] }}{% unless forloop.last %}, {% endunless %}{% endfor %}
