@@ -88,6 +88,75 @@
   opacity: 0.8;
 }
 
+/* Publication Cards */
+.pub-card {
+  background: var(--card-bg);
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: box-shadow 0.2s;
+}
+
+.pub-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.pub-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--heading-color);
+  line-height: 1.4;
+}
+
+.pub-card .pub-authors {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin-bottom: 0.35rem;
+  line-height: 1.5;
+}
+
+.pub-card .pub-authors strong {
+  color: var(--link-color);
+}
+
+.pub-card .pub-venue {
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pub-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--link-color);
+  border-radius: 2rem;
+  color: var(--link-color);
+  background: transparent;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.15s;
+}
+
+.pub-links a:hover {
+  background: color-mix(in srgb, var(--link-color) 12%, transparent);
+  color: var(--link-color);
+  border-color: color-mix(in srgb, var(--link-color) 70%, transparent);
+  transform: translateY(-1px);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--link-color) 15%, transparent);
+}
+
 /* Mobile: Stack vertically */
 @media (max-width: 480px) {
   .newsletter-signup {
