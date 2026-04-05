@@ -28,4 +28,8 @@ assets/js/dist
 
 .claude/
 
-assets/videos
+nul
+
+# Shorts pipeline
+.env
+shorts/
