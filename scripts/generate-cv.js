@@ -56,7 +56,7 @@ const positionsTeX = positions
     }
     return tex;
   })
-  .join("\n\n\\vspace{0.3em}\n\n");
+  .join("\n\n\\vspace{0.5em}\n\n");
 
 const publicationsTeX = publications
   .map((p) => {
@@ -83,7 +83,7 @@ GPA: ${texEscape(e.gpa)}`;
     }
     return tex;
   })
-  .join("\n\n\\vspace{0.15em}\n\n");
+  .join("\n\n\\vspace{0.4em}\n\n");
 
 const talksTeX = talks
   .map((t) => {
@@ -128,13 +128,14 @@ const tex = `\\documentclass[11pt, a4paper]{article}
   urlcolor=blue
 }
 
-\\titleformat{\\section}{\\large\\bfseries\\color{sectioncolor}}{}{0em}{}[\\vspace{0.15em}{\\color{rulecolor}\\hrule}\\vspace{0.25em}]
-\\titlespacing{\\section}{0pt}{0.8em}{0em}
+\\titleformat{\\section}{\\large\\bfseries\\color{sectioncolor}}{}{0em}{}[\\vspace{0.2em}{\\color{rulecolor}\\hrule}\\vspace{0.3em}]
+\\titlespacing{\\section}{0pt}{1.2em}{0.1em}
 
-\\setlength{\\parskip}{0.4em}
+\\setlength{\\parskip}{0.5em}
 \\setlength{\\parindent}{0pt}
 
-\\setlist[itemize]{nosep, topsep=0.2em, left=1.5em, itemsep=0.15em}
+\\setlist[itemize]{nosep, topsep=0.3em, left=1.5em, itemsep=0.25em}
+\\renewcommand{\\baselinestretch}{1.1}
 
 \\pagestyle{empty}
 
