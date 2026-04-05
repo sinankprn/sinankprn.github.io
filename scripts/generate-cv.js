@@ -18,9 +18,6 @@ const awards = load("awards.yml");
 const supervision = load("supervision.yml");
 
 const cv = `---
-title: "${profile.name}"
-subtitle: "${profile.headline}"
-author: "${profile.contact.join(" | ")}"
 geometry: margin=2cm
 fontsize: 11pt
 linkcolor: blue
@@ -31,8 +28,18 @@ header-includes: |
   \\titlespacing{\\section}{0pt}{0.6em}{0.3em}
   \\titlespacing{\\subsection}{0pt}{0.4em}{0.2em}
   \\setlength{\\parskip}{0.15em}
-  \\AtBeginDocument{\\vspace{-2em}}
+  \\pagestyle{empty}
 ---
+
+\\begin{center}
+{\\LARGE \\textbf{${profile.name}}}\\\\[0.2em]
+${profile.headline}\\\\[0.15em]
+{\\small ${profile.contact.join(" $|$ ")}}
+\\end{center}
+
+\\vspace{0.3em}
+\\hrule
+\\vspace{0.3em}
 
 ## Profile
 
