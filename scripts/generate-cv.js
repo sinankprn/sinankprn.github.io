@@ -19,23 +19,26 @@ const supervision = load("supervision.yml");
 
 const cv = `---
 title: "${profile.name}"
-geometry: margin=2.5cm
+geometry: margin=2cm
 fontsize: 11pt
 linkcolor: blue
 urlcolor: blue
 colorlinks: true
+header-includes: |
+  \\usepackage{titlesec}
+  \\titlespacing{\\section}{0pt}{1.2em}{0.4em}
+  \\titlespacing{\\subsection}{0pt}{0.8em}{0.3em}
+  \\setlength{\\parskip}{0.3em}
 ---
 
 **${profile.headline}**\\
-${profile.contact.join(" · ")}
+${profile.contact.join(" \\textbar{} ")}
 
 ---
 
-## Research Profile
+## Profile
 
 ${profile.research_profile.trim()}
-
----
 
 ## Education
 
@@ -53,9 +56,11 @@ GPA: ${e.gpa}`;
   })
   .join("\n\n")}
 
----
+## Technical Skills
 
-## Research Positions
+${skills.map((s) => `**${s.category}:** ${s.items}`).join("\\\n")}
+
+## Research Experience
 
 ${positions
   .map((p) => {
@@ -68,8 +73,6 @@ ${p.organisation} · ${p.period}`;
   })
   .join("\n\n")}
 
----
-
 ## Publications
 
 ${publications
@@ -78,8 +81,6 @@ ${publications
     return `${p.authors_cv} (${p.year}). *${p.title}*. ${p.venue}. ${links}`;
   })
   .join("\n\n")}
-
----
 
 ## Conference Presentations
 
@@ -90,23 +91,13 @@ ${t.venue} · ${t.year}`;
   })
   .join("\n\n")}
 
----
+## Awards & Honours
+
+${awards.map((a) => `${a.title} — ${a.institution} · ${a.years}`).join("\n\n")}
 
 ## Supervision
 
 ${supervision.map((s) => s.description).join("\n\n")}
-
----
-
-## Technical Skills
-
-${skills.map((s) => `**${s.category}:** ${s.items}`).join("\n\n")}
-
----
-
-## Awards & Honours
-
-${awards.map((a) => `${a.title} — ${a.institution} · ${a.years}`).join("\n\n")}
 `;
 
 const outputPath = path.join(__dirname, "..", "cv.md");

@@ -1,24 +1,27 @@
 ---
 title: "Sinan Koparan"
-geometry: margin=2.5cm
+geometry: margin=2cm
 fontsize: 11pt
 linkcolor: blue
 urlcolor: blue
 colorlinks: true
+header-includes: |
+  \usepackage{titlesec}
+  \titlespacing{\section}{0pt}{1.2em}{0.4em}
+  \titlespacing{\subsection}{0pt}{0.8em}{0.3em}
+  \setlength{\parskip}{0.3em}
 ---
 
 **PhD Candidate · Sports Data Science & AI · University of Technology Sydney**\
-sinan.koparan@uts.edu.au · linkedin.com/in/sinankprn · github.com/sinankprn
+sinan.koparan@uts.edu.au \textbar{} linkedin.com/in/sinankprn \textbar{} github.com/sinankprn
 
 ---
 
-## Research Profile
+## Profile
 
 I am a PhD Candidate in Sports Data Science and AI in the Next Generation Graduates Program (NGGP), supported by CSIRO Data61 and Rugby Australia. My research investigates how data science and machine learning can be used to strengthen community sport participation by identifying how club organisational characteristics influence participation growth and retention. The aim is to help national sporting organisations make evidence-based resource allocation decisions to improve retention, grow participation, and support long-term club sustainability.
 
 Alongside my PhD, I work as a Research Assistant on an applied AI project in partnership with the NSW Institute of Sport (NSWIS), exploring how Large Language Models can be leveraged in coach and athlete environments to automate content analysis and support more efficient insight generation and decision-making.
-
----
 
 ## Education
 
@@ -33,9 +36,14 @@ GPA: 6.574 / 7 · Dean's Merit Award: 2021, 2022, 2023
 **Bachelor of Business** — Management\
 Western Sydney University
 
----
+## Technical Skills
 
-## Research Positions
+**Languages:** Python, JavaScript, TypeScript, SQL\
+**Machine Learning & AI:** Scikit-learn, PyTorch, LLMs, Agents, LangChain, OpenAI API, Google Gemini API, RAG Systems\
+**Data & Analytics:** Pandas, NumPy, Statistical Modelling, Data Visualisation\
+**Development & Tools:** React, Node.js, Express, Git, REST APIs
+
+## Research Experience
 
 **PhD Candidate / Embedded Research Partner**\
 Rugby Australia Community Rugby · University of Technology Sydney · 2024 – present
@@ -51,8 +59,6 @@ NSW Institute of Sport (NSWIS) · University of Technology Sydney · 2024 – pr
 - Exploring the application of Large Language Models in coach and athlete environments
 - Developing methods for automating content analysis to support insight generation and decision-making
 
----
-
 ## Publications
 
 Schulenkorf, N., Koparan, S., English, M., Sharp, P., Sixsmith, H., Wood, L. M., Farhart, P., & Caperchione, C. M. (2026). *Participant perceptions of HAT TRICK™ Cricket: a culturally-adapted intervention for men with South Asian backgrounds in Australia*. Health Promotion International, 41(1), February 2026. [Open Access](https://doi.org/10.1093/heapro/daag001)
@@ -60,8 +66,6 @@ Schulenkorf, N., Koparan, S., English, M., Sharp, P., Sixsmith, H., Wood, L. M.,
 Liu, A., Hook, A., Duffus, B., Davis, F., Hsu, H.-M., Israel, I., Donovan, J., Parker, M., Stibbe, M., Wu, M., Wilde, P., Fullinfaw, P., Uchino-Hansen, R., Koparan, S., Lind, T., Gavrielatos, T., Pestrivas, T., & Sutton, W. Eds: Mengersen, K., Wu, P., Mehta, D., Carson-Flynn, F., & Duwalage, K. I. (2026). *AusiSTAR: The NextGen Playbook 2025*. Queensland University of Technology, March 2026. [Open Access](https://qut.pressbooks.pub/ausistar-nextgen-playbook-2025/)
 
 Koparan, S. & Javadi, B. (2024). *DeepRacer on Physical Track: Parameters Exploration and Performance Evaluation*. arXiv preprint, June 2024. [Open Access](https://arxiv.org/abs/2406.03769) · [GitHub](https://github.com/SDC-Lab/DeepRacer-Models)
-
----
 
 ## Conference Presentations
 
@@ -74,26 +78,10 @@ Faculty of Health GenAI-Enhance Summit, UTS · 2026
 **The Anatomy of a Thriving Club: Organisational Characteristics Supporting Retention and Growth**\
 STARS, Australian Sports Commission · 2025
 
----
+## Awards & Honours
+
+Dean's Merit Award — Western Sydney University · 2021, 2022, 2023
 
 ## Supervision
 
 Currently supervising undergraduate students on capstone research projects in sports data science and AI.
-
----
-
-## Technical Skills
-
-**Languages:** Python, JavaScript, TypeScript, SQL
-
-**Machine Learning & AI:** Scikit-learn, PyTorch, LLMs, Agents, LangChain, OpenAI API, Google Gemini API, RAG Systems
-
-**Data & Analytics:** Pandas, NumPy, Statistical Modelling, Data Visualisation
-
-**Development & Tools:** React, Node.js, Express, Git, REST APIs
-
----
-
-## Awards & Honours
-
-Dean's Merit Award — Western Sydney University · 2021, 2022, 2023
