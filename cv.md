@@ -1,32 +1,11 @@
 ---
-geometry: margin=1.8cm
-fontsize: 11pt
-linkcolor: blue
-urlcolor: blue
-colorlinks: true
-header-includes: |
-  \usepackage{titlesec}
-  \usepackage{enumitem}
-  \usepackage{xcolor}
-  \definecolor{sectioncolor}{RGB}{40, 40, 40}
-  \definecolor{rulecolor}{RGB}{180, 180, 180}
-  \titleformat{\section}{\large\bfseries\color{sectioncolor}}{}{0em}{}[\vspace{0.15em}{\color{rulecolor}\hrule}\vspace{0.25em}]
-  \titlespacing{\section}{0pt}{0.8em}{0em}
-  \setlength{\parskip}{0.4em}
-  \setlength{\parindent}{0pt}
-  \setlist[itemize]{nosep, topsep=0.2em, left=1.5em, itemsep=0.15em}
-  \pagestyle{empty}
+title: "Sinan Koparan"
 ---
 
-\begin{center}
-{\LARGE \textbf{Sinan Koparan}}\\[0.3em]
-{\normalsize PhD Candidate | Sports Data Science \& AI | University of Technology Sydney}\\[0.2em]
-{\small sinan.koparan@uts.edu.au $\,|\,$ linkedin.com/in/sinankprn $\,|\,$ github.com/sinankprn}
-\end{center}
+**PhD Candidate | Sports Data Science & AI | University of Technology Sydney**\
+sinan.koparan@uts.edu.au | linkedin.com/in/sinankprn | github.com/sinankprn
 
-\vspace{0.2em}
-{\color{rulecolor}\hrule height 0.5pt}
-\vspace{0.5em}
+---
 
 ## Profile
 
@@ -36,18 +15,16 @@ Alongside my PhD, I work as a Research Assistant on an applied AI project in par
 
 ## Research Experience
 
-**PhD Candidate / Embedded Research Partner**\
-*Rugby Australia Community Rugby · University of Technology Sydney* \hfill 2024 – present
+**PhD Candidate / Embedded Research Partner** — 2024 – present\
+*Rugby Australia Community Rugby · University of Technology Sydney*
 
 - Investigating club organisational characteristics and their influence on participation growth and retention in community sport
 - Embedded with the Rugby Australia Community Rugby team, translating data insights into actionable strategies
 - Developing interactive dashboards and visualisations to monitor participation, retention, and club performance
 - Collaborating directly with the national team to identify key challenges and data needs
 
-\vspace{0.3em}
-
-**Research Assistant — Applied AI in Sport**\
-*NSW Institute of Sport (NSWIS) · University of Technology Sydney* \hfill 2024 – present
+**Research Assistant — Applied AI in Sport** — 2024 – present\
+*NSW Institute of Sport (NSWIS) · University of Technology Sydney*
 
 - Exploring the application of Large Language Models in coach and athlete environments
 - Developing methods for automating content analysis to support insight generation and decision-making
@@ -63,41 +40,37 @@ Koparan, S. & Javadi, B. (2024). *DeepRacer on Physical Track: Parameters Explor
 ## Education
 
 **Doctor of Philosophy (PhD)** — Sports Data Science & AI\
-*University of Technology Sydney* \hfill 2023 – present\
+*University of Technology Sydney* · 2023 – present\
 Next Generation Graduates Program, supported by CSIRO Data61 & Rugby Australia
-
-\vspace{0.15em}
 
 **Master of Information and Communications Technology** — Artificial Intelligence & Cloud Computing\
 *Western Sydney University*\
 GPA: 6.574 / 7 · Dean's Merit Award: 2021, 2022, 2023
-
-\vspace{0.15em}
 
 **Bachelor of Business** — Management\
 *Western Sydney University*
 
 ## Conference Presentations
 
-**Generative AI for Biomechanists**\
-*Australian Institute of Sports Biomechanics Network* \hfill 2026
+**Generative AI for Biomechanists** — 2026\
+*Australian Institute of Sports Biomechanics Network*
 
-**Technical Considerations for Reliable Studies Using Large Language Models**\
-*Faculty of Health GenAI-Enhance Summit, UTS* \hfill 2026
+**Technical Considerations for Reliable Studies Using Large Language Models** — 2026\
+*Faculty of Health GenAI-Enhance Summit, UTS*
 
-**The Anatomy of a Thriving Club: Organisational Characteristics Supporting Retention and Growth**\
-*STARS, Australian Sports Commission* \hfill 2025
+**The Anatomy of a Thriving Club: Organisational Characteristics Supporting Retention and Growth** — 2025\
+*STARS, Australian Sports Commission*
 
 ## Technical Skills
 
-**Languages:** Python, JavaScript, TypeScript, SQL\\\relax
-**Machine Learning & AI:** Scikit-learn, PyTorch, LLMs, Agents, LangChain, OpenAI API, Google Gemini API, RAG Systems\\\relax
-**Data & Analytics:** Pandas, NumPy, Statistical Modelling, Data Visualisation\\\relax
+**Languages:** Python, JavaScript, TypeScript, SQL  
+**Machine Learning & AI:** Scikit-learn, PyTorch, LLMs, Agents, LangChain, OpenAI API, Google Gemini API, RAG Systems  
+**Data & Analytics:** Pandas, NumPy, Statistical Modelling, Data Visualisation  
 **Development & Tools:** React, Node.js, Express, Git, REST APIs
 
-## Awards \& Honours
+## Awards & Honours
 
-**Dean's Merit Award** — Western Sydney University \hfill 2021, 2022, 2023
+**Dean's Merit Award** — Western Sydney University · 2021, 2022, 2023
 
 ## Supervision
 

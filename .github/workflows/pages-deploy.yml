@@ -9,6 +9,7 @@ on:
       - README.md
       - LICENSE
       - cv.md
+      - cv.tex
       - assets/docs/cv.pdf
 
   # Allows you to run this workflow manually from the Actions tab

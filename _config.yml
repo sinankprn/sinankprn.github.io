@@ -206,6 +206,7 @@ compress_html:
 
 exclude:
   - cv.md
+  - cv.tex
   - "*.gem"
   - "*.gemspec"
   - docs
