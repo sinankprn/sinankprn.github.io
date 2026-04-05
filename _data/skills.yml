@@ -1,0 +1,11 @@
+- category: "Languages"
+  items: "Python, JavaScript, TypeScript, SQL"
+
+- category: "Machine Learning & AI"
+  items: "Scikit-learn, PyTorch, LLMs, Agents, LangChain, OpenAI API, Google Gemini API, RAG Systems"
+
+- category: "Data & Analytics"
+  items: "Pandas, NumPy, Statistical Modelling, Data Visualisation"
+
+- category: "Development & Tools"
+  items: "React, Node.js, Express, Git, REST APIs"

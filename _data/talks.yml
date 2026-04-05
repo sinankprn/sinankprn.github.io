@@ -1,0 +1,23 @@
+- title: "Generative AI for Biomechanists"
+  venue: "Australian Institute of Sports Biomechanics Network"
+  year: 2026
+  links:
+    - label: Slides
+      url: "/assets/presentations/generativeaiforbiomechanists2026.pdf"
+      icon: "fas fa-file-pdf"
+
+- title: "Technical Considerations for Reliable Studies Using Large Language Models"
+  venue: "Faculty of Health GenAI-Enhance Summit, UTS"
+  year: 2026
+  links:
+    - label: Slides
+      url: "/assets/presentations/genaienhancesummit2026.pdf"
+      icon: "fas fa-file-pdf"
+
+- title: "The Anatomy of a Thriving Club: Organisational Characteristics Supporting Retention and Growth"
+  venue: "STARS, Australian Sports Commission"
+  year: 2025
+  links:
+    - label: Website
+      url: "https://www.ausport.gov.au/services-and-programs/learning-resources/conferences/stars2025"
+      icon: "fas fa-globe"

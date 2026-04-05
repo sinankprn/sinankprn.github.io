@@ -1,0 +1,56 @@
+name: Generate CV PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '_data/profile.yml'
+      - '_data/education.yml'
+      - '_data/positions.yml'
+      - '_data/publications.yml'
+      - '_data/talks.yml'
+      - '_data/skills.yml'
+      - '_data/awards.yml'
+      - '_data/supervision.yml'
+      - 'scripts/generate-cv.js'
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install js-yaml
+        run: npm install js-yaml
+
+      - name: Generate cv.md from data
+        run: node scripts/generate-cv.js
+
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-fonts-extra
+
+      - name: Generate PDF
+        run: |
+          mkdir -p assets/docs
+          pandoc cv.md \
+            --pdf-engine=xelatex \
+            --variable mainfont="DejaVu Serif" \
+            --variable sansfont="DejaVu Sans" \
+            -o assets/docs/cv.pdf
+
+      - name: Commit PDF and cv.md
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: regenerate cv from data"
+          file_pattern: "cv.md assets/docs/cv.pdf"
