@@ -33,7 +33,7 @@ header-includes: |
 
 \\begin{center}
 {\\LARGE \\textbf{${profile.name}}}\\\\[0.2em]
-${profile.headline}\\\\[0.15em]
+${profile.headline.replace(/&/g, "\\&")}\\\\[0.15em]
 {\\small ${profile.contact.join(" $|$ ")}}
 \\end{center}
 

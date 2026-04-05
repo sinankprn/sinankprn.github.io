@@ -14,7 +14,7 @@ header-includes: |
 
 \begin{center}
 {\LARGE \textbf{Sinan Koparan}}\\[0.2em]
-PhD Candidate | Sports Data Science & AI | University of Technology Sydney\\[0.15em]
+PhD Candidate | Sports Data Science \& AI | University of Technology Sydney\\[0.15em]
 {\small sinan.koparan@uts.edu.au $|$ linkedin.com/in/sinankprn $|$ github.com/sinankprn}
 \end{center}
 
