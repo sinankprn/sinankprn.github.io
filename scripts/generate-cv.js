@@ -18,28 +18,34 @@ const awards = load("awards.yml");
 const supervision = load("supervision.yml");
 
 const cv = `---
-geometry: margin=2cm
+geometry: margin=1.8cm
 fontsize: 11pt
 linkcolor: blue
 urlcolor: blue
 colorlinks: true
 header-includes: |
   \\usepackage{titlesec}
-  \\titlespacing{\\section}{0pt}{0.6em}{0.3em}
-  \\titlespacing{\\subsection}{0pt}{0.4em}{0.2em}
-  \\setlength{\\parskip}{0.15em}
+  \\usepackage{enumitem}
+  \\usepackage{xcolor}
+  \\definecolor{sectioncolor}{RGB}{40, 40, 40}
+  \\definecolor{rulecolor}{RGB}{180, 180, 180}
+  \\titleformat{\\section}{\\large\\bfseries\\color{sectioncolor}}{}{0em}{}[\\vspace{0.15em}{\\color{rulecolor}\\hrule}\\vspace{0.25em}]
+  \\titlespacing{\\section}{0pt}{0.8em}{0em}
+  \\setlength{\\parskip}{0.4em}
+  \\setlength{\\parindent}{0pt}
+  \\setlist[itemize]{nosep, topsep=0.2em, left=1.5em, itemsep=0.15em}
   \\pagestyle{empty}
 ---
 
 \\begin{center}
-{\\LARGE \\textbf{${profile.name}}}\\\\[0.2em]
-${profile.headline.replace(/&/g, "\\&")}\\\\[0.15em]
-{\\small ${profile.contact.join(" $|$ ")}}
+{\\LARGE \\textbf{${profile.name}}}\\\\[0.3em]
+{\\normalsize ${profile.headline.replace(/&/g, "\\&")}}\\\\[0.2em]
+{\\small ${profile.contact.join(" $\\,|\\,$ ")}}
 \\end{center}
 
-\\vspace{0.3em}
-\\hrule
-\\vspace{0.3em}
+\\vspace{0.2em}
+{\\color{rulecolor}\\hrule height 0.5pt}
+\\vspace{0.5em}
 
 ## Profile
 
@@ -50,13 +56,13 @@ ${profile.research_profile.trim()}
 ${positions
   .map((p) => {
     let entry = `**${p.title}**\\
-${p.organisation} · ${p.period}`;
+*${p.organisation}* \\hfill ${p.period}`;
     if (p.bullets && p.bullets.length) {
       entry += "\n\n" + p.bullets.map((b) => `- ${b}`).join("\n");
     }
     return entry;
   })
-  .join("\n\n")}
+  .join("\n\n\\vspace{0.3em}\n\n")}
 
 ## Publications
 
@@ -71,9 +77,10 @@ ${publications
 
 ${education
   .map((e) => {
-    let entry = `**${e.degree}** — ${e.field}\\
-${e.institution}`;
-    if (e.period) entry += ` · ${e.period}`;
+    let entry = `**${e.degree}** — ${e.field}`;
+    entry += `\\
+*${e.institution}*`;
+    if (e.period) entry += ` \\hfill ${e.period}`;
     if (e.note) entry += `\\
 ${e.note}`;
     if (e.gpa) entry += `\\
@@ -81,24 +88,24 @@ GPA: ${e.gpa}`;
     if (e.awards) entry += ` · ${e.awards}`;
     return entry;
   })
-  .join("\n\n")}
+  .join("\n\n\\vspace{0.15em}\n\n")}
 
 ## Conference Presentations
 
 ${talks
   .map((t) => {
     return `**${t.title}**\\
-${t.venue} · ${t.year}`;
+*${t.venue}* \\hfill ${t.year}`;
   })
   .join("\n\n")}
 
 ## Technical Skills
 
-${skills.map((s) => `**${s.category}:** ${s.items}`).join("\\\n")}
+${skills.map((s) => `**${s.category}:** ${s.items}`).join("\\\\\\relax\n")}
 
-## Awards & Honours
+## Awards \\& Honours
 
-${awards.map((a) => `${a.title} — ${a.institution} · ${a.years}`).join("\n\n")}
+${awards.map((a) => `**${a.title}** — ${a.institution} \\hfill ${a.years}`).join("\n\n")}
 
 ## Supervision
 
