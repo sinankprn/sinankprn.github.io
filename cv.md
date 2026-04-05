@@ -7,14 +7,19 @@ urlcolor: blue
 colorlinks: true
 header-includes: |
   \usepackage{titlesec}
-  \titlespacing{\section}{0pt}{1.2em}{0.4em}
-  \titlespacing{\subsection}{0pt}{0.8em}{0.3em}
-  \setlength{\parskip}{0.3em}
----
-
-**PhD Candidate · Sports Data Science & AI · University of Technology Sydney**\
-sinan.koparan@uts.edu.au \textbar{} linkedin.com/in/sinankprn \textbar{} github.com/sinankprn
-
+  \titlespacing{\section}{0pt}{0.6em}{0.3em}
+  \titlespacing{\subsection}{0pt}{0.4em}{0.2em}
+  \setlength{\parskip}{0.15em}
+  \renewcommand{\maketitle}{
+    \begin{center}
+    {\LARGE\bfseries Sinan Koparan}\\[0.2em]
+    PhD Candidate · Sports Data Science & AI · University of Technology Sydney\\[0.15em]
+    {\small sinan.koparan@uts.edu.au \textbar{} linkedin.com/in/sinankprn \textbar{} github.com/sinankprn}
+    \end{center}
+    \vspace{0.2em}
+    \hrule
+    \vspace{0.3em}
+  }
 ---
 
 ## Profile
@@ -22,26 +27,6 @@ sinan.koparan@uts.edu.au \textbar{} linkedin.com/in/sinankprn \textbar{} github.
 I am a PhD Candidate in Sports Data Science and AI in the Next Generation Graduates Program (NGGP), supported by CSIRO Data61 and Rugby Australia. My research investigates how data science and machine learning can be used to strengthen community sport participation by identifying how club organisational characteristics influence participation growth and retention. The aim is to help national sporting organisations make evidence-based resource allocation decisions to improve retention, grow participation, and support long-term club sustainability.
 
 Alongside my PhD, I work as a Research Assistant on an applied AI project in partnership with the NSW Institute of Sport (NSWIS), exploring how Large Language Models can be leveraged in coach and athlete environments to automate content analysis and support more efficient insight generation and decision-making.
-
-## Education
-
-**Doctor of Philosophy (PhD)** — Sports Data Science & AI\
-University of Technology Sydney · 2023 – present\
-Next Generation Graduates Program, supported by CSIRO Data61 & Rugby Australia
-
-**Master of Information and Communications Technology** — Artificial Intelligence & Cloud Computing\
-Western Sydney University\
-GPA: 6.574 / 7 · Dean's Merit Award: 2021, 2022, 2023
-
-**Bachelor of Business** — Management\
-Western Sydney University
-
-## Technical Skills
-
-**Languages:** Python, JavaScript, TypeScript, SQL\
-**Machine Learning & AI:** Scikit-learn, PyTorch, LLMs, Agents, LangChain, OpenAI API, Google Gemini API, RAG Systems\
-**Data & Analytics:** Pandas, NumPy, Statistical Modelling, Data Visualisation\
-**Development & Tools:** React, Node.js, Express, Git, REST APIs
 
 ## Research Experience
 
@@ -67,6 +52,19 @@ Liu, A., Hook, A., Duffus, B., Davis, F., Hsu, H.-M., Israel, I., Donovan, J., P
 
 Koparan, S. & Javadi, B. (2024). *DeepRacer on Physical Track: Parameters Exploration and Performance Evaluation*. arXiv preprint, June 2024. [Open Access](https://arxiv.org/abs/2406.03769) · [GitHub](https://github.com/SDC-Lab/DeepRacer-Models)
 
+## Education
+
+**Doctor of Philosophy (PhD)** — Sports Data Science & AI\
+University of Technology Sydney · 2023 – present\
+Next Generation Graduates Program, supported by CSIRO Data61 & Rugby Australia
+
+**Master of Information and Communications Technology** — Artificial Intelligence & Cloud Computing\
+Western Sydney University\
+GPA: 6.574 / 7 · Dean's Merit Award: 2021, 2022, 2023
+
+**Bachelor of Business** — Management\
+Western Sydney University
+
 ## Conference Presentations
 
 **Generative AI for Biomechanists**\
@@ -77,6 +75,13 @@ Faculty of Health GenAI-Enhance Summit, UTS · 2026
 
 **The Anatomy of a Thriving Club: Organisational Characteristics Supporting Retention and Growth**\
 STARS, Australian Sports Commission · 2025
+
+## Technical Skills
+
+**Languages:** Python, JavaScript, TypeScript, SQL\
+**Machine Learning & AI:** Scikit-learn, PyTorch, LLMs, Agents, LangChain, OpenAI API, Google Gemini API, RAG Systems\
+**Data & Analytics:** Pandas, NumPy, Statistical Modelling, Data Visualisation\
+**Development & Tools:** React, Node.js, Express, Git, REST APIs
 
 ## Awards & Honours
 

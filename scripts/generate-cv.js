@@ -26,39 +26,24 @@ urlcolor: blue
 colorlinks: true
 header-includes: |
   \\usepackage{titlesec}
-  \\titlespacing{\\section}{0pt}{1.2em}{0.4em}
-  \\titlespacing{\\subsection}{0pt}{0.8em}{0.3em}
-  \\setlength{\\parskip}{0.3em}
----
-
-**${profile.headline}**\\
-${profile.contact.join(" \\textbar{} ")}
-
+  \\titlespacing{\\section}{0pt}{0.6em}{0.3em}
+  \\titlespacing{\\subsection}{0pt}{0.4em}{0.2em}
+  \\setlength{\\parskip}{0.15em}
+  \\renewcommand{\\maketitle}{
+    \\begin{center}
+    {\\LARGE\\bfseries ${profile.name}}\\\\[0.2em]
+    ${profile.headline}\\\\[0.15em]
+    {\\small ${profile.contact.join(" \\textbar{} ")}}
+    \\end{center}
+    \\vspace{0.2em}
+    \\hrule
+    \\vspace{0.3em}
+  }
 ---
 
 ## Profile
 
 ${profile.research_profile.trim()}
-
-## Education
-
-${education
-  .map((e) => {
-    let entry = `**${e.degree}** — ${e.field}\\
-${e.institution}`;
-    if (e.period) entry += ` · ${e.period}`;
-    if (e.note) entry += `\\
-${e.note}`;
-    if (e.gpa) entry += `\\
-GPA: ${e.gpa}`;
-    if (e.awards) entry += ` · ${e.awards}`;
-    return entry;
-  })
-  .join("\n\n")}
-
-## Technical Skills
-
-${skills.map((s) => `**${s.category}:** ${s.items}`).join("\\\n")}
 
 ## Research Experience
 
@@ -82,6 +67,22 @@ ${publications
   })
   .join("\n\n")}
 
+## Education
+
+${education
+  .map((e) => {
+    let entry = `**${e.degree}** — ${e.field}\\
+${e.institution}`;
+    if (e.period) entry += ` · ${e.period}`;
+    if (e.note) entry += `\\
+${e.note}`;
+    if (e.gpa) entry += `\\
+GPA: ${e.gpa}`;
+    if (e.awards) entry += ` · ${e.awards}`;
+    return entry;
+  })
+  .join("\n\n")}
+
 ## Conference Presentations
 
 ${talks
@@ -90,6 +91,10 @@ ${talks
 ${t.venue} · ${t.year}`;
   })
   .join("\n\n")}
+
+## Technical Skills
+
+${skills.map((s) => `**${s.category}:** ${s.items}`).join("\\\n")}
 
 ## Awards & Honours
 
