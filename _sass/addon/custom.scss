@@ -157,6 +157,30 @@
   box-shadow: 0 0 12px color-mix(in srgb, var(--link-color) 15%, transparent);
 }
 
+/* Resource Cards */
+.resource-section {
+  margin-top: 0.75rem;
+}
+
+.resource-category {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 1rem 0 0.5rem;
+}
+
+.resource-category:first-child {
+  margin-top: 0.25rem;
+}
+
+.resource-books {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
 /* Mobile: Stack vertically */
 @media (max-width: 480px) {
   .newsletter-signup {
