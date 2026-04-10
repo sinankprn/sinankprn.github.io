@@ -87,10 +87,10 @@ GPA: ${texEscape(e.gpa)}`;
 
 const talksTeX = talks
   .map((t) => {
-    return `\\textbf{${texEscape(t.title)}} \\hfill ${t.year}\\\\
-\\textit{${texEscape(t.venue)}}`;
+    return `\\textbf{${texEscape(t.title)}}\\\\
+\\textit{${texEscape(t.venue)}} \\hfill ${t.year}`;
   })
-  .join("\n\n");
+  .join("\n\n\\vspace{0.4em}\n\n");
 
 const skillsTeX = skills
   .map((s) => `\\textbf{${texEscape(s.category)}:} ${texEscape(s.items)}`)

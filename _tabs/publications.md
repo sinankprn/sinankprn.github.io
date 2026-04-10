@@ -8,7 +8,7 @@ description: "Peer-reviewed publications by Sinan Koparan on sports analytics, c
 {% for pub in site.data.publications %}
 <div class="pub-card">
   <h3>{{ pub.title }}</h3>
-  <div class="pub-authors">{{ pub.authors }}</div>
+  <div class="pub-authors">{{ pub.authors | markdownify | remove: '<p>' | remove: '</p>' }}</div>
   <div class="pub-venue">{{ pub.venue }}</div>
   <div class="pub-links">
     {% for link in pub.links %}
