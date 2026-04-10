@@ -54,7 +54,7 @@ jobs:
       - name: Generate PDF
         run: |
           mkdir -p assets/docs
-          tectonic -X compile cv.tex --outdir assets/docs --keep-logs=false --keep-intermediates=false
+          tectonic -X compile cv.tex --outdir assets/docs
 
       - name: Commit PDF, cv.tex and cv.md
         uses: stefanzweifel/git-auto-commit-action@v5
