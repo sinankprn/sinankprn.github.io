@@ -205,7 +205,6 @@ compress_html:
     envs: [development]
 
 exclude:
-  - cv.md
   - cv.tex
   - "*.gem"
   - "*.gemspec"

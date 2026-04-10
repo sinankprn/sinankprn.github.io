@@ -8,7 +8,6 @@ on:
       - .gitignore
       - README.md
       - LICENSE
-      - cv.md
       - cv.tex
       - assets/docs/cv.pdf
 

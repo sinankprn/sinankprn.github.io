@@ -32,7 +32,7 @@ jobs:
       - name: Install js-yaml
         run: npm install js-yaml
 
-      - name: Generate cv.tex and cv.md from data
+      - name: Generate cv.tex from data
         run: node scripts/generate-cv.js
 
       - name: Install DejaVu fonts
@@ -56,11 +56,11 @@ jobs:
           mkdir -p assets/docs
           tectonic -X compile cv.tex --outdir assets/docs
 
-      - name: Commit PDF, cv.tex and cv.md
+      - name: Commit PDF and cv.tex
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: regenerate cv from data"
-          file_pattern: "cv.md cv.tex assets/docs/cv.pdf"
+          file_pattern: "cv.tex assets/docs/cv.pdf"
 
   trigger-deploy:
     needs: generate-pdf
