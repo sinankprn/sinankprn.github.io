@@ -41,7 +41,7 @@ permalink: /llms-full.txt
 {{ post.description | default: post.excerpt | strip_html | truncate: 200 }}
 - [Read more]({{ site.url }}{{ post.url }})
 
-{{ post.content | strip_html | strip_newlines | truncate: 2000 }}
+{{ post.content | strip_html }}
 
 ---
 {% endunless %}{% endfor %}
@@ -52,7 +52,7 @@ permalink: /llms-full.txt
 {{ post.description | default: post.excerpt | strip_html | truncate: 200 }}
 - [Read more]({{ site.url }}{{ post.url }})
 
-{{ post.content | strip_html | strip_newlines | truncate: 2000 }}
+{{ post.content | strip_html }}
 
 ---
 {% endif %}{% endfor %}
