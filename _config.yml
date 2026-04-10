@@ -21,15 +21,18 @@ tagline: PhD Candidate # it will display as the subtitle
 description: >- # used by seo meta and the atom feed
   Sinan Koparan - PhD Candidate in Sports Data Science & AI. Research on machine learning, LLMs, and community sport analytics with CSIRO Data61 and Rugby Australia.
 
+# Used by jekyll-seo-tag for schema.org Person and article:author tags.
+author:
+  name: Sinan Koparan
+  email: sinan.koparan@uts.edu.au
+  url: https://sinankprn.com
+
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://sinankprn.com"
 
 github:
   username: sinankprn # change to your GitHub username
-
-twitter:
-  username: # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -215,6 +218,13 @@ exclude:
   - purgecss.js
   - "*.config.js"
   - "package*.json"
+  - node_modules
+  - scripts
+  - shorts
+  - .devcontainer
+  - .github
+  - .vscode
+  - animation.html
 
 jekyll-archives:
   enabled: [categories, tags]
