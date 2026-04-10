@@ -40,15 +40,15 @@ Koparan, S. & Javadi, B. (2024). *DeepRacer on Physical Track: Parameters Explor
 ## Education
 
 **Doctor of Philosophy (PhD)** — Sports Data Science & AI\
-*University of Technology Sydney* · 2023 – present\
+*University of Technology Sydney* · 2024 – present\
 Next Generation Graduates Program, supported by CSIRO Data61 & Rugby Australia
 
 **Master of Information and Communications Technology** — Artificial Intelligence & Cloud Computing\
-*Western Sydney University*\
+*Western Sydney University* · 2021 – 2023\
 GPA: 6.574 / 7 · Dean's Merit Award: 2021, 2022, 2023
 
 **Bachelor of Business** — Management\
-*Western Sydney University*
+*Western Sydney University* · 2017 – 2020
 
 ## Conference Presentations
 
