@@ -6,6 +6,9 @@ categories: [Large Language Models]
 tags: [AI, Generative AI, Sport]
 pin: false
 description: "A comprehensive guide for sport leaders on how generative AI capabilities (multimodal understanding, structured outputs, tool use, and more) can improve efficiency across sporting organisations."
+image:
+  path: /assets/img/og/enhancing-sporting-organisation-efficiency-with-generative-ai.png
+  alt: "Generative AI for sporting organisations"
 ---
 
 > I would like to acknowledge **John Warmenhoven**, whose interest in generative AI led me to explore this space, **Steven Hughes**, whose incisive questions have consistently reinforced and deepened my understanding of it, **Andrew Novak**, who has supported my methodological thinking and encouraged the use of this technology within my PhD, and **Katie Slattery**, for pioneering generative AI in sport.

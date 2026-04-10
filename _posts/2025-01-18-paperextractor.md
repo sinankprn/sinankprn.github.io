@@ -5,6 +5,9 @@ date: 2025-01-18 14:00:00 +1100
 categories: [Projects, AI Tools]
 tags: [projects, ai, pdf, gemini, react, extraction]
 description: "An AI-powered tool that extracts specific information from PDF documents. Upload a PDF, specify what information you need, and the application automatically finds it with source citations."
+image:
+  path: /assets/img/og/paperextractor.png
+  alt: "Structured extraction from journal PDFs"
 ---
 
 ## Overview

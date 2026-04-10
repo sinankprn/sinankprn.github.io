@@ -6,6 +6,9 @@ categories: [Large Language Models]
 tags: [AI, Generative AI, Claude Code, Sport Analytics, Claude Opus 4.6]
 pin: false
 description: "Anthropic's Claude Opus 4.6 release powers Claude Code to deliver production-ready data analytics for resource-constrained sporting organisations. I built a dashboard from 48,000 football matches in 40 minutes for $15 AUD."
+image:
+  path: /assets/img/og/claude-opus-4.6-for-sports-analytics.png
+  alt: "Opus 4.6 in the sports analytics loop"
 ---
 
 For years, turning raw sport data into something useful required either a dedicated data team or an expensive consultancy. Anthropic's newly released Claude Opus 4.6 model[^1], paired with Claude Code[^2], removes that constraint. Anyone can now build interactive dashboards and analytics workflows without writing code.

@@ -5,6 +5,9 @@ date: 2025-01-12 15:00:00 +1100
 categories: [Projects, AI Tools]
 tags: [projects, ai, creative, javascript]
 description: "A full-stack application for creative AI-powered content generation. Transform text prompts into visual content using modern web technologies and AI capabilities."
+image:
+  path: /assets/img/og/prompt2canvas.png
+  alt: "Turning prompts into live p5.js visuals"
 ---
 
 ## Overview

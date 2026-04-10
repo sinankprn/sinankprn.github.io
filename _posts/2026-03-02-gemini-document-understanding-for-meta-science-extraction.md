@@ -6,6 +6,9 @@ categories: [Large Language Models]
 tags: [AI, Gemini, PDF, Meta-Science, Document Understanding, Research]
 pin: false
 description: "A roadmap of empirical questions for using Gemini's document understanding and derendering capabilities to automate meta-science extraction tasks."
+image:
+  path: /assets/img/og/gemini-document-understanding-for-meta-science-extraction.png
+  alt: "Document understanding for meta-science"
 ---
 
 Many researchers are attempting to automate journal article extraction using large language models, but the pipelines they build typically rely on traditional libraries to first read the PDF and convert it to text. Tools such as PyMuPDF and GROBID are widely used for this purpose, yet both can be unreliable on the complex layouts of journal articles, misreading tables, dropping figures, mangling equations, and losing the structural hierarchy that gives the extracted data its meaning. The quality of what a language model can extract is only as good as the text it is given.
