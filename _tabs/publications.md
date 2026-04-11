@@ -17,7 +17,10 @@ description: "Peer-reviewed publications by Sinan Koparan on sports analytics, c
     {% assign current_year = pub.year %}
   {% endif %}
   <div class="pub-card">
-    <h3>{{ pub.title }}</h3>
+    <h3>
+      {% if pub.type == 'book' %}<i class="fas fa-book" aria-hidden="true"></i>{% else %}<i class="fas fa-file-alt" aria-hidden="true"></i>{% endif %}
+      {{ pub.title }}
+    </h3>
     <div class="pub-authors">{{ pub.authors | markdownify | remove: '<p>' | remove: '</p>' }}</div>
     <div class="pub-venue">{{ pub.venue }}</div>
     <div class="pub-links">

@@ -7,6 +7,7 @@ description: "Sinan Koparan, PhD Candidate at UTS researching sports data scienc
 
 <div class="about-hero">
   <div class="about-hero-body">
+    <span class="about-hero-eyebrow">Profile · PhD Candidate</span>
     <h2 class="about-hero-name">Sinan Koparan</h2>
     <p class="about-hero-role">PhD Candidate, Community Sport Analytics</p>
     <p class="about-hero-affiliation">CSIRO Data61 &amp; Rugby Australia</p>

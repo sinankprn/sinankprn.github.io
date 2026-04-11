@@ -79,6 +79,6 @@ description: "Curated tools, libraries, courses, and datasets for sports data sc
   </div>
 </div>
 
-<p style="font-size: 0.85rem; color: var(--text-muted-color); text-align: center; margin-top: 2rem;">
+<p class="page-note">
   This page is updated periodically. Have a suggestion? <a href="/about/">Get in touch</a>.
 </p>

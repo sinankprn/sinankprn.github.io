@@ -266,6 +266,14 @@
   box-shadow: 0 0 14px color-mix(in srgb, var(--link-color) 60%, transparent);
 }
 
+/* Footnote / meta note below page content */
+.page-note {
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
+  text-align: center;
+  margin-top: 2rem;
+}
+
 /* Tighter top spacing for the first category inside a pub-card */
 .pub-card .resource-category:first-of-type {
   margin-top: 0.25rem;
@@ -865,8 +873,7 @@
   min-width: 0;
 }
 
-.about-hero .about-hero-body::before {
-  content: "PROFILE · PHD CANDIDATE";
+.about-hero-eyebrow {
   display: block;
   font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
   font-size: 0.68rem;

@@ -66,7 +66,7 @@ refactor: true
     <div class="featured-hero__glow" aria-hidden="true"></div>
     <div class="featured-hero__body">
       <span class="featured-hero__eyebrow">
-        <span class="featured-hero__eyebrow-label">Latest Dispatch</span>
+        <span class="featured-hero__eyebrow-label">Latest Post</span>
         <span class="featured-hero__eyebrow-date">{% include datetime.html date=featured_post.date lang=lang %}</span>
       </span>
       <h2 class="featured-hero__title">{{ featured_post.title }}</h2>
@@ -120,7 +120,7 @@ refactor: true
 
         <div class="col-md-{{ card_body_col }}">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
+            <h2 class="card-title my-2 mt-md-0">{{ post.title }}</h2>
 
             <div class="card-text content mt-0 mb-3">
               <p>{% include post-description.html %}</p>
