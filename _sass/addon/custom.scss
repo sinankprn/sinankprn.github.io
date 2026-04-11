@@ -1143,8 +1143,8 @@
 .featured-hero-wrap::after {
   content: '';
   position: absolute;
-  inset: -7px;
-  border-radius: calc(1.25rem + 10px);
+  inset: 0;
+  border-radius: inherit;
   background: conic-gradient(
     from var(--fh-neon-angle),
     transparent 55%,
