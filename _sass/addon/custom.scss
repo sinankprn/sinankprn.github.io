@@ -1091,3 +1091,87 @@
     transform: none !important;
   }
 }
+
+/* =====================================================
+   Featured hero — rotating neon border
+   Technique: wrapper with padding:2px and no background;
+   ::before is the sharp neon line (z-index:-1, fills the
+   2px gap between wrapper edge and card); ::after is the
+   same gradient blurred into a glow halo (z-index:-2).
+   @property makes --fh-neon-angle animatable.
+   ===================================================== */
+
+@property --fh-neon-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes fh-neon-rotate {
+  to { --fh-neon-angle: 360deg; }
+}
+
+.featured-hero-wrap {
+  position: relative;
+  z-index: 0;                          /* establishes stacking context */
+  border-radius: calc(1.25rem + 3px);  /* 3px > 2px padding, curves match */
+  padding: 2px;
+  margin-bottom: 2.75rem;
+  /* no background — the pseudo-elements paint the neon border */
+}
+
+/* Sharp neon line */
+.featured-hero-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--fh-neon-angle),
+    transparent 0%,
+    transparent 55%,
+    color-mix(in srgb, var(--link-color) 45%, transparent) 67%,
+    color-mix(in srgb, var(--link-color) 90%, transparent) 80%,
+    var(--link-color) 83%,
+    rgba(255, 255, 255, 0.88) 85%,
+    var(--link-color) 87%,
+    color-mix(in srgb, var(--link-color) 90%, transparent) 90%,
+    transparent 100%
+  );
+  z-index: -1;
+  animation: fh-neon-rotate 5s linear infinite;
+}
+
+/* Blurred glow halo — same gradient, spread wider */
+.featured-hero-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border-radius: calc(1.25rem + 10px);
+  background: conic-gradient(
+    from var(--fh-neon-angle),
+    transparent 55%,
+    color-mix(in srgb, var(--link-color) 28%, transparent) 67%,
+    color-mix(in srgb, var(--link-color) 65%, transparent) 83%,
+    color-mix(in srgb, var(--link-color) 65%, transparent) 87%,
+    color-mix(in srgb, var(--link-color) 28%, transparent) 92%,
+    transparent 100%
+  );
+  filter: blur(18px);
+  opacity: 0.72;
+  z-index: -2;
+  animation: fh-neon-rotate 5s linear infinite;
+}
+
+/* Hero sits flush — wrapper owns the margin */
+.featured-hero-wrap .featured-hero {
+  margin-bottom: 0;
+  border-color: transparent; /* neon wrapper border replaces inner border */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-hero-wrap::before,
+  .featured-hero-wrap::after {
+    animation: none !important;
+  }
+}
