@@ -90,31 +90,58 @@
 
 /* Publication Cards */
 .pub-card {
+  position: relative;
   background: var(--card-bg);
   border: 1px solid var(--main-border-color);
   border-radius: 0.75rem;
-  padding: 1.5rem;
+  padding: 1.75rem 1.75rem 1.5rem;
   margin-bottom: 1.25rem;
-  transition: box-shadow 0.2s;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
+}
+
+.pub-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.75rem;
+  bottom: 1.5rem;
+  width: 2px;
+  background: color-mix(in srgb, var(--link-color) 0%, transparent);
+  border-radius: 0 2px 2px 0;
+  transition: background 0.25s ease, width 0.25s ease;
 }
 
 .pub-card:hover {
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22), inset 3px 0 0 var(--link-color);
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--link-color) 35%, var(--main-border-color));
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
+
+.pub-card:hover::before {
+  background: var(--link-color);
+  width: 3px;
+  box-shadow: 0 0 16px color-mix(in srgb, var(--link-color) 55%, transparent);
 }
 
 .pub-card h3 {
-  font-size: 1.22rem;
-  font-weight: 600;
-  margin: 0 0 0.75rem;
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-variation-settings: "opsz" 72, "SOFT" 20;
+  margin: 0 0 0.85rem;
   color: var(--heading-color);
-  line-height: 1.4;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
 }
 
 .pub-card h3 i {
   color: var(--link-color);
-  margin-right: 0.55rem;
-  font-size: 0.92em;
+  margin-right: 0.6rem;
+  font-size: 0.82em;
   vertical-align: baseline;
+  opacity: 0.9;
 }
 
 .pub-card .pub-authors {
@@ -213,16 +240,30 @@
   }
 }
 
-/* Shared lead paragraph for tab pages */
+/* Shared lead paragraph for tab pages — editorial serif treatment */
 .page-intro {
-  font-size: 1.05rem;
-  font-style: normal;
-  color: var(--text-muted-color);
-  line-height: 1.65;
-  margin-bottom: 2rem;
-  max-width: 720px;
-  padding-left: 1rem;
-  border-left: 3px solid color-mix(in srgb, var(--link-color) 40%, transparent);
+  position: relative;
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+  font-size: clamp(1.1rem, 1.45vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--text-color);
+  margin: 0.75rem 0 2.5rem;
+  max-width: 62ch;
+  padding-left: 1.35rem;
+  border-left: 2px solid color-mix(in srgb, var(--link-color) 55%, transparent);
+}
+
+.page-intro::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 0;
+  height: 1.4rem;
+  width: 2px;
+  background: var(--link-color);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--link-color) 60%, transparent);
 }
 
 /* Tighter top spacing for the first category inside a pub-card */
@@ -738,132 +779,194 @@
 
 /* Year grouping headers on publications page */
 .year-group-heading {
-  font-size: 1.1rem;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
   color: var(--text-muted-color);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  margin: 2rem 0 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--main-border-color);
+  margin: 2.5rem 0 1.25rem;
+  padding: 0;
+  border: 0;
+}
+
+.year-group-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--main-border-color);
+}
+
+.year-group-heading::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--link-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px color-mix(in srgb, var(--link-color) 45%, transparent);
 }
 
 .year-group-heading:first-of-type {
   margin-top: 0.5rem;
 }
 
-/* About page hero card */
+/* About page hero — editorial spine, echoes home featured hero */
 .about-hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--link-color) 8%, var(--card-bg)) 0%,
-    var(--card-bg) 60%
-  );
+  background:
+    radial-gradient(ellipse at 92% 10%, color-mix(in srgb, var(--link-color) 14%, transparent) 0%, transparent 55%),
+    linear-gradient(180deg, var(--card-bg) 0%, color-mix(in srgb, var(--link-color) 3%, var(--card-bg)) 100%);
   border: 1px solid var(--main-border-color);
-  border-left: 4px solid var(--link-color);
-  border-radius: 0.75rem;
-  padding: 2rem 2.25rem;
-  margin-bottom: 1.25rem;
-}
-
-.about-hero::before,
-.about-hero::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
+  border-radius: 1rem;
+  padding: 2.75rem 2.5rem 2.5rem;
+  margin: 0.5rem 0 2rem;
+  isolation: isolate;
 }
 
 .about-hero::before {
-  top: -60px;
-  right: -60px;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(
-    circle at center,
-    color-mix(in srgb, var(--link-color) 18%, transparent) 0%,
-    transparent 70%
+  content: "";
+  position: absolute;
+  left: 2.5rem;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    color-mix(in srgb, var(--link-color) 35%, var(--main-border-color)) 10%,
+    color-mix(in srgb, var(--link-color) 35%, var(--main-border-color)) 90%,
+    transparent 100%
   );
+  z-index: 1;
+  pointer-events: none;
 }
 
 .about-hero::after {
-  bottom: -80px;
-  right: 40px;
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(
-    circle at center,
-    color-mix(in srgb, var(--link-color) 10%, transparent) 0%,
-    transparent 70%
-  );
+  content: "";
+  position: absolute;
+  left: calc(2.5rem - 1px);
+  top: 2.5rem;
+  width: 3px;
+  height: 3rem;
+  background: var(--link-color);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--link-color) 60%, transparent);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .about-hero .about-hero-body {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  padding-left: 1.5rem;
   min-width: 0;
+}
+
+.about-hero .about-hero-body::before {
+  content: "PROFILE · PHD CANDIDATE";
+  display: block;
+  font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--link-color);
+  margin-bottom: 1.1rem;
+  text-transform: uppercase;
+}
+
+.about-hero .about-hero-name {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 900;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  color: var(--heading-color);
+  margin: 0 0 0.5rem;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.about-hero .about-hero-role {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-color);
+  margin: 0 0 0.2rem;
+}
+
+.about-hero .about-hero-affiliation {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+  margin: 0.15rem 0 0;
+  font-style: normal;
 }
 
 .about-hero .hero-focus {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1rem 0 0;
-  padding: 0;
+  gap: 0.55rem;
+  margin: 1.5rem 0 0;
+  padding: 1.5rem 0 0;
   list-style: none;
+  border-top: 1px solid color-mix(in srgb, var(--main-border-color) 80%, transparent);
 }
 
 .about-hero .hero-focus li {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.85rem;
-  font-size: 0.8rem;
-  font-weight: 500;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   color: var(--heading-color);
-  background: color-mix(in srgb, var(--card-bg) 75%, transparent);
-  border: 1px solid color-mix(in srgb, var(--link-color) 30%, transparent);
-  border-radius: 2rem;
-  backdrop-filter: blur(4px);
+  background: color-mix(in srgb, var(--link-color) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--link-color) 35%, transparent);
+  border-radius: 2px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.about-hero .hero-focus li:hover {
+  background: color-mix(in srgb, var(--link-color) 14%, transparent);
+  border-color: color-mix(in srgb, var(--link-color) 55%, transparent);
 }
 
 .about-hero .hero-focus li i {
   color: var(--link-color);
-  font-size: 0.85em;
-}
-
-.about-hero .about-hero-name {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--heading-color);
-  margin: 0 0 0.35rem;
-  line-height: 1.2;
-}
-
-.about-hero .about-hero-role {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--link-color);
-  margin: 0 0 0.25rem;
-}
-
-.about-hero .about-hero-affiliation {
-  font-size: 0.9rem;
-  color: var(--text-muted-color);
-  margin: 0;
-  font-style: italic;
+  font-size: 0.9em;
 }
 
 @media (max-width: 576px) {
   .about-hero {
-    padding: 1.5rem 1.25rem;
+    padding: 2rem 1.5rem 1.75rem;
+  }
+
+  .about-hero::before {
+    left: 1.5rem;
+    top: 2rem;
+    bottom: 2rem;
+  }
+
+  .about-hero::after {
+    left: calc(1.5rem - 1px);
+    top: 2rem;
+  }
+
+  .about-hero .about-hero-body {
+    padding-left: 1rem;
   }
 
   .about-hero .about-hero-name {
-    font-size: 1.55rem;
+    font-size: 1.85rem;
   }
 }
 
