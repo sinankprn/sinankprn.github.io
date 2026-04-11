@@ -306,7 +306,7 @@
     linear-gradient(180deg, var(--fh-ink-2) 0%, var(--fh-ink) 62%);
   border: 1px solid var(--fh-rule-strong);
   box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.42),
+    0 12px 36px rgba(0, 0, 0, 0.26),
     0 0 0 1px rgba(255, 255, 255, 0.03) inset;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   isolation: isolate;
@@ -350,8 +350,8 @@
     opacity: 0.92;
   }
   50% {
-    box-shadow: 0 0 40px color-mix(in srgb, var(--link-color) 85%, transparent),
-                0 0 70px color-mix(in srgb, var(--link-color) 32%, transparent);
+    box-shadow: 0 0 26px color-mix(in srgb, var(--link-color) 70%, transparent),
+                0 0 44px color-mix(in srgb, var(--link-color) 22%, transparent);
     opacity: 1;
   }
 }
@@ -383,9 +383,9 @@
   transform: translateY(-5px);
   border-color: color-mix(in srgb, var(--link-color) 55%, var(--fh-rule-strong));
   box-shadow:
-    0 38px 82px rgba(0, 0, 0, 0.55),
+    0 20px 52px rgba(0, 0, 0, 0.36),
     0 0 0 1px color-mix(in srgb, var(--link-color) 30%, transparent) inset,
-    0 0 72px -20px color-mix(in srgb, var(--link-color) 55%, transparent);
+    0 0 44px -14px color-mix(in srgb, var(--link-color) 38%, transparent);
   text-decoration: none;
   color: var(--fh-paper);
   outline: none;
@@ -393,8 +393,8 @@
 
 .featured-hero:hover::after {
   height: 4.5rem;
-  box-shadow: 0 0 48px color-mix(in srgb, var(--link-color) 95%, transparent),
-              0 0 96px color-mix(in srgb, var(--link-color) 40%, transparent);
+  box-shadow: 0 0 30px color-mix(in srgb, var(--link-color) 85%, transparent),
+              0 0 56px color-mix(in srgb, var(--link-color) 28%, transparent);
   animation: none;
   transition: height 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
