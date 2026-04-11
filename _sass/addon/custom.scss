@@ -305,9 +305,7 @@
     radial-gradient(ellipse at 6% 96%, color-mix(in srgb, var(--link-color) 14%, transparent) 0%, transparent 56%),
     linear-gradient(180deg, var(--fh-ink-2) 0%, var(--fh-ink) 62%);
   border: 1px solid var(--fh-rule-strong);
-  box-shadow:
-    0 12px 36px rgba(0, 0, 0, 0.26),
-    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   isolation: isolate;
 }
@@ -383,7 +381,6 @@
   transform: translateY(-5px);
   border-color: color-mix(in srgb, var(--link-color) 55%, var(--fh-rule-strong));
   box-shadow:
-    0 20px 52px rgba(0, 0, 0, 0.36),
     0 0 0 1px color-mix(in srgb, var(--link-color) 30%, transparent) inset,
     0 0 44px -14px color-mix(in srgb, var(--link-color) 38%, transparent);
   text-decoration: none;
