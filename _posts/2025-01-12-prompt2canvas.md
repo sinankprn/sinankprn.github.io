@@ -2,11 +2,12 @@
 layout: post
 title: "Prompt2Canvas: Creative AI Content Generation"
 date: 2025-01-12 15:00:00 +1100
+last_modified_at: 2026-04-11 10:00:00 +1000
 categories: [Projects, AI Tools]
-tags: [projects, ai, creative, javascript]
-description: "A full-stack application for creative AI-powered content generation. Transform text prompts into visual content using modern web technologies and AI capabilities."
+tags: [projects, ai, creative, javascript, p5js, gemini]
+description: "Prompt2Canvas turns text prompts into live p5.js visuals using Gemini 3, generating JavaScript that runs safely on an in-browser canvas."
 image:
-  path: /assets/img/og/prompt2canvas.png
+  path: /assets/img/og/prompt2canvas.webp
   alt: "Turning prompts into live p5.js visuals"
 ---
 

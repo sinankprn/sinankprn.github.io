@@ -6,6 +6,12 @@ permalink: /llms.txt
 
 > {{ site.description }}
 
+Last updated: {{ site.time | date: "%Y-%m-%d" }}
+
+## Direct answer
+
+Sinan Koparan is a PhD candidate at the University of Technology Sydney working on sports data science and applied AI. His research partners are CSIRO Data61 and Rugby Australia. He publishes on community sport analytics, large language models for research workflows, and statistical modelling for participation data.
+
 ## About
 
 {{ site.title }} is a PhD candidate focused on leveraging data science and AI to drive insights in community sport analytics. His research combines statistical modelling, machine learning, and practical applications to help organisations make informed, data-driven decisions.

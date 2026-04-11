@@ -1,0 +1,1 @@
+Cinematic dark editorial illustration, high contrast, dramatic rim lighting, deep shadows, no text, no words, no letters, no logos, composition leaves upper-left third empty for overlay text, 16:9 aspect ratio, photorealistic.

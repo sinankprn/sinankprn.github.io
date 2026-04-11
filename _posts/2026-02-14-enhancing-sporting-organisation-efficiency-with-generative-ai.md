@@ -2,12 +2,13 @@
 layout: post
 title: "Enhancing Sporting Organisation Efficiency with Generative AI"
 date: 2026-02-18 14:00:00 +1100
+last_modified_at: 2026-04-11 10:00:00 +1000
 categories: [Large Language Models]
-tags: [AI, Generative AI, Sport]
+tags: [AI, Generative AI, Sport, Sport Analytics, LLMs]
 pin: false
-description: "A comprehensive guide for sport leaders on how generative AI capabilities (multimodal understanding, structured outputs, tool use, and more) can improve efficiency across sporting organisations."
+description: "A practical guide for sport leaders on using generative AI (multimodal understanding, structured outputs, tool use) to improve organisational efficiency."
 image:
-  path: /assets/img/og/enhancing-sporting-organisation-efficiency-with-generative-ai.png
+  path: /assets/img/og/enhancing-sporting-organisation-efficiency-with-generative-ai.webp
   alt: "Generative AI for sporting organisations"
 ---
 

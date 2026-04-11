@@ -2,11 +2,12 @@
 layout: post
 title: "PaperExtractor: AI-Powered PDF Data Extraction"
 date: 2025-01-18 14:00:00 +1100
+last_modified_at: 2026-04-11 10:00:00 +1000
 categories: [Projects, AI Tools]
 tags: [projects, ai, pdf, gemini, react, extraction]
-description: "An AI-powered tool that extracts specific information from PDF documents. Upload a PDF, specify what information you need, and the application automatically finds it with source citations."
+description: "PaperExtractor uses Gemini 3 Pro visual derendering to pull structured data from journal PDFs with source citations for every extracted field."
 image:
-  path: /assets/img/og/paperextractor.png
+  path: /assets/img/og/paperextractor.webp
   alt: "Structured extraction from journal PDFs"
 ---
 

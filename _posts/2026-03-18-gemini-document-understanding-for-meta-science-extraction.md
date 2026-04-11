@@ -2,12 +2,13 @@
 layout: post
 title: "A Roadmap for Gemini-Powered Meta-Science Extraction Tasks"
 date: 2026-03-18 08:00:00 +1100
+last_modified_at: 2026-04-11 10:00:00 +1000
 categories: [Large Language Models]
 tags: [AI, Gemini, PDF, Meta-Science, Document Understanding, Research]
 pin: false
-description: "A roadmap of empirical questions for using Gemini's document understanding and derendering capabilities to automate meta-science extraction tasks."
+description: "A research roadmap for using Gemini native vision, derendering, and agentic vision to automate reliable extraction from full journal articles."
 image:
-  path: /assets/img/og/gemini-document-understanding-for-meta-science-extraction.png
+  path: /assets/img/og/gemini-document-understanding-for-meta-science-extraction.webp
   alt: "Document understanding for meta-science"
 ---
 

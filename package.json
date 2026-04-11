@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "js-yaml": "^4.1.1"
+    "js-yaml": "^4.1.1",
+    "puppeteer": "^23.0.0"
+  },
+  "scripts": {
+    "og": "node scripts/generate-og.js",
+    "og:write": "node scripts/generate-og.js --write-frontmatter"
   }
 }

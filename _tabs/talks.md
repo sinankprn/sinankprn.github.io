@@ -1,9 +1,11 @@
 ---
 layout: page
 icon: fas fa-microphone-alt
-order: 6
+order: 4
 description: "Conference presentations and talks by Sinan Koparan on AI, large language models, and sports analytics research."
 ---
+
+<p class="page-intro">Conference presentations and invited talks on AI, large language models, and sports analytics.</p>
 
 {% for talk in site.data.talks %}
 <div class="pub-card">
@@ -11,7 +13,7 @@ description: "Conference presentations and talks by Sinan Koparan on AI, large l
   <div class="pub-venue">{{ talk.venue }}, {{ talk.year }}</div>
   <div class="pub-links">
     {% for link in talk.links %}
-    <a href="{{ link.url }}"><i class="{{ link.icon }}"></i> {{ link.label }}</a>
+    <a href="{{ link.url }}" target="_blank" rel="noopener"><i class="{{ link.icon }}" aria-hidden="true"></i> {{ link.label }}</a>
     {% endfor %}
   </div>
 </div>

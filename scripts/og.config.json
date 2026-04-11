@@ -1,0 +1,64 @@
+{
+  "width": 1200,
+  "height": 630,
+  "author": "Sinan Koparan",
+  "site": "sinankprn.com",
+  "outputDir": "assets/img/og",
+  "sourceDir": "assets/frontmatters",
+  "posts": [
+    {
+      "slug": "prompt2canvas",
+      "postFile": "2025-01-12-prompt2canvas.md",
+      "kicker": "Tool / Experiment",
+      "headline": "TEXT \u2192 ART, INSTANTLY",
+      "subtitle": "Turning prompts into live p5.js visuals",
+      "accent": "#ff2d95",
+      "source": "prompt2canvas.jpg"
+    },
+    {
+      "slug": "paperextractor",
+      "postFile": "2025-01-18-paperextractor.md",
+      "kicker": "Tool / Research",
+      "headline": "READ 100 PAPERS IN A MINUTE",
+      "subtitle": "Structured extraction from journal PDFs",
+      "accent": "#ffb020",
+      "source": "paperextractor.jpg"
+    },
+    {
+      "slug": "claude-opus-4.6-for-sports-analytics",
+      "postFile": "2025-02-08-claude-opus-4.6-for-sports-analytics.md",
+      "kicker": "Essay / Sport & AI",
+      "headline": "CLAUDE CODES FOOTBALL",
+      "subtitle": "Opus 4.6 in the sports analytics loop",
+      "accent": "#00d4ff",
+      "source": "claude-opus-4.6-for-sports-analytics.jpg"
+    },
+    {
+      "slug": "enhancing-sporting-organisation-efficiency-with-generative-ai",
+      "postFile": "2026-02-14-enhancing-sporting-organisation-efficiency-with-generative-ai.md",
+      "kicker": "Essay / Sport & AI",
+      "headline": "THE AI BACKROOM STAFF",
+      "subtitle": "Generative AI for sporting organisations",
+      "accent": "#ffa500",
+      "source": "enhancing-sporting-organisation-efficiency.jpg"
+    },
+    {
+      "slug": "gemini-document-understanding-for-meta-science-extraction",
+      "postFile": "2026-03-18-gemini-document-understanding-for-meta-science-extraction.md",
+      "kicker": "Essay / Meta-Science",
+      "headline": "GEMINI READS THE UNREADABLE",
+      "subtitle": "Document understanding for meta-science",
+      "accent": "#4fc3f7",
+      "source": "gemini-document-understanding.jpg"
+    },
+    {
+      "slug": "the-secret-life-of-your-chatbot",
+      "postFile": "2026-04-10-the-secret-life-of-your-chatbot.md",
+      "kicker": "Essay / Systems",
+      "headline": "INSIDE THE BOX YOU CAN'T SEE",
+      "subtitle": "What's really in your chatbot's context window",
+      "accent": "#c77dff",
+      "source": "the-secret-life-of-your-chatbot.jpg"
+    }
+  ]
+}
