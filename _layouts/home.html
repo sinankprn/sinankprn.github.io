@@ -70,7 +70,7 @@ refactor: true
           <span class="featured-hero__eyebrow-label">Latest Post</span>
           <span class="featured-hero__eyebrow-date">{% include datetime.html date=featured_post.date lang=lang %}</span>
         </span>
-        <h2 class="featured-hero__title">{{ featured_post.title }}</h2>
+        <h1 class="featured-hero__title">{{ featured_post.title }}</h1>
         <p class="featured-hero__excerpt">{{ featured_post.description | default: featured_post.excerpt | strip_html | truncate: 160 }}</p>
         <div class="featured-hero__footer">
           {% if featured_post.categories.size > 0 %}
@@ -82,9 +82,9 @@ refactor: true
         </div>
       </div>
       {% if featured_src %}
-        <div class="featured-hero__media" aria-hidden="true">
+        <div class="featured-hero__media">
           <div class="featured-hero__media-frame">
-            <img src="{{ featured_src }}" alt="{{ featured_alt }}" loading="eager">
+            <img src="{{ featured_src }}" alt="{{ featured_alt }}" width="1200" height="630" loading="eager" fetchpriority="high" decoding="async">
           </div>
         </div>
       {% endif %}

@@ -12,6 +12,18 @@
 <!-- Allow Google (and AI Overviews) to show large image previews -->
 <meta name="robots" content="max-image-preview:large">
 
+<!-- Preload featured hero image on home page for LCP -->
+{% if page.url == '/' %}
+  {% assign hero_post = site.posts | where_exp: 'item', 'item.hidden != true' | first %}
+  {% if hero_post.image %}
+    {% assign hero_src = hero_post.image.path | default: hero_post.image %}
+    {% unless hero_src contains '//' %}
+      {% assign hero_src = hero_post.media_subpath | append: '/' | append: hero_src | replace: '//', '/' %}
+    {% endunless %}
+    <link rel="preload" as="image" href="{{ hero_src | relative_url }}" fetchpriority="high">
+  {% endif %}
+{% endif %}
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17919898476"></script>
 <script>
