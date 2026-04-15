@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Do You Know How a Chatbot Actually Works?"
+title: "How Chatbots Actually Work (Simple Technical Explanation)"
 date: 2026-04-12 09:00:00 +1000
 last_modified_at: 2026-04-12 09:00:00 +1000
 categories: [Large Language Models]
