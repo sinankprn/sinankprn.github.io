@@ -33,3 +33,6 @@ nul
 # Shorts pipeline
 .env
 shorts/
+
+# Font generation cache
+scripts/.fontcache/

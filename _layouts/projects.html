@@ -11,82 +11,77 @@ refactor: true
 
 {% assign posts = '' | split: '' %}
 
-<!-- Get pinned posts -->
 {% for post in all_pinned %}
   {% assign posts = posts | push: post %}
 {% endfor %}
 
-<!-- Get normal posts -->
 {% for post in all_normal %}
   {% assign posts = posts | push: post %}
 {% endfor %}
 
-<div id="post-list" class="flex-grow-1 px-xl-1">
+{{ content }}
+
+<section class="project-grid" aria-label="Projects">
   {% for post in posts %}
-    <article class="card-wrapper card">
-      <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
-        {% assign card_body_col = '12' %}
-
-        {% if post.image %}
-          {% assign src = post.image.path | default: post.image %}
-          {% unless src contains '//' %}
-            {% assign src = post.media_subpath | append: '/' | append: src | replace: '//', '/' %}
+    {% assign has_image = false %}
+    {% if post.image %}
+      {% assign has_image = true %}
+      {% assign src = post.image.path | default: post.image %}
+      {% if post.media_subpath %}
+        {% unless src contains '://' %}
+          {% assign src = post.media_subpath | append: '/' | append: src | replace: '///', '/' | replace: '//', '/' %}
+        {% endunless %}
+      {% endif %}
+      {% assign alt = post.image.alt | xml_escape | default: post.title | xml_escape %}
+      {% assign lqip_attr = '' %}
+      {% if post.image.lqip %}
+        {% assign lqip_val = post.image.lqip %}
+        {% if post.media_subpath %}
+          {% unless lqip_val contains 'data:' %}
+            {% assign lqip_val = post.media_subpath | append: '/' | append: lqip_val | replace: '///', '/' | replace: '//', '/' %}
           {% endunless %}
+        {% endif %}
+        {% assign lqip_attr = 'lqip="' | append: lqip_val | append: '"' %}
+      {% endif %}
+    {% endif %}
 
-          {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
+    {% assign visible_tags = post.tags | where_exp: 'tag', 'tag != "projects"' %}
 
-          {% assign lqip = null %}
+    <article class="project-card{% unless has_image %} project-card--no-image{% endunless %}">
+      <a class="project-card__link" href="{{ post.url | relative_url }}" aria-label="View project: {{ post.title | xml_escape }}">
+        <div class="project-card__media" aria-hidden="true">
+          {% if has_image %}
+            <img src="{{ src }}" alt="{{ alt }}" loading="lazy" {{ lqip_attr }}>
+          {% else %}
+            <span class="project-card__placeholder" aria-hidden="true">
+              <span class="project-card__placeholder-mark">{{ post.title | slice: 0, 1 | upcase }}</span>
+            </span>
+          {% endif %}
+          {% if post.pin %}
+            <span class="project-card__pin" title="{{ site.data.locales[lang].post.pin_prompt }}">
+              <i class="fas fa-thumbtack fa-fw"></i>
+            </span>
+          {% endif %}
+        </div>
 
-          {% if post.image.lqip %}
-            {% capture lqip %}lqip="{{ post.image.lqip }}"{% endcapture %}
+        <div class="project-card__body">
+          <h2 class="project-card__title">{{ post.title }}</h2>
+
+          <p class="project-card__excerpt">{% include post-description.html %}</p>
+
+          {% if visible_tags.size > 0 %}
+            <ul class="project-card__tags" aria-label="Technologies">
+              {% for tag in visible_tags limit: 4 %}
+                <li>{{ tag }}</li>
+              {% endfor %}
+            </ul>
           {% endif %}
 
-          <div class="col-md-5">
-            <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
-          </div>
-
-          {% assign card_body_col = '7' %}
-        {% endif %}
-
-        <div class="col-md-{{ card_body_col }}">
-          <div class="card-body d-flex flex-column">
-            <h2 class="card-title my-2 mt-md-0">{{ post.title }}</h2>
-
-            <div class="card-text content mt-0 mb-3">
-              <p>{% include post-description.html %}</p>
-            </div>
-
-            <div class="post-meta flex-grow-1 d-flex align-items-end">
-              <div class="me-auto">
-                <!-- posted date -->
-                <i class="far fa-calendar fa-fw me-1"></i>
-                {% include datetime.html date=post.date lang=lang %}
-
-                <!-- categories -->
-                {% if post.categories.size > 0 %}
-                  <i class="far fa-folder-open fa-fw me-1"></i>
-                  <span class="categories">
-                    {% for category in post.categories %}
-                      {{ category }}
-                      {%- unless forloop.last -%},{%- endunless -%}
-                    {% endfor %}
-                  </span>
-                {% endif %}
-              </div>
-
-              {% if post.pin %}
-                <div class="pin ms-1">
-                  <i class="fas fa-thumbtack fa-fw"></i>
-                  <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
-                </div>
-              {% endif %}
-            </div>
-            <!-- .post-meta -->
-          </div>
-          <!-- .card-body -->
+          <span class="project-card__cta">
+            View project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </span>
         </div>
       </a>
     </article>
   {% endfor %}
-</div>
-<!-- #post-list -->
+</section>

@@ -1,5 +1,110 @@
 /* Custom styles */
 
+/* =====================================================
+   Design tokens
+   Shared values for radii, spacing, easing, duration,
+   shadows, and rule / link-tint colours. Defined here so
+   every custom component can reference one source of
+   truth. All colour tokens compose Chirpy's own theme
+   variables (--link-color, --text-color,
+   --main-border-color, --card-bg, --heading-color) via
+   color-mix, so they stay correct in BOTH light and dark
+   mode (Chirpy switches the underlying values via the
+   [data-mode] attribute on <html>).
+
+   Naming:
+     --radius-*     border radii (xs through pill)
+     --space-*      spacing scale (3xs through 5xl)
+     --ease-*       cubic-bezier easings
+     --dur-*        transition / animation durations
+     --shadow-*     neutral lift shadows
+     --glow-*       link-tinted halo shadows
+     --rule-*       hairline rule / border colours
+     --tint-link-*  link-tinted surface fills
+     --border-link-* link-tinted borders
+
+   Existing rules are NOT yet refactored to consume these
+   tokens. The home, projects and tabs engineers will
+   adopt them in their respective passes.
+   ===================================================== */
+
+:root {
+  /* Border radii */
+  --radius-xs: 2px;          /* sharp tags, eyebrow chips */
+  --radius-sm: 0.15rem;      /* inner media frame */
+  --radius-md: 0.3rem;       /* compact media surrounds */
+  --radius-lg: 0.5rem;       /* inputs, small buttons */
+  --radius-xl: 0.75rem;      /* cards (pub-card, newsletter) */
+  --radius-2xl: 1rem;        /* large hero panels (about-hero) */
+  --radius-3xl: 1.25rem;     /* feature hero panels */
+  --radius-pill: 2rem;       /* pill links and skill tags */
+  --radius-circle: 50%;      /* dots, avatars */
+
+  /* Spacing scale (rem) */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.4rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.625rem;
+  --space-md: 0.75rem;
+  --space-lg: 1rem;
+  --space-xl: 1.25rem;
+  --space-2xl: 1.5rem;
+  --space-3xl: 1.75rem;
+  --space-4xl: 2rem;
+  --space-5xl: 2.5rem;
+  --space-6xl: 2.75rem;
+
+  /* Easing curves */
+  --ease-snap: cubic-bezier(0.2, 0.8, 0.2, 1);   /* card lifts, CTA shifts */
+  --ease-rise: cubic-bezier(0.2, 0.85, 0.25, 1); /* entrance animations */
+  --ease-out: ease-out;
+  --ease-in-out: ease-in-out;
+  --ease-base: ease;
+
+  /* Durations */
+  --dur-instant: 0.15s;  /* tight hover feedback */
+  --dur-fast: 0.2s;      /* colour swaps, focus rings */
+  --dur-quick: 0.25s;    /* card lifts */
+  --dur-base: 0.3s;      /* hero lifts, default transitions */
+  --dur-medium: 0.35s;   /* CTA gap shifts */
+  --dur-slow: 0.5s;      /* media zoom, year-rule draw */
+  --dur-rise: 0.65s;     /* entrance rise */
+  --dur-rise-long: 0.85s;/* hero entrance rise */
+
+  /* Neutral lift shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.18);
+  --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.22);
+
+  /* Link-tinted halo / glow shadows */
+  --glow-sm: 0 0 12px color-mix(in srgb, var(--link-color) 15%, transparent);
+  --glow-md: 0 0 16px color-mix(in srgb, var(--link-color) 55%, transparent);
+  --glow-lg: 0 0 22px color-mix(in srgb, var(--link-color) 60%, transparent);
+  --glow-xl: 0 0 28px color-mix(in srgb, var(--link-color) 72%, transparent);
+  --glow-feature: 0 22px 48px -18px color-mix(in srgb, var(--link-color) 55%, transparent);
+
+  /* Rule / hairline colours */
+  --rule-soft: var(--main-border-color);
+  --rule-soft-faded: color-mix(in srgb, var(--main-border-color) 80%, transparent);
+  --rule-link-soft: color-mix(in srgb, var(--link-color) 35%, var(--main-border-color));
+  --rule-link-strong: color-mix(in srgb, var(--link-color) 55%, var(--main-border-color));
+
+  /* Link-tinted surface fills (for chips, hovered pills) */
+  --tint-link-faint: color-mix(in srgb, var(--link-color) 6%, transparent);
+  --tint-link-soft: color-mix(in srgb, var(--link-color) 12%, transparent);
+  --tint-link-medium: color-mix(in srgb, var(--link-color) 14%, transparent);
+  --tint-link-strong: color-mix(in srgb, var(--link-color) 22%, transparent);
+
+  /* Link-tinted borders (for chips, pills, focus states) */
+  --border-link-soft: color-mix(in srgb, var(--link-color) 35%, transparent);
+  --border-link-medium: color-mix(in srgb, var(--link-color) 45%, transparent);
+  --border-link-strong: color-mix(in srgb, var(--link-color) 55%, transparent);
+  --border-link-vivid: color-mix(in srgb, var(--link-color) 70%, transparent);
+
+  /* Heading / text tints used in hover states */
+  --text-link-tinted: color-mix(in srgb, var(--link-color) 18%, var(--text-color));
+}
+
 /* Disable avatar hover zoom completely */
 #sidebar #avatar img:hover {
   transform: scale(1.0) !important;
@@ -92,37 +197,38 @@
 .pub-card {
   position: relative;
   background: var(--card-bg);
-  border: 1px solid var(--main-border-color);
-  border-radius: 0.75rem;
-  padding: 1.75rem 1.75rem 1.5rem;
-  margin-bottom: 1.25rem;
-  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
-              box-shadow 0.25s ease,
-              border-color 0.25s ease;
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl) var(--space-3xl) var(--space-2xl);
+  margin-bottom: var(--space-xl);
+  transition: transform var(--dur-quick) var(--ease-snap),
+              box-shadow var(--dur-quick) var(--ease-base),
+              border-color var(--dur-quick) var(--ease-base);
 }
 
 .pub-card::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 1.75rem;
-  bottom: 1.5rem;
+  top: var(--space-3xl);
+  bottom: var(--space-2xl);
   width: 2px;
   background: color-mix(in srgb, var(--link-color) 0%, transparent);
-  border-radius: 0 2px 2px 0;
-  transition: background 0.25s ease, width 0.25s ease;
+  border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+  transition: background var(--dur-quick) var(--ease-base),
+              width var(--dur-quick) var(--ease-base);
 }
 
 .pub-card:hover {
   transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--link-color) 35%, var(--main-border-color));
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  border-color: var(--rule-link-soft);
+  box-shadow: var(--shadow-lg);
 }
 
 .pub-card:hover::before {
   background: var(--link-color);
   width: 3px;
-  box-shadow: 0 0 16px color-mix(in srgb, var(--link-color) 55%, transparent);
+  box-shadow: var(--glow-md);
 }
 
 .pub-card h3 {
@@ -165,30 +271,35 @@
 .pub-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--space-xs);
 }
 
 .pub-links a {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.4rem 0.9rem;
+  gap: var(--space-2xs);
+  padding: var(--space-2xs) var(--space-md);
   font-size: 0.8rem;
   font-weight: 500;
   border: 1px solid var(--link-color);
-  border-radius: 2rem;
+  border-radius: var(--radius-pill);
   color: var(--link-color);
   background: transparent;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.15s;
+  transition: background var(--dur-fast) var(--ease-base),
+              color var(--dur-fast) var(--ease-base),
+              transform var(--dur-instant) var(--ease-base),
+              box-shadow var(--dur-instant) var(--ease-base);
+  /* keep chips coherent on narrow viewports */
+  max-width: 100%;
 }
 
 .pub-links a:hover {
-  background: color-mix(in srgb, var(--link-color) 12%, transparent);
+  background: var(--tint-link-soft);
   color: var(--link-color);
-  border-color: color-mix(in srgb, var(--link-color) 70%, transparent);
+  border-color: var(--border-link-vivid);
   transform: translateY(-1px);
-  box-shadow: 0 0 12px color-mix(in srgb, var(--link-color) 15%, transparent);
+  box-shadow: var(--glow-sm);
 }
 
 .pub-links a:focus-visible {
@@ -198,7 +309,18 @@
 
 /* Resource Cards */
 .resource-section {
-  margin-top: 0.75rem;
+  margin-top: var(--space-md);
+}
+
+/* Inside resource sections, give chip groups more breathing room
+   so adjacent category labels and chip rows don't crowd. */
+.resource-section .pub-links {
+  gap: var(--space-sm) var(--space-sm);
+  margin: var(--space-2xs) 0 var(--space-sm);
+}
+
+.resource-section .pub-links a {
+  padding: var(--space-2xs) var(--space-lg);
 }
 
 .resource-category {
@@ -207,11 +329,11 @@
   color: var(--text-muted-color);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin: 1.25rem 0 0.75rem;
+  margin: var(--space-xl) 0 var(--space-md);
 }
 
 .resource-category:first-child {
-  margin-top: 0.25rem;
+  margin-top: var(--space-3xs);
 }
 
 .resource-books {
@@ -249,10 +371,10 @@
   font-size: clamp(1.1rem, 1.45vw, 1.35rem);
   line-height: 1.5;
   color: var(--text-color);
-  margin: 0.75rem 0 2.5rem;
+  margin: var(--space-md) 0 var(--space-5xl);
   max-width: 62ch;
-  padding-left: 1.35rem;
-  border-left: 2px solid color-mix(in srgb, var(--link-color) 55%, transparent);
+  padding-left: var(--space-xl);
+  border-left: 2px solid var(--border-link-strong);
 }
 
 .page-intro::before {
@@ -271,12 +393,52 @@
   font-size: 0.85rem;
   color: var(--text-muted-color);
   text-align: center;
-  margin-top: 2rem;
+  margin-top: var(--space-4xl);
 }
 
 /* Tighter top spacing for the first category inside a pub-card */
 .pub-card .resource-category:first-of-type {
-  margin-top: 0.25rem;
+  margin-top: var(--space-3xs);
+}
+
+/* About page two-up grid for compact paired sections (Education + Connect).
+   Stacks below 900px; side-by-side above to give the spine of the page rhythm. */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.about-grid > .pub-card {
+  margin-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+}
+
+/* Resources page two-up grid for tool category cards.
+   Stacks below 768px; pairs cards above so chip groups breathe. */
+.resource-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.resource-grid > .pub-card {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .resource-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
 }
 
 /* Featured post hero on home — editorial / type-first */
@@ -752,8 +914,16 @@
 }
 
 @media (max-width: 600px) {
+  .featured-hero-wrap {
+    /* Tighter neon ring on mobile — wrapper sits flush with the viewport */
+    padding: 1.5px;
+    border-radius: calc(var(--radius-2xl) + 2px);
+    margin-bottom: var(--space-3xl);
+  }
+
   .featured-hero {
     padding: 2rem 1.5rem 1.75rem;
+    border-radius: var(--radius-2xl);
   }
 
   .featured-hero::before {
@@ -773,6 +943,12 @@
     gap: 1rem;
   }
 
+  /* Allow the meta date to wrap onto its own line on very narrow viewports
+     so the eyebrow row never overflows */
+  .featured-hero__eyebrow-date {
+    white-space: normal;
+  }
+
   .featured-hero__footer {
     font-size: 0.65rem;
   }
@@ -783,21 +959,52 @@
 
   .featured-hero__media {
     max-width: 100%;
+    /* Reduce the corner-bracket overhang on mobile so they aren't
+       clipped by the hero's overflow:hidden and the neon wrapper */
+    margin: 6px;
+  }
+
+  .featured-hero__media::before {
+    top: -6px;
+    left: -6px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .featured-hero__media::after {
+    bottom: -6px;
+    right: -6px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .featured-hero:hover .featured-hero__media::before {
+    top: -10px;
+    left: -10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .featured-hero:hover .featured-hero__media::after {
+    bottom: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
   }
 }
 
-/* Year grouping headers on publications page */
+/* Year grouping headers on publications and talks pages */
 .year-group-heading {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--space-lg);
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--text-muted-color);
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  margin: 2.5rem 0 1.25rem;
+  margin: var(--space-5xl) 0 var(--space-xl);
   padding: 0;
   border: 0;
 }
@@ -806,7 +1013,9 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: var(--main-border-color);
+  background: var(--rule-soft);
+  /* will-change avoids layout reflow during the rule-draw scaleX */
+  will-change: transform;
 }
 
 .year-group-heading::before {
@@ -814,12 +1023,26 @@
   width: 10px;
   height: 10px;
   border: 2px solid var(--link-color);
-  border-radius: 50%;
+  border-radius: var(--radius-circle);
   box-shadow: 0 0 10px color-mix(in srgb, var(--link-color) 45%, transparent);
+  flex-shrink: 0;
 }
 
 .year-group-heading:first-of-type {
-  margin-top: 0.5rem;
+  margin-top: var(--space-xs);
+}
+
+/* Year-group container: gives stacked cards consistent vertical rhythm
+   independent of pub-card's own bottom margin. */
+.year-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.year-group > .pub-card {
+  margin-bottom: 0;
 }
 
 /* About page hero — editorial spine, echoes home featured hero */
@@ -829,10 +1052,10 @@
   background:
     radial-gradient(ellipse at 92% 10%, color-mix(in srgb, var(--link-color) 14%, transparent) 0%, transparent 55%),
     linear-gradient(180deg, var(--card-bg) 0%, color-mix(in srgb, var(--link-color) 3%, var(--card-bg)) 100%);
-  border: 1px solid var(--main-border-color);
-  border-radius: 1rem;
-  padding: 2.75rem 2.5rem 2.5rem;
-  margin: 0.5rem 0 2rem;
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6xl) var(--space-5xl) var(--space-5xl);
+  margin: var(--space-xs) 0 var(--space-4xl);
   isolation: isolate;
 }
 
@@ -919,33 +1142,47 @@
 .about-hero .hero-focus {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
-  margin: 1.5rem 0 0;
-  padding: 1.5rem 0 0;
+  gap: var(--space-xs);
+  margin: var(--space-2xl) 0 0;
+  padding: var(--space-2xl) 0 0;
   list-style: none;
-  border-top: 1px solid color-mix(in srgb, var(--main-border-color) 80%, transparent);
+  border-top: 1px solid var(--rule-soft-faded);
 }
 
 .about-hero .hero-focus li {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 0.9rem;
+  gap: var(--space-xs);
+  padding: var(--space-2xs) var(--space-md);
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--heading-color);
-  background: color-mix(in srgb, var(--link-color) 6%, transparent);
-  border: 1px solid color-mix(in srgb, var(--link-color) 35%, transparent);
-  border-radius: 2px;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  background: var(--tint-link-faint);
+  border: 1px solid var(--border-link-soft);
+  border-radius: var(--radius-xs);
+  transition: background var(--dur-fast) var(--ease-base),
+              border-color var(--dur-fast) var(--ease-base),
+              box-shadow var(--dur-fast) var(--ease-base);
 }
 
 .about-hero .hero-focus li:hover {
-  background: color-mix(in srgb, var(--link-color) 14%, transparent);
-  border-color: color-mix(in srgb, var(--link-color) 55%, transparent);
+  background: var(--tint-link-medium);
+  border-color: var(--border-link-strong);
+}
+
+/* Keyboard focus parity: each focus chip is non-interactive but
+   contains no link — keep :focus-visible scoped to interactive
+   children if they ever appear, and surface a visible ring on the
+   chip itself for keyboard users tabbing through screen-reader lists. */
+.about-hero .hero-focus li:focus-visible,
+.about-hero .hero-focus li:focus-within {
+  outline: 2px solid var(--link-color);
+  outline-offset: 3px;
+  background: var(--tint-link-medium);
+  border-color: var(--border-link-strong);
 }
 
 .about-hero .hero-focus li i {
@@ -955,26 +1192,42 @@
 
 @media (max-width: 576px) {
   .about-hero {
-    padding: 2rem 1.5rem 1.75rem;
+    padding: var(--space-4xl) var(--space-2xl) var(--space-3xl);
   }
 
   .about-hero::before {
-    left: 1.5rem;
-    top: 2rem;
-    bottom: 2rem;
+    left: var(--space-2xl);
+    top: var(--space-4xl);
+    bottom: var(--space-4xl);
   }
 
   .about-hero::after {
-    left: calc(1.5rem - 1px);
-    top: 2rem;
+    left: calc(var(--space-2xl) - 1px);
+    top: var(--space-4xl);
   }
 
   .about-hero .about-hero-body {
-    padding-left: 1rem;
+    padding-left: var(--space-lg);
   }
 
   .about-hero .about-hero-name {
     font-size: 1.85rem;
+  }
+
+  .pub-card {
+    padding: var(--space-2xl) var(--space-xl) var(--space-xl);
+  }
+
+  .pub-card::before {
+    top: var(--space-2xl);
+    bottom: var(--space-xl);
+  }
+
+  /* Year-group rule line is shorter on small screens — break-out
+     the heading dot so it does not crowd the year text. */
+  .year-group-heading {
+    margin: var(--space-3xl) 0 var(--space-lg);
+    gap: var(--space-md);
   }
 }
 
@@ -982,8 +1235,8 @@
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
-  margin: 0.25rem 0 0;
+  gap: var(--space-xs);
+  margin: var(--space-3xs) 0 0;
   padding: 0;
   list-style: none;
 }
@@ -995,13 +1248,13 @@
 .skill-tags span {
   display: inline-flex;
   align-items: center;
-  padding: 0.35rem 0.8rem;
+  padding: var(--space-2xs) var(--space-md);
   font-size: 0.78rem;
   font-weight: 500;
-  border: 1px solid color-mix(in srgb, var(--link-color) 55%, transparent);
-  border-radius: 2rem;
+  border: 1px solid var(--border-link-strong);
+  border-radius: var(--radius-pill);
   color: var(--link-color);
-  background: color-mix(in srgb, var(--link-color) 6%, transparent);
+  background: var(--tint-link-faint);
   line-height: 1.3;
 }
 
@@ -1030,13 +1283,13 @@
 /* Page intro (publications, talks, resources) */
 .page-intro {
   opacity: 0;
-  animation: ah-rise 0.7s cubic-bezier(0.2, 0.85, 0.25, 1) 0.1s forwards;
+  animation: ah-rise var(--dur-rise) var(--ease-rise) 0.1s forwards;
 }
 
 /* Publication / content cards */
 .pub-card {
   opacity: 0;
-  animation: ah-rise 0.6s cubic-bezier(0.2, 0.85, 0.25, 1) 0.1s forwards;
+  animation: ah-rise var(--dur-rise) var(--ease-rise) 0.1s forwards;
 }
 
 /* Stagger cards within year groups */
@@ -1044,10 +1297,20 @@
 .year-group > .pub-card:nth-child(3) { animation-delay: 0.26s; }
 .year-group > .pub-card:nth-child(4) { animation-delay: 0.34s; }
 
-/* Year-group rule line draws from left */
+/* Stagger paired about-grid cards */
+.about-grid > .pub-card:nth-child(2) { animation-delay: 0.22s; }
+
+/* Stagger resource-grid cards */
+.resource-grid > .pub-card:nth-child(2) { animation-delay: 0.18s; }
+.resource-grid > .pub-card:nth-child(3) { animation-delay: 0.26s; }
+.resource-grid > .pub-card:nth-child(4) { animation-delay: 0.34s; }
+
+/* Year-group rule line draws from left.
+   transform-origin + scaleX runs entirely on the compositor and
+   pairs with will-change: transform on the pseudo-element above. */
 .year-group-heading::after {
-  transform-origin: left;
-  animation: rule-draw 0.5s ease-out 0.2s both;
+  transform-origin: left center;
+  animation: rule-draw var(--dur-slow) var(--ease-snap) 0.2s both;
 }
 
 /* About hero: staggered entrance mirroring featured-hero */
@@ -1063,17 +1326,86 @@
 .about-hero-body > :nth-child(5) { animation-delay: 0.35s; }
 
 /* =====================================================
+   Home — section divider between hero and post list
+   ===================================================== */
+
+.post-list-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin: var(--space-3xl) 0 var(--space-xl);
+  padding: 0;
+}
+
+.post-list-heading__label {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted-color);
+  white-space: nowrap;
+}
+
+.post-list-heading__rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--rule-link-soft) 0%,
+    var(--rule-soft-faded) 35%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 600px) {
+  .post-list-heading {
+    margin: var(--space-2xl) 0 var(--space-lg);
+    gap: var(--space-md);
+  }
+
+  .post-list-heading__label {
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+  }
+}
+
+/* =====================================================
    Post card hover lift (home page list)
    ===================================================== */
 
-.card-wrapper.card {
-  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
-              box-shadow 0.25s ease;
+#post-list .card-wrapper.card {
+  border-radius: var(--radius-xl);
+  transition: transform var(--dur-quick) var(--ease-snap),
+              box-shadow var(--dur-quick) var(--ease-out),
+              border-color var(--dur-quick) var(--ease-out);
 }
 
-.card-wrapper.card:hover {
+#post-list .card-wrapper.card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--shadow-md);
+  border-color: var(--rule-link-soft);
+}
+
+#post-list .card-wrapper.card:focus-within {
+  border-color: var(--rule-link-strong);
+}
+
+#post-list .card-wrapper.card .card-title {
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+#post-list .card-wrapper.card:hover .card-title {
+  color: var(--text-link-tinted);
+}
+
+#post-list .card-wrapper .post-meta {
+  color: var(--text-muted-color);
+}
+
+#post-list .card-wrapper .post-meta i {
+  color: var(--link-color);
+  opacity: 0.85;
 }
 
 /* =====================================================
@@ -1115,9 +1447,9 @@
 .featured-hero-wrap {
   position: relative;
   z-index: 0;                          /* establishes stacking context */
-  border-radius: calc(1.25rem + 3px);  /* 3px > 2px padding, curves match */
+  border-radius: calc(var(--radius-3xl) + 3px); /* 3px > 2px padding, curves match */
   padding: 2px;
-  margin-bottom: 2.75rem;
+  margin-bottom: var(--space-6xl);
   /* no background — the pseudo-elements paint the neon border */
 }
 
@@ -1140,7 +1472,9 @@
     transparent 100%
   );
   z-index: -1;
-  animation: fh-neon-rotate 5s linear infinite;
+  opacity: 0.65;
+  transition: opacity var(--dur-base) var(--ease-out);
+  animation: fh-neon-rotate 12s linear infinite;
 }
 
 /* Blurred glow halo — same gradient, spread wider */
@@ -1159,9 +1493,21 @@
     transparent 100%
   );
   filter: blur(18px);
-  opacity: 0.72;
+  opacity: 0.42;
+  transition: opacity var(--dur-base) var(--ease-out);
   z-index: -2;
-  animation: fh-neon-rotate 5s linear infinite;
+  animation: fh-neon-rotate 12s linear infinite;
+}
+
+/* Brighten neon on hover/focus */
+.featured-hero-wrap:hover::before,
+.featured-hero-wrap:focus-within::before {
+  opacity: 1;
+}
+
+.featured-hero-wrap:hover::after,
+.featured-hero-wrap:focus-within::after {
+  opacity: 0.78;
 }
 
 /* Hero sits flush — wrapper owns the margin */
@@ -1185,5 +1531,275 @@
 
   #post-list .card-wrapper .post-meta {
     font-size: 0.85rem;
+  }
+}
+
+/* =====================================================
+   Projects grid — responsive card layout
+   1 col under 600px, 2 col 600–960px, 3 col above 960px
+   ===================================================== */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  margin: 0 0 var(--space-3xl);
+}
+
+@media (min-width: 600px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  background: var(--card-bg);
+  border: 1px solid var(--rule-soft);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  isolation: isolate;
+  opacity: 0;
+  animation: ah-rise 0.6s var(--ease-rise) 0.1s forwards;
+  transition:
+    transform var(--dur-quick) var(--ease-snap),
+    border-color var(--dur-quick) var(--ease-out),
+    box-shadow var(--dur-quick) var(--ease-out);
+}
+
+.project-grid > .project-card:nth-child(2) { animation-delay: 0.18s; }
+.project-grid > .project-card:nth-child(3) { animation-delay: 0.26s; }
+.project-grid > .project-card:nth-child(4) { animation-delay: 0.34s; }
+.project-grid > .project-card:nth-child(5) { animation-delay: 0.42s; }
+.project-grid > .project-card:nth-child(6) { animation-delay: 0.5s; }
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: color-mix(in srgb, var(--link-color) 0%, transparent);
+  border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+  transition: background var(--dur-quick) var(--ease-out), width var(--dur-quick) var(--ease-out);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-3px);
+  border-color: var(--rule-link-soft);
+  box-shadow: var(--shadow-md);
+}
+
+.project-card:hover::before,
+.project-card:focus-within::before {
+  background: var(--link-color);
+  width: 3px;
+  box-shadow: var(--glow-md);
+}
+
+.project-card__link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card__link:hover,
+.project-card__link:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card__link:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 3px;
+}
+
+.project-card__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--link-color) 18%, var(--card-bg)) 0%,
+    color-mix(in srgb, var(--link-color) 4%, var(--card-bg)) 100%
+  );
+  border-bottom: 1px solid var(--rule-soft-faded);
+}
+
+.project-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--dur-slow) var(--ease-snap);
+}
+
+.project-card:hover .project-card__media img,
+.project-card:focus-within .project-card__media img {
+  transform: scale(1.04);
+}
+
+.project-card__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 78% 18%, color-mix(in srgb, var(--link-color) 22%, transparent) 0%, transparent 55%),
+    radial-gradient(ellipse at 12% 88%, color-mix(in srgb, var(--link-color) 12%, transparent) 0%, transparent 55%),
+    linear-gradient(140deg,
+      color-mix(in srgb, var(--link-color) 14%, var(--card-bg)) 0%,
+      color-mix(in srgb, var(--link-color) 4%, var(--card-bg)) 100%);
+}
+
+.project-card__placeholder-mark {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-weight: 900;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  letter-spacing: -0.02em;
+  color: color-mix(in srgb, var(--link-color) 55%, var(--heading-color));
+  opacity: 0.85;
+  line-height: 1;
+}
+
+.project-card__pin {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: var(--radius-circle);
+  background: color-mix(in srgb, var(--card-bg) 88%, transparent);
+  border: 1px solid var(--border-link-soft);
+  color: var(--link-color);
+  font-size: 0.75rem;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--space-xl) var(--space-lg);
+}
+
+.project-card__title {
+  font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-variation-settings: "opsz" 72, "SOFT" 20;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: var(--heading-color);
+  margin: 0;
+  text-wrap: balance;
+  transition: color var(--dur-base) var(--ease-out);
+}
+
+.project-card:hover .project-card__title,
+.project-card:focus-within .project-card__title {
+  color: var(--text-link-tinted);
+}
+
+.project-card__excerpt {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-card__tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin: 0;
+  padding: 0;
+}
+
+.project-card__tags li {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: var(--link-color);
+  background: var(--tint-link-faint);
+  border: 1px solid var(--border-link-soft);
+  border-radius: var(--radius-xs);
+  line-height: 1.2;
+}
+
+.project-card__cta {
+  margin-top: auto;
+  padding-top: var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--link-color);
+  border-top: 1px solid var(--rule-soft-faded);
+  transition: gap var(--dur-medium) var(--ease-snap);
+}
+
+.project-card__cta i {
+  font-size: 0.85em;
+  transition: transform var(--dur-base) var(--ease-snap);
+}
+
+.project-card:hover .project-card__cta,
+.project-card:focus-within .project-card__cta {
+  gap: var(--space-md);
+}
+
+.project-card:hover .project-card__cta i,
+.project-card:focus-within .project-card__cta i {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card__media img,
+  .project-card__title,
+  .project-card__cta,
+  .project-card__cta i {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

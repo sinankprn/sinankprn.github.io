@@ -7,6 +7,8 @@ description: "Curated tools, libraries, courses, and datasets for sports data sc
 
 <p class="page-intro">A curated collection of tools, papers, and learning materials I find valuable in sports data science, machine learning, and AI.</p>
 
+<div class="resource-grid">
+
 <div class="pub-card">
   <h3><i class="fas fa-cogs" aria-hidden="true"></i>Tools &amp; Libraries</h3>
   <div class="resource-section">
@@ -77,6 +79,8 @@ description: "Curated tools, libraries, courses, and datasets for sports data sc
       <a href="https://ai.google.dev/" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> Google Gemini</a>
     </div>
   </div>
+</div>
+
 </div>
 
 <p class="page-note">
