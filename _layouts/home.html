@@ -5,8 +5,9 @@ refactor: true
 
 {% include lang.html %}
 
-{% assign all_pinned = site.posts | where: 'pin', 'true' %}
-{% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
+{% assign home_posts = site.posts | where_exp: 'item', 'item.tags contains "projects" == false' %}
+{% assign all_pinned = home_posts | where: 'pin', 'true' %}
+{% assign all_normal = home_posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
 
 {% assign posts = '' | split: '' %}
 
@@ -31,7 +32,14 @@ refactor: true
 
 <!-- Get normal posts on current page -->
 
-{% assign normal_size = paginator.posts | size | minus: pinned_size %}
+{% assign page_capacity = paginator.per_page | minus: pinned_size %}
+{% assign remaining_normal = all_normal | size | minus: visible_start %}
+{% if remaining_normal < 0 %}{% assign remaining_normal = 0 %}{% endif %}
+{% if page_capacity < remaining_normal %}
+  {% assign normal_size = page_capacity %}
+{% else %}
+  {% assign normal_size = remaining_normal %}
+{% endif %}
 
 {% if normal_size > 0 %}
   {% if pinned_size > 0 %}
@@ -89,6 +97,18 @@ refactor: true
         </div>
       {% endif %}
     </a>
+  </div>
+{% endif %}
+
+{% assign remaining_count = posts | size %}
+{% if featured_post %}
+  {% assign remaining_count = remaining_count | minus: 1 %}
+{% endif %}
+
+{% if remaining_count > 0 and featured_post %}
+  <div class="post-list-heading" aria-hidden="true">
+    <span class="post-list-heading__label">More writing</span>
+    <span class="post-list-heading__rule"></span>
   </div>
 {% endif %}
 
