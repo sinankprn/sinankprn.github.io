@@ -48,36 +48,36 @@ description: "Sinan Koparan, PhD Candidate at UTS researching sports data scienc
   </div>
 
   <div class="pub-card">
-    <h3><i class="fas fa-envelope" aria-hidden="true"></i>Let's Connect</h3>
-    <p>I'm always open to discussing research collaborations, technical challenges, or opportunities where data science and AI can make a meaningful difference.</p>
-    <div class="pub-links">
-      <a href="/assets/docs/cv.pdf" target="_blank" rel="noopener" aria-label="Download Sinan Koparan CV (PDF)"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV (PDF)</a>
-      <a href="https://www.linkedin.com/in/sinankprn/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
-      <a href="https://github.com/sinankprn" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-      <a href="mailto:sinan.koparan@uts.edu.au"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
+    <h3><i class="fas fa-code" aria-hidden="true"></i>Technical Skills</h3>
+    <div class="resource-section">
+      <div class="resource-category">Languages &amp; Frameworks</div>
+      <ul class="skill-tags" role="list" aria-label="Languages and frameworks">
+        <li><span>Python</span></li><li><span>JavaScript</span></li><li><span>TypeScript</span></li><li><span>SQL</span></li>
+      </ul>
+      <div class="resource-category">Machine Learning &amp; AI</div>
+      <ul class="skill-tags" role="list" aria-label="Machine learning and AI">
+        <li><span>Scikit-learn</span></li><li><span>PyTorch</span></li><li><span>LLMs</span></li><li><span>Agents</span></li><li><span>LangChain</span></li><li><span>OpenAI API</span></li><li><span>Google Gemini API</span></li><li><span>RAG Systems</span></li>
+      </ul>
+      <div class="resource-category">Data &amp; Analytics</div>
+      <ul class="skill-tags" role="list" aria-label="Data and analytics">
+        <li><span>Pandas</span></li><li><span>NumPy</span></li><li><span>Statistical Modelling</span></li><li><span>Data Visualisation</span></li>
+      </ul>
+      <div class="resource-category">Development &amp; Tools</div>
+      <ul class="skill-tags" role="list" aria-label="Development and tools">
+        <li><span>React</span></li><li><span>Node.js</span></li><li><span>Express</span></li><li><span>Git</span></li><li><span>REST APIs</span></li>
+      </ul>
     </div>
   </div>
 </div>
 
 <div class="pub-card">
-  <h3><i class="fas fa-code" aria-hidden="true"></i>Technical Skills</h3>
-  <div class="resource-section">
-    <div class="resource-category">Languages &amp; Frameworks</div>
-    <ul class="skill-tags" role="list" aria-label="Languages and frameworks">
-      <li><span>Python</span></li><li><span>JavaScript</span></li><li><span>TypeScript</span></li><li><span>SQL</span></li>
-    </ul>
-    <div class="resource-category">Machine Learning &amp; AI</div>
-    <ul class="skill-tags" role="list" aria-label="Machine learning and AI">
-      <li><span>Scikit-learn</span></li><li><span>PyTorch</span></li><li><span>LLMs</span></li><li><span>Agents</span></li><li><span>LangChain</span></li><li><span>OpenAI API</span></li><li><span>Google Gemini API</span></li><li><span>RAG Systems</span></li>
-    </ul>
-    <div class="resource-category">Data &amp; Analytics</div>
-    <ul class="skill-tags" role="list" aria-label="Data and analytics">
-      <li><span>Pandas</span></li><li><span>NumPy</span></li><li><span>Statistical Modelling</span></li><li><span>Data Visualisation</span></li>
-    </ul>
-    <div class="resource-category">Development &amp; Tools</div>
-    <ul class="skill-tags" role="list" aria-label="Development and tools">
-      <li><span>React</span></li><li><span>Node.js</span></li><li><span>Express</span></li><li><span>Git</span></li><li><span>REST APIs</span></li>
-    </ul>
+  <h3><i class="fas fa-envelope" aria-hidden="true"></i>Let's Connect</h3>
+  <p>I'm always open to discussing research collaborations, technical challenges, or opportunities where data science and AI can make a meaningful difference.</p>
+  <div class="pub-links">
+    <a href="/assets/docs/cv.pdf" target="_blank" rel="noopener" aria-label="Download Sinan Koparan CV (PDF)"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV (PDF)</a>
+    <a href="https://www.linkedin.com/in/sinankprn/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+    <a href="https://github.com/sinankprn" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+    <a href="mailto:sinan.koparan@uts.edu.au"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
   </div>
 </div>
 
