@@ -5,7 +5,12 @@ refactor: true
 
 {% include lang.html %}
 
-{% assign home_posts = site.posts | where_exp: 'item', 'item.tags contains "projects" == false' %}
+{% assign home_posts = '' | split: '' %}
+{% for post in site.posts %}
+  {% unless post.tags contains 'projects' %}
+    {% assign home_posts = home_posts | push: post %}
+  {% endunless %}
+{% endfor %}
 {% assign all_pinned = home_posts | where: 'pin', 'true' %}
 {% assign all_normal = home_posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
 
