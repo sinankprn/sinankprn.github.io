@@ -21,27 +21,40 @@ description: "Sinan Koparan, PhD Candidate at UTS researching sports data scienc
 
 <div class="pub-card">
   <h3><i class="fas fa-user" aria-hidden="true"></i>About Me</h3>
-  <p>I am a PhD candidate focused on leveraging data science and AI to drive insights in community sport analytics. My research combines statistical modelling, machine learning, and practical applications to help organisations make informed, data-driven decisions.</p>
-  <p>In my free time, I enjoy playing video games and exploring programming projects recreationally.</p>
+  <p>I am a PhD Candidate in Sports Data Science and AI in the Next Generation Graduates Program (NGGP), supported by CSIRO Data61 and Rugby Australia. My research examines how club organisational characteristics shape participation growth and retention in community sport, helping national sporting organisations make evidence-based decisions about where to invest to retain players, grow the game, and keep clubs sustainable.</p>
+  <p>Alongside my PhD, I work as a Research Assistant on an applied AI project with the NSW Institute of Sport (NSWIS), exploring how Large Language Models can support coaches and athletes by automating content analysis and accelerating insight generation.</p>
 </div>
 
-<div class="pub-card">
-  <h3><i class="fas fa-graduation-cap" aria-hidden="true"></i>Education</h3>
-  <div class="resource-section">
-    <div class="resource-category">Doctor of Philosophy (PhD)</div>
-    <div class="resource-books">
-      University of Technology Sydney<br>
-      <em>Current, Community Sport Analytics Research</em>
+<div class="about-grid">
+  <div class="pub-card">
+    <h3><i class="fas fa-graduation-cap" aria-hidden="true"></i>Education</h3>
+    <div class="resource-section">
+      <div class="resource-category">Doctor of Philosophy (PhD)</div>
+      <div class="resource-books">
+        University of Technology Sydney<br>
+        <em>Current, Community Sport Analytics Research</em>
+      </div>
+      <div class="resource-category">Master of Information and Communications Technology (AI &amp; Cloud Computing)</div>
+      <div class="resource-books">
+        Western Sydney University<br>
+        GPA: 6.574 / 7<br>
+        Dean's Merit Award: 2021, 2022, 2023
+      </div>
+      <div class="resource-category">Bachelor of Business (Management)</div>
+      <div class="resource-books">
+        Western Sydney University
+      </div>
     </div>
-    <div class="resource-category">Master of Information and Communications Technology (AI &amp; Cloud Computing)</div>
-    <div class="resource-books">
-      Western Sydney University<br>
-      GPA: 6.574 / 7<br>
-      Dean's Merit Award: 2021, 2022, 2023
-    </div>
-    <div class="resource-category">Bachelor of Business (Management)</div>
-    <div class="resource-books">
-      Western Sydney University
+  </div>
+
+  <div class="pub-card">
+    <h3><i class="fas fa-envelope" aria-hidden="true"></i>Let's Connect</h3>
+    <p>I'm always open to discussing research collaborations, technical challenges, or opportunities where data science and AI can make a meaningful difference.</p>
+    <div class="pub-links">
+      <a href="/assets/docs/cv.pdf" target="_blank" rel="noopener" aria-label="Download Sinan Koparan CV (PDF)"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV (PDF)</a>
+      <a href="https://www.linkedin.com/in/sinankprn/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+      <a href="https://github.com/sinankprn" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+      <a href="mailto:sinan.koparan@uts.edu.au"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
     </div>
   </div>
 </div>
@@ -65,17 +78,6 @@ description: "Sinan Koparan, PhD Candidate at UTS researching sports data scienc
     <ul class="skill-tags" role="list" aria-label="Development and tools">
       <li><span>React</span></li><li><span>Node.js</span></li><li><span>Express</span></li><li><span>Git</span></li><li><span>REST APIs</span></li>
     </ul>
-  </div>
-</div>
-
-<div class="pub-card">
-  <h3><i class="fas fa-envelope" aria-hidden="true"></i>Let's Connect</h3>
-  <p>I'm always open to discussing research collaborations, technical challenges, or opportunities where data science and AI can make a meaningful difference.</p>
-  <div class="pub-links">
-    <a href="/assets/docs/cv.pdf" target="_blank" rel="noopener" aria-label="Download Sinan Koparan CV (PDF)"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV (PDF)</a>
-    <a href="https://www.linkedin.com/in/sinankprn/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
-    <a href="https://github.com/sinankprn" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
-    <a href="mailto:sinan.koparan@uts.edu.au"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
   </div>
 </div>
 
