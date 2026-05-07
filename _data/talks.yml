@@ -6,6 +6,14 @@
       url: "/assets/presentations/generativeaiforbiomechanists2026.pdf"
       icon: "fas fa-file-pdf"
 
+- title: "Agentic Coding Tools for Biomechanics"
+  venue: "Australian Institute of Sports Biomechanics Network"
+  year: 2026
+  links:
+    - label: Slides
+      url: "/assets/presentations/agenticcodingtoolsforbiomechanics2026.pdf"
+      icon: "fas fa-file-pdf"
+
 - title: "Technical Considerations for Reliable Studies Using Large Language Models"
   venue: "Faculty of Health GenAI-Enhance Summit, UTS"
   year: 2026
