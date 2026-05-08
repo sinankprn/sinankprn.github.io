@@ -59,6 +59,16 @@
       "subtitle": "What's really in your chatbot's context window",
       "accent": "#c77dff",
       "source": "the-secret-life-of-your-chatbot.jpg"
+    },
+    {
+      "slug": "codethecountdown",
+      "postFile": "2026-05-08-codethecountdown.md",
+      "kicker": "Project / Creative Coding",
+      "headline": "CELLULAR COUNTDOWN",
+      "subtitle": "A 10-second timer in cellular automata",
+      "accent": "auto",
+      "source": "codethecountdown.png",
+      "imagePrompt": "A vast grid of glowing cellular automata cells evolving in deep dark space, intricate emergent patterns rippling across the grid, rim-lit by an electric indigo glow with deep shadows, abstract and cinematic, faint geometric scaffolding, a sense of countdown and emergence."
     }
   ]
 }
