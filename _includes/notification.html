@@ -1,0 +1,57 @@
+<!--
+  Overrides the theme's PWA update popup (jekyll-theme-chirpy
+  _includes/notification.html). Same markup and hooks, plus a fallback
+  so tapping "Update" always reloads, even when the service worker's
+  controllerchange event never fires (seen on mobile Safari).
+-->
+<aside
+  id="notification"
+  class="toast w-auto rounded-5 text-nowrap"
+  role="alert"
+  aria-live="assertive"
+  aria-atomic="true"
+  data-bs-animation="true"
+  data-bs-autohide="false"
+>
+  <div class="d-flex align-items-center">
+    <div class="toast-body ps-3">
+      {{- site.data.locales[include.lang].notification.update_found -}}
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary btn-sm rounded-2 py-0"
+      aria-label="Update"
+    >
+      {{- site.data.locales[include.lang].notification.update -}}
+    </button>
+    <button
+      type="button"
+      class="btn-close mx-3 ms-2"
+      data-bs-dismiss="toast"
+      aria-label="Close"
+    ></button>
+  </div>
+</aside>
+
+<script>
+  (function () {
+    var btn = document.querySelector('#notification [aria-label="Update"]');
+    if (!btn || !('serviceWorker' in navigator)) return;
+
+    btn.addEventListener('click', function () {
+      /* The theme's handler posts SKIP_WAITING and waits for
+         controllerchange to reload. Make sure a reload happens anyway. */
+      btn.disabled = true;
+      navigator.serviceWorker.getRegistration().then(function (reg) {
+        if (reg && reg.waiting) {
+          reg.waiting.postMessage('SKIP_WAITING');
+          setTimeout(function () { window.location.reload(); }, 1500);
+        } else {
+          window.location.reload();
+        }
+      }, function () {
+        window.location.reload();
+      });
+    });
+  })();
+</script>

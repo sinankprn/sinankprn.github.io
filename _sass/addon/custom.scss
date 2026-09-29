@@ -307,6 +307,18 @@
   outline-offset: 3px;
 }
 
+/* Chirpy styles `.content a` as an underlined text link: a pale bottom
+   border (clearly visible in light mode) and an orange !important hover
+   colour. Re-assert the pill button styling at matching specificity. */
+.content .pub-links a {
+  border-bottom: 1px solid var(--link-color);
+}
+
+.content .pub-links a:hover {
+  color: var(--link-color) !important;
+  border-bottom: 1px solid var(--border-link-vivid);
+}
+
 /* Resource Cards */
 .resource-section {
   margin-top: var(--space-md);
@@ -1802,4 +1814,52 @@
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* =====================================================
+   PWA "New content available" popup
+   The theme's buttons are ~21px (Update) and 15px (close)
+   tall, too small to tap reliably on phones, and the popup
+   has no z-index so page layers can sit above it. Give it a
+   proper stacking level and 44px touch targets.
+   ===================================================== */
+#notification.toast {
+  z-index: 1090;
+  pointer-events: auto;
+  max-width: calc(100vw - 2rem);
+  background-color: color-mix(in srgb, var(--card-bg) 85%, transparent);
+  border: 1px solid var(--main-border-color);
+  box-shadow: var(--shadow-md);
+  color: var(--text-color);
+}
+
+#notification .toast-body {
+  padding-right: var(--space-md);
+}
+
+#notification.toast > .d-flex {
+  padding-block: var(--space-3xs);
+}
+
+#notification button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#notification button[aria-label='Update'] {
+  min-height: 2.75rem;
+  padding: 0 var(--space-lg) !important;
+  font-size: 0.85rem;
+  border-radius: var(--radius-pill) !important;
+  background-color: var(--link-color);
+  border-color: var(--link-color);
+  color: var(--card-bg);
+}
+
+#notification .btn-close {
+  box-sizing: content-box;
+  width: 0.75rem;
+  height: 0.75rem;
+  padding: 1rem;
+  margin: 0 var(--space-3xs) 0 var(--space-3xs) !important;
 }
