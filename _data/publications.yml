@@ -20,6 +20,17 @@
       url: "https://qut.pressbooks.pub/ausistar-nextgen-playbook-2025/"
       icon: "fas fa-lock-open"
 
+- title: "Methodological primer on thematic analysis with large language models with general insights for qualitative analysis"
+  authors: "De Paoli, S. & **Koparan, S.**"
+  authors_cv: "De Paoli, S. & Koparan, S."
+  venue: "JME Practical Bioethics, 2(3), e000188, September 2026"
+  year: 2026
+  type: article
+  links:
+    - label: Open Access
+      url: "https://doi.org/10.1136/jmepb-2026-000188"
+      icon: "fas fa-lock-open"
+
 - title: "DeepRacer on Physical Track: Parameters Exploration and Performance Evaluation"
   authors: "**Koparan, S.** & Javadi, B."
   authors_cv: "Koparan, S. & Javadi, B."
